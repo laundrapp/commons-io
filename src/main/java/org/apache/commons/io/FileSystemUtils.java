@@ -16,6 +16,8 @@
  */
 package org.apache.commons.io;
 
+import com.google.j2objc.annotations.J2ObjCIncompatible;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
@@ -42,6 +44,7 @@ import java.util.StringTokenizer;
  * @version $Id$
  * @since 1.1
  */
+@J2ObjCIncompatible
 public class FileSystemUtils {
 
     /** Singleton instance, used mainly for testing. */
