@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/commons-io.iml" filepath="$PROJECT_DIR$/commons-io.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/commons-io_main.iml" filepath="$PROJECT_DIR$/.idea/modules/commons-io_main.iml" group="commons-io" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/commons-io_test.iml" filepath="$PROJECT_DIR$/.idea/modules/commons-io_test.iml" group="commons-io" />
+    </modules>
+  </component>
+</project>

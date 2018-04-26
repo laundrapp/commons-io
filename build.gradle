@@ -1,0 +1,59 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+
+group = 'commons-io'
+version = '2.4'
+
+description = """Commons IO"""
+
+sourceCompatibility = 1.6
+targetCompatibility = 1.6
+tasks.withType(JavaCompile) {
+	options.encoding = 'iso-8859-1'
+}
+
+
+
+repositories {
+     mavenCentral()        
+     maven { url "http://repository.apache.org/snapshots" }
+     maven { url "http://repo.maven.apache.org/maven2" }
+}
+dependencies {
+    compile group: 'com.google.j2objc', name: 'j2objc-annotations', version: '1.3'
+    testCompile group: 'junit', name: 'junit', version:'4.10'
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src/main/java']
+        }
+    }
+}
+
+
+task translateJava(type:Exec) {
+    inputs.files sourceSets.main.allJava
+    outputs.files files((sourceSets.main.allJava).collect { i ->
+        i.collect { j ->
+            def name = projectDir.path + 'gen/objc/' + i.name
+            //def name = j.path.replace(i.srcDirs.iterator().next().path, 'src/gen/objc')
+            return [name.replace('.java', '.h'), name.replace('.java', '.m')]
+        }
+    }.flatten())
+
+
+    // the classpath is built from the runtime dependencies for the sourcesets ...
+    executable "${J2OBJC_HOME_LATEST}/j2objc"
+    //args '--prefixes', file('main/resources/prefixes.properties').path
+//    args '--mapping', file('mapping.properties').path
+    args '--doc-comments'
+    args '--nullability'
+    args '--strip-reflection'
+    args '-d', file('gen/objc').path
+    args '-sourcepath', (sourceSets.main.allJava.srcDirs).join(':')
+    args '-classpath', sourceSets.main.runtimeClasspath.collect { it.absolutePath }.join(':')
+    args inputs.files
+}
+
