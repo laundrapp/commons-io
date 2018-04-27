@@ -37,7 +37,7 @@ task translateJava(type:Exec) {
     inputs.files sourceSets.main.allJava
     outputs.files files((sourceSets.main.allJava).collect { i ->
         i.collect { j ->
-            def name = projectDir.path + 'gen/objc/' + i.name
+            def name = projectDir.path + '/gen/objc/' + i.name
             //def name = j.path.replace(i.srcDirs.iterator().next().path, 'src/gen/objc')
             return [name.replace('.java', '.h'), name.replace('.java', '.m')]
         }
