@@ -15,7 +15,7 @@ OrgApacheCommonsIoOutputNullOutputStream *OrgApacheCommonsIoOutputNullOutputStre
 @implementation OrgApacheCommonsIoOutputNullOutputStream
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
-- (instancetype)init {
+- (instancetype __nonnull)init {
   OrgApacheCommonsIoOutputNullOutputStream_init(self);
   return self;
 }

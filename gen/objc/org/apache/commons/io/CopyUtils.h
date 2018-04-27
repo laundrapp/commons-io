@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgApacheCommonsIoCopyUtils
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgApacheCommonsIoCopyUtils_) && (INCLUDE_ALL_OrgApacheCommonsIoCopyUtils || defined(INCLUDE_OrgApacheCommonsIoCopyUtils))
 #define OrgApacheCommonsIoCopyUtils_
 
@@ -106,7 +111,7 @@
 /*!
  @brief Instances should NOT be constructed in standard programming.
  */
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 /*!
  @brief Copy bytes from a <code>byte[]</code> to an <code>OutputStream</code>.
@@ -252,4 +257,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoCopyUtils)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgApacheCommonsIoCopyUtils")

@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgApacheCommonsIoFileUtils
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgApacheCommonsIoFileUtils_) && (INCLUDE_ALL_OrgApacheCommonsIoFileUtils || defined(INCLUDE_OrgApacheCommonsIoFileUtils))
 #define OrgApacheCommonsIoFileUtils_
 
@@ -63,7 +68,7 @@
 /*!
  @brief Instances should NOT be constructed in standard programming.
  */
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 /*!
  @brief Returns a human-readable version of the file size, where the input represents a specific number of bytes.
@@ -1948,4 +1953,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoFileUtils)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgApacheCommonsIoFileUtils")

@@ -30,12 +30,12 @@ J2OBJC_FIELD_SETTER(OrgApacheCommonsIoFilefilterDelegateFileFilter, fileFilter_,
 
 @implementation OrgApacheCommonsIoFilefilterDelegateFileFilter
 
-- (instancetype)initWithJavaIoFilenameFilter:(id<JavaIoFilenameFilter>)filter {
+- (instancetype __nonnull)initWithJavaIoFilenameFilter:(id<JavaIoFilenameFilter>)filter {
   OrgApacheCommonsIoFilefilterDelegateFileFilter_initWithJavaIoFilenameFilter_(self, filter);
   return self;
 }
 
-- (instancetype)initWithJavaIoFileFilter:(id<JavaIoFileFilter>)filter {
+- (instancetype __nonnull)initWithJavaIoFileFilter:(id<JavaIoFileFilter>)filter {
   OrgApacheCommonsIoFilefilterDelegateFileFilter_initWithJavaIoFileFilter_(self, filter);
   return self;
 }

@@ -31,7 +31,7 @@ NSString *OrgApacheCommonsIoHexDump_EOL;
 @implementation OrgApacheCommonsIoHexDump
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
-- (instancetype)init {
+- (instancetype __nonnull)init {
   OrgApacheCommonsIoHexDump_init(self);
   return self;
 }

@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgApacheCommonsIoFilefilterAbstractFileFilter
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgApacheCommonsIoFilefilterAbstractFileFilter_) && (INCLUDE_ALL_OrgApacheCommonsIoFilefilterAbstractFileFilter || defined(INCLUDE_OrgApacheCommonsIoFilefilterAbstractFileFilter))
 #define OrgApacheCommonsIoFilefilterAbstractFileFilter_
 
@@ -35,7 +40,7 @@
 
 #pragma mark Public
 
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 /*!
  @brief Checks to see if the File should be accepted by this filter.
@@ -69,4 +74,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoFilefilterAbstractFileFilter)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgApacheCommonsIoFilefilterAbstractFileFilter")

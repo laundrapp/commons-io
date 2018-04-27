@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgApacheCommonsIoInputCloseShieldInputStream
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgApacheCommonsIoInputCloseShieldInputStream_) && (INCLUDE_ALL_OrgApacheCommonsIoInputCloseShieldInputStream || defined(INCLUDE_OrgApacheCommonsIoInputCloseShieldInputStream))
 #define OrgApacheCommonsIoInputCloseShieldInputStream_
 
@@ -40,7 +45,7 @@
   closed.
  @param inArg underlying input stream
  */
-- (instancetype)initWithJavaIoInputStream:(JavaIoInputStream *)inArg;
+- (instancetype __nonnull)initWithJavaIoInputStream:(JavaIoInputStream *)inArg;
 
 /*!
  @brief Replaces the underlying input stream with a <code>ClosedInputStream</code>
@@ -63,4 +68,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoInputCloseShieldInputStream)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgApacheCommonsIoInputCloseShieldInputStream")

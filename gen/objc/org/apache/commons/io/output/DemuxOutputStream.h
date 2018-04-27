@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgApacheCommonsIoOutputDemuxOutputStream
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgApacheCommonsIoOutputDemuxOutputStream_) && (INCLUDE_ALL_OrgApacheCommonsIoOutputDemuxOutputStream || defined(INCLUDE_OrgApacheCommonsIoOutputDemuxOutputStream))
 #define OrgApacheCommonsIoOutputDemuxOutputStream_
 
@@ -29,7 +34,7 @@
 
 #pragma mark Public
 
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 /*!
  @brief Bind the specified stream to the current thread.
@@ -71,4 +76,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoOutputDemuxOutputStream)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgApacheCommonsIoOutputDemuxOutputStream")

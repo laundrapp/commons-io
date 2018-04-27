@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgApacheCommonsIoInputCharSequenceInputStream
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgApacheCommonsIoInputCharSequenceInputStream_) && (INCLUDE_ALL_OrgApacheCommonsIoInputCharSequenceInputStream || defined(INCLUDE_OrgApacheCommonsIoInputCharSequenceInputStream))
 #define OrgApacheCommonsIoInputCharSequenceInputStream_
 
@@ -41,8 +46,8 @@
  @param s the input character sequence
  @param charset the character set name to use
  */
-- (instancetype)initWithJavaLangCharSequence:(id<JavaLangCharSequence>)s
-                   withJavaNioCharsetCharset:(JavaNioCharsetCharset *)charset;
+- (instancetype __nonnull)initWithJavaLangCharSequence:(id<JavaLangCharSequence>)s
+                             withJavaNioCharsetCharset:(JavaNioCharsetCharset *)charset;
 
 /*!
  @brief Constructor.
@@ -50,9 +55,9 @@
  @param charset the character set name to use
  @param bufferSize the buffer size to use.
  */
-- (instancetype)initWithJavaLangCharSequence:(id<JavaLangCharSequence>)s
-                   withJavaNioCharsetCharset:(JavaNioCharsetCharset *)charset
-                                     withInt:(jint)bufferSize;
+- (instancetype __nonnull)initWithJavaLangCharSequence:(id<JavaLangCharSequence>)s
+                             withJavaNioCharsetCharset:(JavaNioCharsetCharset *)charset
+                                               withInt:(jint)bufferSize;
 
 /*!
  @brief Constructor, calls <code>String, int)</code>
@@ -60,8 +65,8 @@
  @param s the input character sequence
  @param charset the character set name to use
  */
-- (instancetype)initWithJavaLangCharSequence:(id<JavaLangCharSequence>)s
-                                withNSString:(NSString *)charset;
+- (instancetype __nonnull)initWithJavaLangCharSequence:(id<JavaLangCharSequence>)s
+                                          withNSString:(NSString *)charset;
 
 /*!
  @brief Constructor, calls <code>Charset, int)</code>.
@@ -69,9 +74,9 @@
  @param charset the character set name to use
  @param bufferSize the buffer size to use.
  */
-- (instancetype)initWithJavaLangCharSequence:(id<JavaLangCharSequence>)s
-                                withNSString:(NSString *)charset
-                                     withInt:(jint)bufferSize;
+- (instancetype __nonnull)initWithJavaLangCharSequence:(id<JavaLangCharSequence>)s
+                                          withNSString:(NSString *)charset
+                                               withInt:(jint)bufferSize;
 
 - (jint)available;
 
@@ -98,7 +103,7 @@
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)init NS_UNAVAILABLE;
+- (instancetype __nonnull)init NS_UNAVAILABLE;
 
 @end
 
@@ -132,4 +137,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoInputCharSequenceInputStream)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgApacheCommonsIoInputCharSequenceInputStream")

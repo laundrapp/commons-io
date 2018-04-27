@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgApacheCommonsIoFilefilterNameFileFilter
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgApacheCommonsIoFilefilterNameFileFilter_) && (INCLUDE_ALL_OrgApacheCommonsIoFilefilterNameFileFilter || defined(INCLUDE_OrgApacheCommonsIoFilefilterNameFileFilter))
 #define OrgApacheCommonsIoFilefilterNameFileFilter_
 
@@ -59,7 +64,7 @@
  @throw IllegalArgumentExceptionif the name list is null
  @throw ClassCastExceptionif the list does not contain Strings
  */
-- (instancetype)initWithJavaUtilList:(id<JavaUtilList>)names;
+- (instancetype __nonnull)initWithJavaUtilList:(id<JavaUtilList>)names;
 
 /*!
  @brief Constructs a new name file filter for a list of names specifying case-sensitivity.
@@ -68,15 +73,15 @@
  @throw IllegalArgumentExceptionif the name list is null
  @throw ClassCastExceptionif the list does not contain Strings
  */
-- (instancetype)initWithJavaUtilList:(id<JavaUtilList>)names
-        withOrgApacheCommonsIoIOCase:(OrgApacheCommonsIoIOCase *)caseSensitivity;
+- (instancetype __nonnull)initWithJavaUtilList:(id<JavaUtilList>)names
+                  withOrgApacheCommonsIoIOCase:(OrgApacheCommonsIoIOCase *)caseSensitivity;
 
 /*!
  @brief Constructs a new case-sensitive name file filter for a single name.
  @param name the name to allow, must not be null
  @throw IllegalArgumentExceptionif the name is null
  */
-- (instancetype)initWithNSString:(NSString *)name;
+- (instancetype __nonnull)initWithNSString:(NSString *)name;
 
 /*!
  @brief Construct a new name file filter specifying case-sensitivity.
@@ -84,8 +89,8 @@
  @param caseSensitivity how to handle case sensitivity, null means case-sensitive
  @throw IllegalArgumentExceptionif the name is null
  */
-- (instancetype)initWithNSString:(NSString *)name
-    withOrgApacheCommonsIoIOCase:(OrgApacheCommonsIoIOCase *)caseSensitivity;
+- (instancetype __nonnull)initWithNSString:(NSString *)name
+              withOrgApacheCommonsIoIOCase:(OrgApacheCommonsIoIOCase *)caseSensitivity;
 
 /*!
  @brief Constructs a new case-sensitive name file filter for an array of names.
@@ -95,7 +100,7 @@
  @param names the names to allow, must not be null
  @throw IllegalArgumentExceptionif the names array is null
  */
-- (instancetype)initWithNSStringArray:(IOSObjectArray *)names;
+- (instancetype __nonnull)initWithNSStringArray:(IOSObjectArray *)names;
 
 /*!
  @brief Constructs a new name file filter for an array of names specifying case-sensitivity.
@@ -106,8 +111,8 @@
  @param caseSensitivity how to handle case sensitivity, null means case-sensitive
  @throw IllegalArgumentExceptionif the names array is null
  */
-- (instancetype)initWithNSStringArray:(IOSObjectArray *)names
-         withOrgApacheCommonsIoIOCase:(OrgApacheCommonsIoIOCase *)caseSensitivity;
+- (instancetype __nonnull)initWithNSStringArray:(IOSObjectArray *)names
+                   withOrgApacheCommonsIoIOCase:(OrgApacheCommonsIoIOCase *)caseSensitivity;
 
 /*!
  @brief Checks to see if the filename matches.
@@ -133,7 +138,7 @@
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)init NS_UNAVAILABLE;
+- (instancetype __nonnull)init NS_UNAVAILABLE;
 
 @end
 
@@ -179,4 +184,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoFilefilterNameFileFilter)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgApacheCommonsIoFilefilterNameFileFilter")

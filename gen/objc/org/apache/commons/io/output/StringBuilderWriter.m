@@ -22,18 +22,18 @@ J2OBJC_FIELD_SETTER(OrgApacheCommonsIoOutputStringBuilderWriter, builder_, JavaL
 @implementation OrgApacheCommonsIoOutputStringBuilderWriter
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
-- (instancetype)init {
+- (instancetype __nonnull)init {
   OrgApacheCommonsIoOutputStringBuilderWriter_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
-- (instancetype)initWithInt:(jint)capacity {
+- (instancetype __nonnull)initWithInt:(jint)capacity {
   OrgApacheCommonsIoOutputStringBuilderWriter_initWithInt_(self, capacity);
   return self;
 }
 
-- (instancetype)initWithJavaLangStringBuilder:(JavaLangStringBuilder *)builder {
+- (instancetype __nonnull)initWithJavaLangStringBuilder:(JavaLangStringBuilder *)builder {
   OrgApacheCommonsIoOutputStringBuilderWriter_initWithJavaLangStringBuilder_(self, builder);
   return self;
 }

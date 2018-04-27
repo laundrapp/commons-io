@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgApacheCommonsIoFilefilterDelegateFileFilter
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgApacheCommonsIoFilefilterDelegateFileFilter_) && (INCLUDE_ALL_OrgApacheCommonsIoFilefilterDelegateFileFilter || defined(INCLUDE_OrgApacheCommonsIoFilefilterDelegateFileFilter))
 #define OrgApacheCommonsIoFilefilterDelegateFileFilter_
 
@@ -43,13 +48,13 @@
  @brief Constructs a delegate file filter around an existing FileFilter.
  @param filter the filter to decorate
  */
-- (instancetype)initWithJavaIoFileFilter:(id<JavaIoFileFilter>)filter;
+- (instancetype __nonnull)initWithJavaIoFileFilter:(id<JavaIoFileFilter>)filter;
 
 /*!
  @brief Constructs a delegate file filter around an existing FilenameFilter.
  @param filter the filter to decorate
  */
-- (instancetype)initWithJavaIoFilenameFilter:(id<JavaIoFilenameFilter>)filter;
+- (instancetype __nonnull)initWithJavaIoFilenameFilter:(id<JavaIoFilenameFilter>)filter;
 
 /*!
  @brief Checks the filter.
@@ -75,7 +80,7 @@
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)init NS_UNAVAILABLE;
+- (instancetype __nonnull)init NS_UNAVAILABLE;
 
 @end
 
@@ -97,4 +102,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoFilefilterDelegateFileFilter)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgApacheCommonsIoFilefilterDelegateFileFilter")

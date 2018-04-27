@@ -18,7 +18,7 @@ id<OrgApacheCommonsIoFilefilterIOFileFilter> OrgApacheCommonsIoFilefilterCanWrit
 @implementation OrgApacheCommonsIoFilefilterCanWriteFileFilter
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
-- (instancetype)init {
+- (instancetype __nonnull)init {
   OrgApacheCommonsIoFilefilterCanWriteFileFilter_init(self);
   return self;
 }

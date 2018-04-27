@@ -25,13 +25,13 @@
 
 @implementation OrgApacheCommonsIoFilefilterSizeFileFilter
 
-- (instancetype)initWithLong:(jlong)size {
+- (instancetype __nonnull)initWithLong:(jlong)size {
   OrgApacheCommonsIoFilefilterSizeFileFilter_initWithLong_(self, size);
   return self;
 }
 
-- (instancetype)initWithLong:(jlong)size
-                 withBoolean:(jboolean)acceptLarger {
+- (instancetype __nonnull)initWithLong:(jlong)size
+                           withBoolean:(jboolean)acceptLarger {
   OrgApacheCommonsIoFilefilterSizeFileFilter_initWithLong_withBoolean_(self, size, acceptLarger);
   return self;
 }

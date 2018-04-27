@@ -75,26 +75,26 @@ J2OBJC_INITIALIZED_DEFN(OrgApacheCommonsIoInputBOMInputStream)
 
 @implementation OrgApacheCommonsIoInputBOMInputStream
 
-- (instancetype)initWithJavaIoInputStream:(JavaIoInputStream *)delegate {
+- (instancetype __nonnull)initWithJavaIoInputStream:(JavaIoInputStream *)delegate {
   OrgApacheCommonsIoInputBOMInputStream_initWithJavaIoInputStream_(self, delegate);
   return self;
 }
 
-- (instancetype)initWithJavaIoInputStream:(JavaIoInputStream *)delegate
-                              withBoolean:(jboolean)include {
+- (instancetype __nonnull)initWithJavaIoInputStream:(JavaIoInputStream *)delegate
+                                        withBoolean:(jboolean)include {
   OrgApacheCommonsIoInputBOMInputStream_initWithJavaIoInputStream_withBoolean_(self, delegate, include);
   return self;
 }
 
-- (instancetype)initWithJavaIoInputStream:(JavaIoInputStream *)delegate
- withOrgApacheCommonsIoByteOrderMarkArray:(IOSObjectArray *)boms {
+- (instancetype __nonnull)initWithJavaIoInputStream:(JavaIoInputStream *)delegate
+           withOrgApacheCommonsIoByteOrderMarkArray:(IOSObjectArray *)boms {
   OrgApacheCommonsIoInputBOMInputStream_initWithJavaIoInputStream_withOrgApacheCommonsIoByteOrderMarkArray_(self, delegate, boms);
   return self;
 }
 
-- (instancetype)initWithJavaIoInputStream:(JavaIoInputStream *)delegate
-                              withBoolean:(jboolean)include
- withOrgApacheCommonsIoByteOrderMarkArray:(IOSObjectArray *)boms {
+- (instancetype __nonnull)initWithJavaIoInputStream:(JavaIoInputStream *)delegate
+                                        withBoolean:(jboolean)include
+           withOrgApacheCommonsIoByteOrderMarkArray:(IOSObjectArray *)boms {
   OrgApacheCommonsIoInputBOMInputStream_initWithJavaIoInputStream_withBoolean_withOrgApacheCommonsIoByteOrderMarkArray_(self, delegate, include, boms);
   return self;
 }

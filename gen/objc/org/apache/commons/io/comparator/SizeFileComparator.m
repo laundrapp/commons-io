@@ -31,13 +31,13 @@ id<JavaUtilComparator> OrgApacheCommonsIoComparatorSizeFileComparator_SIZE_SUMDI
 @implementation OrgApacheCommonsIoComparatorSizeFileComparator
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
-- (instancetype)init {
+- (instancetype __nonnull)init {
   OrgApacheCommonsIoComparatorSizeFileComparator_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
-- (instancetype)initWithBoolean:(jboolean)sumDirectoryContents {
+- (instancetype __nonnull)initWithBoolean:(jboolean)sumDirectoryContents {
   OrgApacheCommonsIoComparatorSizeFileComparator_initWithBoolean_(self, sumDirectoryContents);
   return self;
 }

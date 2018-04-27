@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgApacheCommonsIoOutputWriterOutputStream
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgApacheCommonsIoOutputWriterOutputStream_) && (INCLUDE_ALL_OrgApacheCommonsIoOutputWriterOutputStream || defined(INCLUDE_OrgApacheCommonsIoOutputWriterOutputStream))
 #define OrgApacheCommonsIoOutputWriterOutputStream_
 
@@ -79,7 +84,7 @@
   be flushed when it overflows or when <code>flush()</code> or <code>close()</code> is called.
  @param writer the target <code>Writer</code>
  */
-- (instancetype)initWithJavaIoWriter:(JavaIoWriter *)writer;
+- (instancetype __nonnull)initWithJavaIoWriter:(JavaIoWriter *)writer;
 
 /*!
  @brief Constructs a new <code>WriterOutputStream</code> with a default output buffer size of
@@ -88,8 +93,8 @@
  @param writer the target <code>Writer</code>
  @param charset the charset encoding
  */
-- (instancetype)initWithJavaIoWriter:(JavaIoWriter *)writer
-           withJavaNioCharsetCharset:(JavaNioCharsetCharset *)charset;
+- (instancetype __nonnull)initWithJavaIoWriter:(JavaIoWriter *)writer
+                     withJavaNioCharsetCharset:(JavaNioCharsetCharset *)charset;
 
 /*!
  @brief Constructs a new <code>WriterOutputStream</code>.
@@ -102,10 +107,10 @@
                            
  <code>flush()</code>  or <code>close()</code>  is called.
  */
-- (instancetype)initWithJavaIoWriter:(JavaIoWriter *)writer
-           withJavaNioCharsetCharset:(JavaNioCharsetCharset *)charset
-                             withInt:(jint)bufferSize
-                         withBoolean:(jboolean)writeImmediately;
+- (instancetype __nonnull)initWithJavaIoWriter:(JavaIoWriter *)writer
+                     withJavaNioCharsetCharset:(JavaNioCharsetCharset *)charset
+                                       withInt:(jint)bufferSize
+                                   withBoolean:(jboolean)writeImmediately;
 
 /*!
  @brief Constructs a new <code>WriterOutputStream</code> with a default output buffer size of
@@ -115,8 +120,8 @@
  @param decoder the charset decoder
  @since 2.1
  */
-- (instancetype)initWithJavaIoWriter:(JavaIoWriter *)writer
-    withJavaNioCharsetCharsetDecoder:(JavaNioCharsetCharsetDecoder *)decoder;
+- (instancetype __nonnull)initWithJavaIoWriter:(JavaIoWriter *)writer
+              withJavaNioCharsetCharsetDecoder:(JavaNioCharsetCharsetDecoder *)decoder;
 
 /*!
  @brief Constructs a new <code>WriterOutputStream</code>.
@@ -130,10 +135,10 @@
  <code>flush()</code>  or <code>close()</code>  is called.
  @since 2.1
  */
-- (instancetype)initWithJavaIoWriter:(JavaIoWriter *)writer
-    withJavaNioCharsetCharsetDecoder:(JavaNioCharsetCharsetDecoder *)decoder
-                             withInt:(jint)bufferSize
-                         withBoolean:(jboolean)writeImmediately;
+- (instancetype __nonnull)initWithJavaIoWriter:(JavaIoWriter *)writer
+              withJavaNioCharsetCharsetDecoder:(JavaNioCharsetCharsetDecoder *)decoder
+                                       withInt:(jint)bufferSize
+                                   withBoolean:(jboolean)writeImmediately;
 
 /*!
  @brief Constructs a new <code>WriterOutputStream</code> with a default output buffer size of
@@ -142,8 +147,8 @@
  @param writer the target <code>Writer</code>
  @param charsetName the name of the charset encoding
  */
-- (instancetype)initWithJavaIoWriter:(JavaIoWriter *)writer
-                        withNSString:(NSString *)charsetName;
+- (instancetype __nonnull)initWithJavaIoWriter:(JavaIoWriter *)writer
+                                  withNSString:(NSString *)charsetName;
 
 /*!
  @brief Constructs a new <code>WriterOutputStream</code>.
@@ -156,10 +161,10 @@
                            
  <code>flush()</code>  or <code>close()</code>  is called.
  */
-- (instancetype)initWithJavaIoWriter:(JavaIoWriter *)writer
-                        withNSString:(NSString *)charsetName
-                             withInt:(jint)bufferSize
-                         withBoolean:(jboolean)writeImmediately;
+- (instancetype __nonnull)initWithJavaIoWriter:(JavaIoWriter *)writer
+                                  withNSString:(NSString *)charsetName
+                                       withInt:(jint)bufferSize
+                                   withBoolean:(jboolean)writeImmediately;
 
 /*!
  @brief Close the stream.Any remaining content accumulated in the output buffer
@@ -206,7 +211,7 @@
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)init NS_UNAVAILABLE;
+- (instancetype __nonnull)init NS_UNAVAILABLE;
 
 @end
 
@@ -258,4 +263,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoOutputWriterOutputStream)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgApacheCommonsIoOutputWriterOutputStream")

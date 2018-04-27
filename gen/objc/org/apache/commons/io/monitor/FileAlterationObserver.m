@@ -51,45 +51,45 @@ __attribute__((unused)) static IOSObjectArray *OrgApacheCommonsIoMonitorFileAlte
 
 @implementation OrgApacheCommonsIoMonitorFileAlterationObserver
 
-- (instancetype)initWithNSString:(NSString *)directoryName {
+- (instancetype __nonnull)initWithNSString:(NSString *)directoryName {
   OrgApacheCommonsIoMonitorFileAlterationObserver_initWithNSString_(self, directoryName);
   return self;
 }
 
-- (instancetype)initWithNSString:(NSString *)directoryName
-            withJavaIoFileFilter:(id<JavaIoFileFilter>)fileFilter {
+- (instancetype __nonnull)initWithNSString:(NSString *)directoryName
+                      withJavaIoFileFilter:(id<JavaIoFileFilter>)fileFilter {
   OrgApacheCommonsIoMonitorFileAlterationObserver_initWithNSString_withJavaIoFileFilter_(self, directoryName, fileFilter);
   return self;
 }
 
-- (instancetype)initWithNSString:(NSString *)directoryName
-            withJavaIoFileFilter:(id<JavaIoFileFilter>)fileFilter
-    withOrgApacheCommonsIoIOCase:(OrgApacheCommonsIoIOCase *)caseSensitivity {
+- (instancetype __nonnull)initWithNSString:(NSString *)directoryName
+                      withJavaIoFileFilter:(id<JavaIoFileFilter>)fileFilter
+              withOrgApacheCommonsIoIOCase:(OrgApacheCommonsIoIOCase *)caseSensitivity {
   OrgApacheCommonsIoMonitorFileAlterationObserver_initWithNSString_withJavaIoFileFilter_withOrgApacheCommonsIoIOCase_(self, directoryName, fileFilter, caseSensitivity);
   return self;
 }
 
-- (instancetype)initWithJavaIoFile:(JavaIoFile *)directory {
+- (instancetype __nonnull)initWithJavaIoFile:(JavaIoFile *)directory {
   OrgApacheCommonsIoMonitorFileAlterationObserver_initWithJavaIoFile_(self, directory);
   return self;
 }
 
-- (instancetype)initWithJavaIoFile:(JavaIoFile *)directory
-              withJavaIoFileFilter:(id<JavaIoFileFilter>)fileFilter {
+- (instancetype __nonnull)initWithJavaIoFile:(JavaIoFile *)directory
+                        withJavaIoFileFilter:(id<JavaIoFileFilter>)fileFilter {
   OrgApacheCommonsIoMonitorFileAlterationObserver_initWithJavaIoFile_withJavaIoFileFilter_(self, directory, fileFilter);
   return self;
 }
 
-- (instancetype)initWithJavaIoFile:(JavaIoFile *)directory
-              withJavaIoFileFilter:(id<JavaIoFileFilter>)fileFilter
-      withOrgApacheCommonsIoIOCase:(OrgApacheCommonsIoIOCase *)caseSensitivity {
+- (instancetype __nonnull)initWithJavaIoFile:(JavaIoFile *)directory
+                        withJavaIoFileFilter:(id<JavaIoFileFilter>)fileFilter
+                withOrgApacheCommonsIoIOCase:(OrgApacheCommonsIoIOCase *)caseSensitivity {
   OrgApacheCommonsIoMonitorFileAlterationObserver_initWithJavaIoFile_withJavaIoFileFilter_withOrgApacheCommonsIoIOCase_(self, directory, fileFilter, caseSensitivity);
   return self;
 }
 
-- (instancetype)initWithOrgApacheCommonsIoMonitorFileEntry:(OrgApacheCommonsIoMonitorFileEntry *)rootEntry
-                                      withJavaIoFileFilter:(id<JavaIoFileFilter>)fileFilter
-                              withOrgApacheCommonsIoIOCase:(OrgApacheCommonsIoIOCase *)caseSensitivity {
+- (instancetype __nonnull)initWithOrgApacheCommonsIoMonitorFileEntry:(OrgApacheCommonsIoMonitorFileEntry *)rootEntry
+                                                withJavaIoFileFilter:(id<JavaIoFileFilter>)fileFilter
+                                        withOrgApacheCommonsIoIOCase:(OrgApacheCommonsIoIOCase *)caseSensitivity {
   OrgApacheCommonsIoMonitorFileAlterationObserver_initWithOrgApacheCommonsIoMonitorFileEntry_withJavaIoFileFilter_withOrgApacheCommonsIoIOCase_(self, rootEntry, fileFilter, caseSensitivity);
   return self;
 }

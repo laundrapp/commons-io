@@ -26,7 +26,7 @@ J2OBJC_FIELD_SETTER(OrgApacheCommonsIoInputCharSequenceReader, charSequence_, id
 
 @implementation OrgApacheCommonsIoInputCharSequenceReader
 
-- (instancetype)initWithJavaLangCharSequence:(id<JavaLangCharSequence>)charSequence {
+- (instancetype __nonnull)initWithJavaLangCharSequence:(id<JavaLangCharSequence>)charSequence {
   OrgApacheCommonsIoInputCharSequenceReader_initWithJavaLangCharSequence_(self, charSequence);
   return self;
 }

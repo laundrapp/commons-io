@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgApacheCommonsIoInputReaderInputStream
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgApacheCommonsIoInputReaderInputStream_) && (INCLUDE_ALL_OrgApacheCommonsIoInputReaderInputStream || defined(INCLUDE_OrgApacheCommonsIoInputReaderInputStream))
 #define OrgApacheCommonsIoInputReaderInputStream_
 
@@ -83,7 +88,7 @@
   with a default input buffer size of 1024 characters.
  @param reader the target <code>Reader</code>
  */
-- (instancetype)initWithJavaIoReader:(JavaIoReader *)reader;
+- (instancetype __nonnull)initWithJavaIoReader:(JavaIoReader *)reader;
 
 /*!
  @brief Construct a new <code>ReaderInputStream</code> with a default input buffer size of
@@ -91,8 +96,8 @@
  @param reader the target <code>Reader</code>
  @param charset the charset encoding
  */
-- (instancetype)initWithJavaIoReader:(JavaIoReader *)reader
-           withJavaNioCharsetCharset:(JavaNioCharsetCharset *)charset;
+- (instancetype __nonnull)initWithJavaIoReader:(JavaIoReader *)reader
+                     withJavaNioCharsetCharset:(JavaNioCharsetCharset *)charset;
 
 /*!
  @brief Construct a new <code>ReaderInputStream</code>.
@@ -100,9 +105,9 @@
  @param charset the charset encoding
  @param bufferSize the size of the input buffer in number of characters
  */
-- (instancetype)initWithJavaIoReader:(JavaIoReader *)reader
-           withJavaNioCharsetCharset:(JavaNioCharsetCharset *)charset
-                             withInt:(jint)bufferSize;
+- (instancetype __nonnull)initWithJavaIoReader:(JavaIoReader *)reader
+                     withJavaNioCharsetCharset:(JavaNioCharsetCharset *)charset
+                                       withInt:(jint)bufferSize;
 
 /*!
  @brief Construct a new <code>ReaderInputStream</code>.
@@ -110,8 +115,8 @@
  @param encoder the charset encoder
  @since 2.1
  */
-- (instancetype)initWithJavaIoReader:(JavaIoReader *)reader
-    withJavaNioCharsetCharsetEncoder:(JavaNioCharsetCharsetEncoder *)encoder;
+- (instancetype __nonnull)initWithJavaIoReader:(JavaIoReader *)reader
+              withJavaNioCharsetCharsetEncoder:(JavaNioCharsetCharsetEncoder *)encoder;
 
 /*!
  @brief Construct a new <code>ReaderInputStream</code>.
@@ -120,9 +125,9 @@
  @param bufferSize the size of the input buffer in number of characters
  @since 2.1
  */
-- (instancetype)initWithJavaIoReader:(JavaIoReader *)reader
-    withJavaNioCharsetCharsetEncoder:(JavaNioCharsetCharsetEncoder *)encoder
-                             withInt:(jint)bufferSize;
+- (instancetype __nonnull)initWithJavaIoReader:(JavaIoReader *)reader
+              withJavaNioCharsetCharsetEncoder:(JavaNioCharsetCharsetEncoder *)encoder
+                                       withInt:(jint)bufferSize;
 
 /*!
  @brief Construct a new <code>ReaderInputStream</code> with a default input buffer size of
@@ -130,8 +135,8 @@
  @param reader the target <code>Reader</code>
  @param charsetName the name of the charset encoding
  */
-- (instancetype)initWithJavaIoReader:(JavaIoReader *)reader
-                        withNSString:(NSString *)charsetName;
+- (instancetype __nonnull)initWithJavaIoReader:(JavaIoReader *)reader
+                                  withNSString:(NSString *)charsetName;
 
 /*!
  @brief Construct a new <code>ReaderInputStream</code>.
@@ -139,9 +144,9 @@
  @param charsetName the name of the charset encoding
  @param bufferSize the size of the input buffer in number of characters
  */
-- (instancetype)initWithJavaIoReader:(JavaIoReader *)reader
-                        withNSString:(NSString *)charsetName
-                             withInt:(jint)bufferSize;
+- (instancetype __nonnull)initWithJavaIoReader:(JavaIoReader *)reader
+                                  withNSString:(NSString *)charsetName
+                                       withInt:(jint)bufferSize;
 
 /*!
  @brief Close the stream.This method will cause the underlying <code>Reader</code>
@@ -182,7 +187,7 @@
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)init NS_UNAVAILABLE;
+- (instancetype __nonnull)init NS_UNAVAILABLE;
 
 @end
 
@@ -234,4 +239,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoInputReaderInputStream)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgApacheCommonsIoInputReaderInputStream")

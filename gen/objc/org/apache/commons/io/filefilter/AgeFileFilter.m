@@ -26,35 +26,35 @@
 
 @implementation OrgApacheCommonsIoFilefilterAgeFileFilter
 
-- (instancetype)initWithLong:(jlong)cutoff {
+- (instancetype __nonnull)initWithLong:(jlong)cutoff {
   OrgApacheCommonsIoFilefilterAgeFileFilter_initWithLong_(self, cutoff);
   return self;
 }
 
-- (instancetype)initWithLong:(jlong)cutoff
-                 withBoolean:(jboolean)acceptOlder {
+- (instancetype __nonnull)initWithLong:(jlong)cutoff
+                           withBoolean:(jboolean)acceptOlder {
   OrgApacheCommonsIoFilefilterAgeFileFilter_initWithLong_withBoolean_(self, cutoff, acceptOlder);
   return self;
 }
 
-- (instancetype)initWithJavaUtilDate:(JavaUtilDate *)cutoffDate {
+- (instancetype __nonnull)initWithJavaUtilDate:(JavaUtilDate *)cutoffDate {
   OrgApacheCommonsIoFilefilterAgeFileFilter_initWithJavaUtilDate_(self, cutoffDate);
   return self;
 }
 
-- (instancetype)initWithJavaUtilDate:(JavaUtilDate *)cutoffDate
-                         withBoolean:(jboolean)acceptOlder {
+- (instancetype __nonnull)initWithJavaUtilDate:(JavaUtilDate *)cutoffDate
+                                   withBoolean:(jboolean)acceptOlder {
   OrgApacheCommonsIoFilefilterAgeFileFilter_initWithJavaUtilDate_withBoolean_(self, cutoffDate, acceptOlder);
   return self;
 }
 
-- (instancetype)initWithJavaIoFile:(JavaIoFile *)cutoffReference {
+- (instancetype __nonnull)initWithJavaIoFile:(JavaIoFile *)cutoffReference {
   OrgApacheCommonsIoFilefilterAgeFileFilter_initWithJavaIoFile_(self, cutoffReference);
   return self;
 }
 
-- (instancetype)initWithJavaIoFile:(JavaIoFile *)cutoffReference
-                       withBoolean:(jboolean)acceptOlder {
+- (instancetype __nonnull)initWithJavaIoFile:(JavaIoFile *)cutoffReference
+                                 withBoolean:(jboolean)acceptOlder {
   OrgApacheCommonsIoFilefilterAgeFileFilter_initWithJavaIoFile_withBoolean_(self, cutoffReference, acceptOlder);
   return self;
 }

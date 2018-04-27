@@ -14,7 +14,7 @@
 
 @implementation OrgApacheCommonsIoInputSwappedDataInputStream
 
-- (instancetype)initWithJavaIoInputStream:(JavaIoInputStream *)input {
+- (instancetype __nonnull)initWithJavaIoInputStream:(JavaIoInputStream *)input {
   OrgApacheCommonsIoInputSwappedDataInputStream_initWithJavaIoInputStream_(self, input);
   return self;
 }

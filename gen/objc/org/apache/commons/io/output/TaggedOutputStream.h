@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgApacheCommonsIoOutputTaggedOutputStream
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgApacheCommonsIoOutputTaggedOutputStream_) && (INCLUDE_ALL_OrgApacheCommonsIoOutputTaggedOutputStream || defined(INCLUDE_OrgApacheCommonsIoOutputTaggedOutputStream))
 #define OrgApacheCommonsIoOutputTaggedOutputStream_
 
@@ -73,7 +78,7 @@
  @brief Creates a tagging decorator for the given output stream.
  @param proxy output stream to be decorated
  */
-- (instancetype)initWithJavaIoOutputStream:(JavaIoOutputStream *)proxy;
+- (instancetype __nonnull)initWithJavaIoOutputStream:(JavaIoOutputStream *)proxy;
 
 /*!
  @brief Tests if the given exception was caused by this stream.
@@ -118,4 +123,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoOutputTaggedOutputStream)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgApacheCommonsIoOutputTaggedOutputStream")

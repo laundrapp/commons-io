@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgApacheCommonsIoCharsets
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgApacheCommonsIoCharsets_) && (INCLUDE_ALL_OrgApacheCommonsIoCharsets || defined(INCLUDE_OrgApacheCommonsIoCharsets))
 #define OrgApacheCommonsIoCharsets_
 
@@ -51,7 +56,7 @@
 
 #pragma mark Public
 
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 /*!
  @brief Returns the given Charset or the default Charset if the given Charset is null.
@@ -171,4 +176,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoCharsets)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgApacheCommonsIoCharsets")

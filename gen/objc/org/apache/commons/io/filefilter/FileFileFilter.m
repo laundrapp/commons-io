@@ -16,7 +16,7 @@ id<OrgApacheCommonsIoFilefilterIOFileFilter> OrgApacheCommonsIoFilefilterFileFil
 @implementation OrgApacheCommonsIoFilefilterFileFileFilter
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
-- (instancetype)init {
+- (instancetype __nonnull)init {
   OrgApacheCommonsIoFilefilterFileFileFilter_init(self);
   return self;
 }

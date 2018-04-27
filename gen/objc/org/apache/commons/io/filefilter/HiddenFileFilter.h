@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgApacheCommonsIoFilefilterHiddenFileFilter
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgApacheCommonsIoFilefilterHiddenFileFilter_) && (INCLUDE_ALL_OrgApacheCommonsIoFilefilterHiddenFileFilter || defined(INCLUDE_OrgApacheCommonsIoFilefilterHiddenFileFilter))
 #define OrgApacheCommonsIoFilefilterHiddenFileFilter_
 
@@ -74,7 +79,7 @@
 /*!
  @brief Restrictive consructor.
  */
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 @end
 
@@ -106,4 +111,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoFilefilterHiddenFileFilter)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgApacheCommonsIoFilefilterHiddenFileFilter")

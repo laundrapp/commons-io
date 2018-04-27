@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgApacheCommonsIoComparatorNameFileComparator
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgApacheCommonsIoComparatorNameFileComparator_) && (INCLUDE_ALL_OrgApacheCommonsIoComparatorNameFileComparator || defined(INCLUDE_OrgApacheCommonsIoComparatorNameFileComparator))
 #define OrgApacheCommonsIoComparatorNameFileComparator_
 
@@ -65,13 +70,13 @@
 /*!
  @brief Construct a case sensitive file name comparator instance.
  */
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 /*!
  @brief Construct a file name comparator instance with the specified case-sensitivity.
  @param caseSensitivity how to handle case sensitivity, null means case-sensitive
  */
-- (instancetype)initWithOrgApacheCommonsIoIOCase:(OrgApacheCommonsIoIOCase *)caseSensitivity;
+- (instancetype __nonnull)initWithOrgApacheCommonsIoIOCase:(OrgApacheCommonsIoIOCase *)caseSensitivity;
 
 /*!
  @brief Compare the names of two files with the specified case sensitivity.
@@ -159,4 +164,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoComparatorNameFileComparator)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgApacheCommonsIoComparatorNameFileComparator")

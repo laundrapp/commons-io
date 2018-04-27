@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgApacheCommonsIoOutputCountingOutputStream
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgApacheCommonsIoOutputCountingOutputStream_) && (INCLUDE_ALL_OrgApacheCommonsIoOutputCountingOutputStream || defined(INCLUDE_OrgApacheCommonsIoOutputCountingOutputStream))
 #define OrgApacheCommonsIoOutputCountingOutputStream_
 
@@ -38,7 +43,7 @@
  @brief Constructs a new CountingOutputStream.
  @param outArg the OutputStream to write to
  */
-- (instancetype)initWithJavaIoOutputStream:(JavaIoOutputStream *)outArg;
+- (instancetype __nonnull)initWithJavaIoOutputStream:(JavaIoOutputStream *)outArg;
 
 /*!
  @brief The number of bytes that have passed through this stream.
@@ -107,4 +112,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoOutputCountingOutputStream)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgApacheCommonsIoOutputCountingOutputStream")

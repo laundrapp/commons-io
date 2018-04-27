@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgApacheCommonsIoFilefilterIOFileFilter
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgApacheCommonsIoFilefilterIOFileFilter_) && (INCLUDE_ALL_OrgApacheCommonsIoFilefilterIOFileFilter || defined(INCLUDE_OrgApacheCommonsIoFilefilterIOFileFilter))
 #define OrgApacheCommonsIoFilefilterIOFileFilter_
 
@@ -62,4 +67,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoFilefilterIOFileFilter)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgApacheCommonsIoFilefilterIOFileFilter")

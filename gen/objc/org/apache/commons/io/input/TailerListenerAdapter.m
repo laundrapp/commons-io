@@ -11,7 +11,7 @@
 @implementation OrgApacheCommonsIoInputTailerListenerAdapter
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
-- (instancetype)init {
+- (instancetype __nonnull)init {
   OrgApacheCommonsIoInputTailerListenerAdapter_init(self);
   return self;
 }

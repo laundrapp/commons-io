@@ -27,7 +27,7 @@ J2OBJC_FIELD_SETTER(OrgApacheCommonsIoInputTaggedInputStream, tag_, id<JavaIoSer
 
 @implementation OrgApacheCommonsIoInputTaggedInputStream
 
-- (instancetype)initWithJavaIoInputStream:(JavaIoInputStream *)proxy {
+- (instancetype __nonnull)initWithJavaIoInputStream:(JavaIoInputStream *)proxy {
   OrgApacheCommonsIoInputTaggedInputStream_initWithJavaIoInputStream_(self, proxy);
   return self;
 }

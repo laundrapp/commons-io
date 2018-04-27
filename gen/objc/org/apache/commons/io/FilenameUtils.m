@@ -63,7 +63,7 @@ NSString *OrgApacheCommonsIoFilenameUtils_EXTENSION_SEPARATOR_STR;
 @implementation OrgApacheCommonsIoFilenameUtils
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
-- (instancetype)init {
+- (instancetype __nonnull)init {
   OrgApacheCommonsIoFilenameUtils_init(self);
   return self;
 }

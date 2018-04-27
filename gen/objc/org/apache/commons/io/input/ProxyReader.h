@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgApacheCommonsIoInputProxyReader
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgApacheCommonsIoInputProxyReader_) && (INCLUDE_ALL_OrgApacheCommonsIoInputProxyReader || defined(INCLUDE_OrgApacheCommonsIoInputProxyReader))
 #define OrgApacheCommonsIoInputProxyReader_
 
@@ -43,7 +48,7 @@
  @brief Constructs a new ProxyReader.
  @param proxy the Reader to delegate to
  */
-- (instancetype)initWithJavaIoReader:(JavaIoReader *)proxy;
+- (instancetype __nonnull)initWithJavaIoReader:(JavaIoReader *)proxy;
 
 /*!
  @brief Invokes the delegate's <code>close()</code> method.
@@ -181,4 +186,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoInputProxyReader)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgApacheCommonsIoInputProxyReader")

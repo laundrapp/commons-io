@@ -13,7 +13,7 @@
 
 @implementation OrgApacheCommonsIoOutputProxyWriter
 
-- (instancetype)initWithJavaIoWriter:(JavaIoWriter *)proxy {
+- (instancetype __nonnull)initWithJavaIoWriter:(JavaIoWriter *)proxy {
   OrgApacheCommonsIoOutputProxyWriter_initWithJavaIoWriter_(self, proxy);
   return self;
 }

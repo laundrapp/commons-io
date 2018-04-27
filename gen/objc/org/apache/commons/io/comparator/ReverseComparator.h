@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgApacheCommonsIoComparatorReverseComparator
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgApacheCommonsIoComparatorReverseComparator_) && (INCLUDE_ALL_OrgApacheCommonsIoComparatorReverseComparator || defined(INCLUDE_OrgApacheCommonsIoComparatorReverseComparator))
 #define OrgApacheCommonsIoComparatorReverseComparator_
 
@@ -41,7 +46,7 @@
  @brief Construct an instance with the sepecified delegate <code>Comparator</code>.
  @param delegate The comparator to delegate to
  */
-- (instancetype)initWithJavaUtilComparator:(id<JavaUtilComparator>)delegate;
+- (instancetype __nonnull)initWithJavaUtilComparator:(id<JavaUtilComparator>)delegate;
 
 /*!
  @brief Compare using the delegate Comparator, but reversing the result.
@@ -61,7 +66,7 @@
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)init NS_UNAVAILABLE;
+- (instancetype __nonnull)init NS_UNAVAILABLE;
 
 @end
 
@@ -77,4 +82,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoComparatorReverseComparator)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgApacheCommonsIoComparatorReverseComparator")

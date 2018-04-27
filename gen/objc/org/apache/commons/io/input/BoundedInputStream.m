@@ -39,13 +39,13 @@ J2OBJC_FIELD_SETTER(OrgApacheCommonsIoInputBoundedInputStream, in_, JavaIoInputS
 
 @implementation OrgApacheCommonsIoInputBoundedInputStream
 
-- (instancetype)initWithJavaIoInputStream:(JavaIoInputStream *)inArg
-                                 withLong:(jlong)size {
+- (instancetype __nonnull)initWithJavaIoInputStream:(JavaIoInputStream *)inArg
+                                           withLong:(jlong)size {
   OrgApacheCommonsIoInputBoundedInputStream_initWithJavaIoInputStream_withLong_(self, inArg, size);
   return self;
 }
 
-- (instancetype)initWithJavaIoInputStream:(JavaIoInputStream *)inArg {
+- (instancetype __nonnull)initWithJavaIoInputStream:(JavaIoInputStream *)inArg {
   OrgApacheCommonsIoInputBoundedInputStream_initWithJavaIoInputStream_(self, inArg);
   return self;
 }

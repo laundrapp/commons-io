@@ -26,24 +26,24 @@ J2OBJC_FIELD_SETTER(OrgApacheCommonsIoFilefilterRegexFileFilter, pattern_, JavaU
 
 @implementation OrgApacheCommonsIoFilefilterRegexFileFilter
 
-- (instancetype)initWithNSString:(NSString *)pattern {
+- (instancetype __nonnull)initWithNSString:(NSString *)pattern {
   OrgApacheCommonsIoFilefilterRegexFileFilter_initWithNSString_(self, pattern);
   return self;
 }
 
-- (instancetype)initWithNSString:(NSString *)pattern
-    withOrgApacheCommonsIoIOCase:(OrgApacheCommonsIoIOCase *)caseSensitivity {
+- (instancetype __nonnull)initWithNSString:(NSString *)pattern
+              withOrgApacheCommonsIoIOCase:(OrgApacheCommonsIoIOCase *)caseSensitivity {
   OrgApacheCommonsIoFilefilterRegexFileFilter_initWithNSString_withOrgApacheCommonsIoIOCase_(self, pattern, caseSensitivity);
   return self;
 }
 
-- (instancetype)initWithNSString:(NSString *)pattern
-                         withInt:(jint)flags {
+- (instancetype __nonnull)initWithNSString:(NSString *)pattern
+                                   withInt:(jint)flags {
   OrgApacheCommonsIoFilefilterRegexFileFilter_initWithNSString_withInt_(self, pattern, flags);
   return self;
 }
 
-- (instancetype)initWithJavaUtilRegexPattern:(JavaUtilRegexPattern *)pattern {
+- (instancetype __nonnull)initWithJavaUtilRegexPattern:(JavaUtilRegexPattern *)pattern {
   OrgApacheCommonsIoFilefilterRegexFileFilter_initWithJavaUtilRegexPattern_(self, pattern);
   return self;
 }

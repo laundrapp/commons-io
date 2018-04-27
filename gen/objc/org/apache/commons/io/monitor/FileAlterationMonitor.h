@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgApacheCommonsIoMonitorFileAlterationMonitor
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgApacheCommonsIoMonitorFileAlterationMonitor_) && (INCLUDE_ALL_OrgApacheCommonsIoMonitorFileAlterationMonitor || defined(INCLUDE_OrgApacheCommonsIoMonitorFileAlterationMonitor))
 #define OrgApacheCommonsIoMonitorFileAlterationMonitor_
 
@@ -39,20 +44,20 @@
 /*!
  @brief Construct a monitor with a default interval of 10 seconds.
  */
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 /*!
  @brief Construct a monitor with the specified interval.
  @param interval The amount of time in miliseconds to wait between  checks of the file system
  */
-- (instancetype)initWithLong:(jlong)interval;
+- (instancetype __nonnull)initWithLong:(jlong)interval;
 
 /*!
  @brief Construct a monitor with the specified interval and set of observers.
  @param interval The amount of time in miliseconds to wait between  checks of the file system
  @param observers The set of observers to add to the monitor.
  */
-- (instancetype)initWithLong:(jlong)interval
+- (instancetype __nonnull)initWithLong:(jlong)interval
 withOrgApacheCommonsIoMonitorFileAlterationObserverArray:(IOSObjectArray *)observers;
 
 /*!
@@ -138,4 +143,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoMonitorFileAlterationMonitor)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgApacheCommonsIoMonitorFileAlterationMonitor")

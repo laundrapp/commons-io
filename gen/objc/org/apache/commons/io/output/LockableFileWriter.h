@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgApacheCommonsIoOutputLockableFileWriter
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgApacheCommonsIoOutputLockableFileWriter_) && (INCLUDE_ALL_OrgApacheCommonsIoOutputLockableFileWriter || defined(INCLUDE_OrgApacheCommonsIoOutputLockableFileWriter))
 #define OrgApacheCommonsIoOutputLockableFileWriter_
 
@@ -54,7 +59,7 @@
  @throw NullPointerExceptionif the file is null
  @throw IOExceptionin case of an I/O error
  */
-- (instancetype)initWithJavaIoFile:(JavaIoFile *)file;
+- (instancetype __nonnull)initWithJavaIoFile:(JavaIoFile *)file;
 
 /*!
  @brief Constructs a LockableFileWriter.
@@ -63,8 +68,8 @@
  @throw NullPointerExceptionif the file is null
  @throw IOExceptionin case of an I/O error
  */
-- (instancetype)initWithJavaIoFile:(JavaIoFile *)file
-                       withBoolean:(jboolean)append;
+- (instancetype __nonnull)initWithJavaIoFile:(JavaIoFile *)file
+                                 withBoolean:(jboolean)append;
 
 /*!
  @brief Constructs a LockableFileWriter.
@@ -74,9 +79,9 @@
  @throw NullPointerExceptionif the file is null
  @throw IOExceptionin case of an I/O error
  */
-- (instancetype)initWithJavaIoFile:(JavaIoFile *)file
-                       withBoolean:(jboolean)append
-                      withNSString:(NSString *)lockDir;
+- (instancetype __nonnull)initWithJavaIoFile:(JavaIoFile *)file
+                                 withBoolean:(jboolean)append
+                                withNSString:(NSString *)lockDir;
 
 /*!
  @brief Constructs a LockableFileWriter with a file encoding.
@@ -86,8 +91,8 @@
  @throw IOExceptionin case of an I/O error
  @since 2.3
  */
-- (instancetype)initWithJavaIoFile:(JavaIoFile *)file
-         withJavaNioCharsetCharset:(JavaNioCharsetCharset *)encoding;
+- (instancetype __nonnull)initWithJavaIoFile:(JavaIoFile *)file
+                   withJavaNioCharsetCharset:(JavaNioCharsetCharset *)encoding;
 
 /*!
  @brief Constructs a LockableFileWriter with a file encoding.
@@ -99,10 +104,10 @@
  @throw IOExceptionin case of an I/O error
  @since 2.3
  */
-- (instancetype)initWithJavaIoFile:(JavaIoFile *)file
-         withJavaNioCharsetCharset:(JavaNioCharsetCharset *)encoding
-                       withBoolean:(jboolean)append
-                      withNSString:(NSString *)lockDir;
+- (instancetype __nonnull)initWithJavaIoFile:(JavaIoFile *)file
+                   withJavaNioCharsetCharset:(JavaNioCharsetCharset *)encoding
+                                 withBoolean:(jboolean)append
+                                withNSString:(NSString *)lockDir;
 
 /*!
  @brief Constructs a LockableFileWriter with a file encoding.
@@ -114,8 +119,8 @@
  thrown instead of <code>UnsupportedEncodingException</code> in version 2.2 if the encoding is not
               supported.
  */
-- (instancetype)initWithJavaIoFile:(JavaIoFile *)file
-                      withNSString:(NSString *)encoding;
+- (instancetype __nonnull)initWithJavaIoFile:(JavaIoFile *)file
+                                withNSString:(NSString *)encoding;
 
 /*!
  @brief Constructs a LockableFileWriter with a file encoding.
@@ -129,10 +134,10 @@
  thrown instead of <code>UnsupportedEncodingException</code> in version 2.2 if the encoding is not
               supported.
  */
-- (instancetype)initWithJavaIoFile:(JavaIoFile *)file
-                      withNSString:(NSString *)encoding
-                       withBoolean:(jboolean)append
-                      withNSString:(NSString *)lockDir;
+- (instancetype __nonnull)initWithJavaIoFile:(JavaIoFile *)file
+                                withNSString:(NSString *)encoding
+                                 withBoolean:(jboolean)append
+                                withNSString:(NSString *)lockDir;
 
 /*!
  @brief Constructs a LockableFileWriter.
@@ -141,7 +146,7 @@
  @throw NullPointerExceptionif the file is null
  @throw IOExceptionin case of an I/O error
  */
-- (instancetype)initWithNSString:(NSString *)fileName;
+- (instancetype __nonnull)initWithNSString:(NSString *)fileName;
 
 /*!
  @brief Constructs a LockableFileWriter.
@@ -150,8 +155,8 @@
  @throw NullPointerExceptionif the file is null
  @throw IOExceptionin case of an I/O error
  */
-- (instancetype)initWithNSString:(NSString *)fileName
-                     withBoolean:(jboolean)append;
+- (instancetype __nonnull)initWithNSString:(NSString *)fileName
+                               withBoolean:(jboolean)append;
 
 /*!
  @brief Constructs a LockableFileWriter.
@@ -161,9 +166,9 @@
  @throw NullPointerExceptionif the file is null
  @throw IOExceptionin case of an I/O error
  */
-- (instancetype)initWithNSString:(NSString *)fileName
-                     withBoolean:(jboolean)append
-                    withNSString:(NSString *)lockDir;
+- (instancetype __nonnull)initWithNSString:(NSString *)fileName
+                               withBoolean:(jboolean)append
+                              withNSString:(NSString *)lockDir;
 
 /*!
  @brief Closes the file writer and deletes the lockfile (if possible).
@@ -222,9 +227,9 @@
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)init NS_UNAVAILABLE;
+- (instancetype __nonnull)init NS_UNAVAILABLE;
 
-- (instancetype)initWithId:(id)arg0 NS_UNAVAILABLE;
+- (instancetype __nonnull)initWithId:(id)arg0 NS_UNAVAILABLE;
 
 @end
 
@@ -294,4 +299,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoOutputLockableFileWriter)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgApacheCommonsIoOutputLockableFileWriter")

@@ -37,28 +37,28 @@ __attribute__((unused)) static void OrgApacheCommonsIoInputCharSequenceInputStre
 
 @implementation OrgApacheCommonsIoInputCharSequenceInputStream
 
-- (instancetype)initWithJavaLangCharSequence:(id<JavaLangCharSequence>)s
-                   withJavaNioCharsetCharset:(JavaNioCharsetCharset *)charset
-                                     withInt:(jint)bufferSize {
+- (instancetype __nonnull)initWithJavaLangCharSequence:(id<JavaLangCharSequence>)s
+                             withJavaNioCharsetCharset:(JavaNioCharsetCharset *)charset
+                                               withInt:(jint)bufferSize {
   OrgApacheCommonsIoInputCharSequenceInputStream_initWithJavaLangCharSequence_withJavaNioCharsetCharset_withInt_(self, s, charset, bufferSize);
   return self;
 }
 
-- (instancetype)initWithJavaLangCharSequence:(id<JavaLangCharSequence>)s
-                                withNSString:(NSString *)charset
-                                     withInt:(jint)bufferSize {
+- (instancetype __nonnull)initWithJavaLangCharSequence:(id<JavaLangCharSequence>)s
+                                          withNSString:(NSString *)charset
+                                               withInt:(jint)bufferSize {
   OrgApacheCommonsIoInputCharSequenceInputStream_initWithJavaLangCharSequence_withNSString_withInt_(self, s, charset, bufferSize);
   return self;
 }
 
-- (instancetype)initWithJavaLangCharSequence:(id<JavaLangCharSequence>)s
-                   withJavaNioCharsetCharset:(JavaNioCharsetCharset *)charset {
+- (instancetype __nonnull)initWithJavaLangCharSequence:(id<JavaLangCharSequence>)s
+                             withJavaNioCharsetCharset:(JavaNioCharsetCharset *)charset {
   OrgApacheCommonsIoInputCharSequenceInputStream_initWithJavaLangCharSequence_withJavaNioCharsetCharset_(self, s, charset);
   return self;
 }
 
-- (instancetype)initWithJavaLangCharSequence:(id<JavaLangCharSequence>)s
-                                withNSString:(NSString *)charset {
+- (instancetype __nonnull)initWithJavaLangCharSequence:(id<JavaLangCharSequence>)s
+                                          withNSString:(NSString *)charset {
   OrgApacheCommonsIoInputCharSequenceInputStream_initWithJavaLangCharSequence_withNSString_(self, s, charset);
   return self;
 }

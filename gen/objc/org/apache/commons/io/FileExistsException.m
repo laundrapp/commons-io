@@ -18,18 +18,18 @@ J2OBJC_STATIC_FIELD_CONSTANT(OrgApacheCommonsIoFileExistsException, serialVersio
 @implementation OrgApacheCommonsIoFileExistsException
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
-- (instancetype)init {
+- (instancetype __nonnull)init {
   OrgApacheCommonsIoFileExistsException_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
-- (instancetype)initWithNSString:(NSString *)message {
+- (instancetype __nonnull)initWithNSString:(NSString *)message {
   OrgApacheCommonsIoFileExistsException_initWithNSString_(self, message);
   return self;
 }
 
-- (instancetype)initWithJavaIoFile:(JavaIoFile *)file {
+- (instancetype __nonnull)initWithJavaIoFile:(JavaIoFile *)file {
   OrgApacheCommonsIoFileExistsException_initWithJavaIoFile_(self, file);
   return self;
 }

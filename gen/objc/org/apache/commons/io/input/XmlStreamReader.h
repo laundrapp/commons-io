@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgApacheCommonsIoInputXmlStreamReader
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgApacheCommonsIoInputXmlStreamReader_) && (INCLUDE_ALL_OrgApacheCommonsIoInputXmlStreamReader || defined(INCLUDE_OrgApacheCommonsIoInputXmlStreamReader))
 #define OrgApacheCommonsIoInputXmlStreamReader_
 
@@ -68,7 +73,7 @@
  @param file File to create a Reader from.
  @throw IOExceptionthrown if there is a problem reading the file.
  */
-- (instancetype)initWithJavaIoFile:(JavaIoFile *)file;
+- (instancetype __nonnull)initWithJavaIoFile:(JavaIoFile *)file;
 
 /*!
  @brief Creates a Reader for a raw InputStream.
@@ -80,7 +85,7 @@
  @param is InputStream to create a Reader from.
  @throw IOExceptionthrown if there is a problem reading the stream.
  */
-- (instancetype)initWithJavaIoInputStream:(JavaIoInputStream *)is;
+- (instancetype __nonnull)initWithJavaIoInputStream:(JavaIoInputStream *)is;
 
 /*!
  @brief Creates a Reader for a raw InputStream.
@@ -107,8 +112,8 @@
  @throw XmlStreamReaderExceptionthrown if the charset encoding could not
           be determined according to the specs.
  */
-- (instancetype)initWithJavaIoInputStream:(JavaIoInputStream *)is
-                              withBoolean:(jboolean)lenient;
+- (instancetype __nonnull)initWithJavaIoInputStream:(JavaIoInputStream *)is
+                                        withBoolean:(jboolean)lenient;
 
 /*!
  @brief Creates a Reader for a raw InputStream.
@@ -136,9 +141,9 @@
  @throw XmlStreamReaderExceptionthrown if the charset encoding could not
           be determined according to the specs.
  */
-- (instancetype)initWithJavaIoInputStream:(JavaIoInputStream *)is
-                              withBoolean:(jboolean)lenient
-                             withNSString:(NSString *)defaultEncoding;
+- (instancetype __nonnull)initWithJavaIoInputStream:(JavaIoInputStream *)is
+                                        withBoolean:(jboolean)lenient
+                                       withNSString:(NSString *)defaultEncoding;
 
 /*!
  @brief Creates a Reader using an InputStream an the associated content-type
@@ -155,8 +160,8 @@
  @param httpContentType content-type header to use for the resolution of         the charset encoding.
  @throw IOExceptionthrown if there is a problem reading the file.
  */
-- (instancetype)initWithJavaIoInputStream:(JavaIoInputStream *)is
-                             withNSString:(NSString *)httpContentType;
+- (instancetype __nonnull)initWithJavaIoInputStream:(JavaIoInputStream *)is
+                                       withNSString:(NSString *)httpContentType;
 
 /*!
  @brief Creates a Reader using an InputStream an the associated content-type
@@ -188,9 +193,9 @@
  @throw XmlStreamReaderExceptionthrown if the charset encoding could not
           be determined according to the specs.
  */
-- (instancetype)initWithJavaIoInputStream:(JavaIoInputStream *)is
-                             withNSString:(NSString *)httpContentType
-                              withBoolean:(jboolean)lenient;
+- (instancetype __nonnull)initWithJavaIoInputStream:(JavaIoInputStream *)is
+                                       withNSString:(NSString *)httpContentType
+                                        withBoolean:(jboolean)lenient;
 
 /*!
  @brief Creates a Reader using an InputStream an the associated content-type
@@ -223,10 +228,10 @@
  @throw XmlStreamReaderExceptionthrown if the charset encoding could not
           be determined according to the specs.
  */
-- (instancetype)initWithJavaIoInputStream:(JavaIoInputStream *)is
-                             withNSString:(NSString *)httpContentType
-                              withBoolean:(jboolean)lenient
-                             withNSString:(NSString *)defaultEncoding;
+- (instancetype __nonnull)initWithJavaIoInputStream:(JavaIoInputStream *)is
+                                       withNSString:(NSString *)httpContentType
+                                        withBoolean:(jboolean)lenient
+                                       withNSString:(NSString *)defaultEncoding;
 
 /*!
  @brief Creates a Reader using the InputStream of a URL.
@@ -244,7 +249,7 @@
  @throw IOExceptionthrown if there is a problem reading the stream of
           the URL.
  */
-- (instancetype)initWithJavaNetURL:(JavaNetURL *)url;
+- (instancetype __nonnull)initWithJavaNetURL:(JavaNetURL *)url;
 
 /*!
  @brief Creates a Reader using the InputStream of a URLConnection.
@@ -264,8 +269,8 @@
  @throw IOExceptionthrown if there is a problem reading the stream of
           the URLConnection.
  */
-- (instancetype)initWithJavaNetURLConnection:(JavaNetURLConnection *)conn
-                                withNSString:(NSString *)defaultEncoding;
+- (instancetype __nonnull)initWithJavaNetURLConnection:(JavaNetURLConnection *)conn
+                                          withNSString:(NSString *)defaultEncoding;
 
 /*!
  @brief Closes the XmlStreamReader stream.
@@ -363,9 +368,9 @@
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)init NS_UNAVAILABLE;
+- (instancetype __nonnull)init NS_UNAVAILABLE;
 
-- (instancetype)initWithId:(id)arg0 NS_UNAVAILABLE;
+- (instancetype __nonnull)initWithId:(id)arg0 NS_UNAVAILABLE;
 
 @end
 
@@ -442,4 +447,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoInputXmlStreamReader)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgApacheCommonsIoInputXmlStreamReader")

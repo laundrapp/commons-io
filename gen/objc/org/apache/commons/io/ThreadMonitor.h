@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgApacheCommonsIoThreadMonitor
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgApacheCommonsIoThreadMonitor_) && (INCLUDE_ALL_OrgApacheCommonsIoThreadMonitor || defined(INCLUDE_OrgApacheCommonsIoThreadMonitor))
 #define OrgApacheCommonsIoThreadMonitor_
 
@@ -82,7 +87,7 @@
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)init NS_UNAVAILABLE;
+- (instancetype __nonnull)init NS_UNAVAILABLE;
 
 @end
 
@@ -98,4 +103,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoThreadMonitor)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgApacheCommonsIoThreadMonitor")

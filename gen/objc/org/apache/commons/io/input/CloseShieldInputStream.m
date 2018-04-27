@@ -11,7 +11,7 @@
 
 @implementation OrgApacheCommonsIoInputCloseShieldInputStream
 
-- (instancetype)initWithJavaIoInputStream:(JavaIoInputStream *)inArg {
+- (instancetype __nonnull)initWithJavaIoInputStream:(JavaIoInputStream *)inArg {
   OrgApacheCommonsIoInputCloseShieldInputStream_initWithJavaIoInputStream_(self, inArg);
   return self;
 }

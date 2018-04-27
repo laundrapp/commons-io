@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgApacheCommonsIoLineIterator
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgApacheCommonsIoLineIterator_) && (INCLUDE_ALL_OrgApacheCommonsIoLineIterator || defined(INCLUDE_OrgApacheCommonsIoLineIterator))
 #define OrgApacheCommonsIoLineIterator_
 
@@ -58,7 +63,7 @@
  @param reader the  <code> Reader </code>  to read from, not null
  @throw IllegalArgumentExceptionif the reader is null
  */
-- (instancetype)initWithJavaIoReader:(JavaIoReader *)reader;
+- (instancetype __nonnull)initWithJavaIoReader:(JavaIoReader *)reader;
 
 /*!
  @brief Closes the underlying <code>Reader</code> quietly.
@@ -116,7 +121,7 @@
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)init NS_UNAVAILABLE;
+- (instancetype __nonnull)init NS_UNAVAILABLE;
 
 @end
 
@@ -134,4 +139,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoLineIterator)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgApacheCommonsIoLineIterator")

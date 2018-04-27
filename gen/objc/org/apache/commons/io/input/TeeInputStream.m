@@ -30,15 +30,15 @@ J2OBJC_FIELD_SETTER(OrgApacheCommonsIoInputTeeInputStream, branch_, JavaIoOutput
 
 @implementation OrgApacheCommonsIoInputTeeInputStream
 
-- (instancetype)initWithJavaIoInputStream:(JavaIoInputStream *)input
-                   withJavaIoOutputStream:(JavaIoOutputStream *)branch {
+- (instancetype __nonnull)initWithJavaIoInputStream:(JavaIoInputStream *)input
+                             withJavaIoOutputStream:(JavaIoOutputStream *)branch {
   OrgApacheCommonsIoInputTeeInputStream_initWithJavaIoInputStream_withJavaIoOutputStream_(self, input, branch);
   return self;
 }
 
-- (instancetype)initWithJavaIoInputStream:(JavaIoInputStream *)input
-                   withJavaIoOutputStream:(JavaIoOutputStream *)branch
-                              withBoolean:(jboolean)closeBranch {
+- (instancetype __nonnull)initWithJavaIoInputStream:(JavaIoInputStream *)input
+                             withJavaIoOutputStream:(JavaIoOutputStream *)branch
+                                        withBoolean:(jboolean)closeBranch {
   OrgApacheCommonsIoInputTeeInputStream_initWithJavaIoInputStream_withJavaIoOutputStream_withBoolean_(self, input, branch, closeBranch);
   return self;
 }

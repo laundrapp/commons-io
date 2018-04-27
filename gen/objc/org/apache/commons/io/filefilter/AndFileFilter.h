@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgApacheCommonsIoFilefilterAndFileFilter
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgApacheCommonsIoFilefilterAndFileFilter_) && (INCLUDE_ALL_OrgApacheCommonsIoFilefilterAndFileFilter || defined(INCLUDE_OrgApacheCommonsIoFilefilterAndFileFilter))
 #define OrgApacheCommonsIoFilefilterAndFileFilter_
 
@@ -51,7 +56,7 @@
  @brief Constructs a new instance of <code>AndFileFilter</code>.
  @since 1.1
  */
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 /*!
  @brief Constructs a new file filter that ANDs the result of two other filters.
@@ -59,8 +64,8 @@
  @param filter2 the second filter, must not be null
  @throw IllegalArgumentExceptionif either filter is null
  */
-- (instancetype)initWithOrgApacheCommonsIoFilefilterIOFileFilter:(id<OrgApacheCommonsIoFilefilterIOFileFilter>)filter1
-                    withOrgApacheCommonsIoFilefilterIOFileFilter:(id<OrgApacheCommonsIoFilefilterIOFileFilter>)filter2;
+- (instancetype __nonnull)initWithOrgApacheCommonsIoFilefilterIOFileFilter:(id<OrgApacheCommonsIoFilefilterIOFileFilter>)filter1
+                              withOrgApacheCommonsIoFilefilterIOFileFilter:(id<OrgApacheCommonsIoFilefilterIOFileFilter>)filter2;
 
 /*!
  @brief Constructs a new instance of <code>AndFileFilter</code>
@@ -68,7 +73,7 @@
  @param fileFilters a List of IOFileFilter instances, copied, null ignored
  @since 1.1
  */
-- (instancetype)initWithJavaUtilList:(id<JavaUtilList>)fileFilters;
+- (instancetype __nonnull)initWithJavaUtilList:(id<JavaUtilList>)fileFilters;
 
 /*!
  */
@@ -127,4 +132,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoFilefilterAndFileFilter)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgApacheCommonsIoFilefilterAndFileFilter")

@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgApacheCommonsIoOutputDeferredFileOutputStream
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgApacheCommonsIoOutputDeferredFileOutputStream_) && (INCLUDE_ALL_OrgApacheCommonsIoOutputDeferredFileOutputStream || defined(INCLUDE_OrgApacheCommonsIoOutputDeferredFileOutputStream))
 #define OrgApacheCommonsIoOutputDeferredFileOutputStream_
 
@@ -46,8 +51,8 @@
  @param threshold The number of bytes at which to trigger an event.
  @param outputFile The file to which data is saved beyond the threshold.
  */
-- (instancetype)initWithInt:(jint)threshold
-             withJavaIoFile:(JavaIoFile *)outputFile;
+- (instancetype __nonnull)initWithInt:(jint)threshold
+                       withJavaIoFile:(JavaIoFile *)outputFile;
 
 /*!
  @brief Constructs an instance of this class which will trigger an event at the
@@ -58,10 +63,10 @@
  @param directory Temporary file directory.
  @since 1.4
  */
-- (instancetype)initWithInt:(jint)threshold
-               withNSString:(NSString *)prefix
-               withNSString:(NSString *)suffix
-             withJavaIoFile:(JavaIoFile *)directory;
+- (instancetype __nonnull)initWithInt:(jint)threshold
+                         withNSString:(NSString *)prefix
+                         withNSString:(NSString *)suffix
+                       withJavaIoFile:(JavaIoFile *)directory;
 
 /*!
  @brief Closes underlying output stream, and mark this as closed
@@ -130,7 +135,7 @@
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)initWithInt:(jint)arg0 NS_UNAVAILABLE;
+- (instancetype __nonnull)initWithInt:(jint)arg0 NS_UNAVAILABLE;
 
 @end
 
@@ -152,4 +157,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoOutputDeferredFileOutputStream)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgApacheCommonsIoOutputDeferredFileOutputStream")

@@ -46,24 +46,24 @@ JavaUtilRegexPattern *OrgApacheCommonsIoOutputXmlStreamWriter_ENCODING_PATTERN;
 
 @implementation OrgApacheCommonsIoOutputXmlStreamWriter
 
-- (instancetype)initWithJavaIoOutputStream:(JavaIoOutputStream *)outArg {
+- (instancetype __nonnull)initWithJavaIoOutputStream:(JavaIoOutputStream *)outArg {
   OrgApacheCommonsIoOutputXmlStreamWriter_initWithJavaIoOutputStream_(self, outArg);
   return self;
 }
 
-- (instancetype)initWithJavaIoOutputStream:(JavaIoOutputStream *)outArg
-                              withNSString:(NSString *)defaultEncoding {
+- (instancetype __nonnull)initWithJavaIoOutputStream:(JavaIoOutputStream *)outArg
+                                        withNSString:(NSString *)defaultEncoding {
   OrgApacheCommonsIoOutputXmlStreamWriter_initWithJavaIoOutputStream_withNSString_(self, outArg, defaultEncoding);
   return self;
 }
 
-- (instancetype)initWithJavaIoFile:(JavaIoFile *)file {
+- (instancetype __nonnull)initWithJavaIoFile:(JavaIoFile *)file {
   OrgApacheCommonsIoOutputXmlStreamWriter_initWithJavaIoFile_(self, file);
   return self;
 }
 
-- (instancetype)initWithJavaIoFile:(JavaIoFile *)file
-                      withNSString:(NSString *)defaultEncoding {
+- (instancetype __nonnull)initWithJavaIoFile:(JavaIoFile *)file
+                                withNSString:(NSString *)defaultEncoding {
   OrgApacheCommonsIoOutputXmlStreamWriter_initWithJavaIoFile_withNSString_(self, file, defaultEncoding);
   return self;
 }

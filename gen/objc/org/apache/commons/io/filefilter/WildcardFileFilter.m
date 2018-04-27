@@ -35,35 +35,35 @@ J2OBJC_FIELD_SETTER(OrgApacheCommonsIoFilefilterWildcardFileFilter, caseSensitiv
 
 @implementation OrgApacheCommonsIoFilefilterWildcardFileFilter
 
-- (instancetype)initWithNSString:(NSString *)wildcard {
+- (instancetype __nonnull)initWithNSString:(NSString *)wildcard {
   OrgApacheCommonsIoFilefilterWildcardFileFilter_initWithNSString_(self, wildcard);
   return self;
 }
 
-- (instancetype)initWithNSString:(NSString *)wildcard
-    withOrgApacheCommonsIoIOCase:(OrgApacheCommonsIoIOCase *)caseSensitivity {
+- (instancetype __nonnull)initWithNSString:(NSString *)wildcard
+              withOrgApacheCommonsIoIOCase:(OrgApacheCommonsIoIOCase *)caseSensitivity {
   OrgApacheCommonsIoFilefilterWildcardFileFilter_initWithNSString_withOrgApacheCommonsIoIOCase_(self, wildcard, caseSensitivity);
   return self;
 }
 
-- (instancetype)initWithNSStringArray:(IOSObjectArray *)wildcards {
+- (instancetype __nonnull)initWithNSStringArray:(IOSObjectArray *)wildcards {
   OrgApacheCommonsIoFilefilterWildcardFileFilter_initWithNSStringArray_(self, wildcards);
   return self;
 }
 
-- (instancetype)initWithNSStringArray:(IOSObjectArray *)wildcards
-         withOrgApacheCommonsIoIOCase:(OrgApacheCommonsIoIOCase *)caseSensitivity {
+- (instancetype __nonnull)initWithNSStringArray:(IOSObjectArray *)wildcards
+                   withOrgApacheCommonsIoIOCase:(OrgApacheCommonsIoIOCase *)caseSensitivity {
   OrgApacheCommonsIoFilefilterWildcardFileFilter_initWithNSStringArray_withOrgApacheCommonsIoIOCase_(self, wildcards, caseSensitivity);
   return self;
 }
 
-- (instancetype)initWithJavaUtilList:(id<JavaUtilList>)wildcards {
+- (instancetype __nonnull)initWithJavaUtilList:(id<JavaUtilList>)wildcards {
   OrgApacheCommonsIoFilefilterWildcardFileFilter_initWithJavaUtilList_(self, wildcards);
   return self;
 }
 
-- (instancetype)initWithJavaUtilList:(id<JavaUtilList>)wildcards
-        withOrgApacheCommonsIoIOCase:(OrgApacheCommonsIoIOCase *)caseSensitivity {
+- (instancetype __nonnull)initWithJavaUtilList:(id<JavaUtilList>)wildcards
+                  withOrgApacheCommonsIoIOCase:(OrgApacheCommonsIoIOCase *)caseSensitivity {
   OrgApacheCommonsIoFilefilterWildcardFileFilter_initWithJavaUtilList_withOrgApacheCommonsIoIOCase_(self, wildcards, caseSensitivity);
   return self;
 }

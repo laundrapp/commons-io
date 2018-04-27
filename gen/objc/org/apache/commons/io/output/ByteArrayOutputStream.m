@@ -65,13 +65,13 @@ J2OBJC_INITIALIZED_DEFN(OrgApacheCommonsIoOutputByteArrayOutputStream)
 @implementation OrgApacheCommonsIoOutputByteArrayOutputStream
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
-- (instancetype)init {
+- (instancetype __nonnull)init {
   OrgApacheCommonsIoOutputByteArrayOutputStream_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
-- (instancetype)initWithInt:(jint)size {
+- (instancetype __nonnull)initWithInt:(jint)size {
   OrgApacheCommonsIoOutputByteArrayOutputStream_initWithInt_(self, size);
   return self;
 }

@@ -11,8 +11,8 @@
 
 @implementation OrgApacheCommonsIoOutputTeeOutputStream
 
-- (instancetype)initWithJavaIoOutputStream:(JavaIoOutputStream *)outArg
-                    withJavaIoOutputStream:(JavaIoOutputStream *)branch {
+- (instancetype __nonnull)initWithJavaIoOutputStream:(JavaIoOutputStream *)outArg
+                              withJavaIoOutputStream:(JavaIoOutputStream *)branch {
   OrgApacheCommonsIoOutputTeeOutputStream_initWithJavaIoOutputStream_withJavaIoOutputStream_(self, outArg, branch);
   return self;
 }

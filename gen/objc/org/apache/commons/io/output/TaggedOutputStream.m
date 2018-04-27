@@ -27,7 +27,7 @@ J2OBJC_FIELD_SETTER(OrgApacheCommonsIoOutputTaggedOutputStream, tag_, id<JavaIoS
 
 @implementation OrgApacheCommonsIoOutputTaggedOutputStream
 
-- (instancetype)initWithJavaIoOutputStream:(JavaIoOutputStream *)proxy {
+- (instancetype __nonnull)initWithJavaIoOutputStream:(JavaIoOutputStream *)proxy {
   OrgApacheCommonsIoOutputTaggedOutputStream_initWithJavaIoOutputStream_(self, proxy);
   return self;
 }

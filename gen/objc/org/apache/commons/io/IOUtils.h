@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgApacheCommonsIoIOUtils
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgApacheCommonsIoIOUtils_) && (INCLUDE_ALL_OrgApacheCommonsIoIOUtils || defined(INCLUDE_OrgApacheCommonsIoIOUtils))
 #define OrgApacheCommonsIoIOUtils_
 
@@ -76,7 +81,7 @@
 /*!
  @brief Instances should NOT be constructed in standard programming.
  */
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 /*!
  @brief Closes a URLConnection.
@@ -2160,4 +2165,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoIOUtils)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgApacheCommonsIoIOUtils")

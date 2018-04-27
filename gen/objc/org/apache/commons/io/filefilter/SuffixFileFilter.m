@@ -34,35 +34,35 @@ J2OBJC_FIELD_SETTER(OrgApacheCommonsIoFilefilterSuffixFileFilter, caseSensitivit
 
 @implementation OrgApacheCommonsIoFilefilterSuffixFileFilter
 
-- (instancetype)initWithNSString:(NSString *)suffix {
+- (instancetype __nonnull)initWithNSString:(NSString *)suffix {
   OrgApacheCommonsIoFilefilterSuffixFileFilter_initWithNSString_(self, suffix);
   return self;
 }
 
-- (instancetype)initWithNSString:(NSString *)suffix
-    withOrgApacheCommonsIoIOCase:(OrgApacheCommonsIoIOCase *)caseSensitivity {
+- (instancetype __nonnull)initWithNSString:(NSString *)suffix
+              withOrgApacheCommonsIoIOCase:(OrgApacheCommonsIoIOCase *)caseSensitivity {
   OrgApacheCommonsIoFilefilterSuffixFileFilter_initWithNSString_withOrgApacheCommonsIoIOCase_(self, suffix, caseSensitivity);
   return self;
 }
 
-- (instancetype)initWithNSStringArray:(IOSObjectArray *)suffixes {
+- (instancetype __nonnull)initWithNSStringArray:(IOSObjectArray *)suffixes {
   OrgApacheCommonsIoFilefilterSuffixFileFilter_initWithNSStringArray_(self, suffixes);
   return self;
 }
 
-- (instancetype)initWithNSStringArray:(IOSObjectArray *)suffixes
-         withOrgApacheCommonsIoIOCase:(OrgApacheCommonsIoIOCase *)caseSensitivity {
+- (instancetype __nonnull)initWithNSStringArray:(IOSObjectArray *)suffixes
+                   withOrgApacheCommonsIoIOCase:(OrgApacheCommonsIoIOCase *)caseSensitivity {
   OrgApacheCommonsIoFilefilterSuffixFileFilter_initWithNSStringArray_withOrgApacheCommonsIoIOCase_(self, suffixes, caseSensitivity);
   return self;
 }
 
-- (instancetype)initWithJavaUtilList:(id<JavaUtilList>)suffixes {
+- (instancetype __nonnull)initWithJavaUtilList:(id<JavaUtilList>)suffixes {
   OrgApacheCommonsIoFilefilterSuffixFileFilter_initWithJavaUtilList_(self, suffixes);
   return self;
 }
 
-- (instancetype)initWithJavaUtilList:(id<JavaUtilList>)suffixes
-        withOrgApacheCommonsIoIOCase:(OrgApacheCommonsIoIOCase *)caseSensitivity {
+- (instancetype __nonnull)initWithJavaUtilList:(id<JavaUtilList>)suffixes
+                  withOrgApacheCommonsIoIOCase:(OrgApacheCommonsIoIOCase *)caseSensitivity {
   OrgApacheCommonsIoFilefilterSuffixFileFilter_initWithJavaUtilList_withOrgApacheCommonsIoIOCase_(self, suffixes, caseSensitivity);
   return self;
 }

@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgApacheCommonsIoInputSwappedDataInputStream
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgApacheCommonsIoInputSwappedDataInputStream_) && (INCLUDE_ALL_OrgApacheCommonsIoInputSwappedDataInputStream || defined(INCLUDE_OrgApacheCommonsIoInputSwappedDataInputStream))
 #define OrgApacheCommonsIoInputSwappedDataInputStream_
 
@@ -43,7 +48,7 @@
  @brief Constructs a SwappedDataInputStream.
  @param input InputStream to read from
  */
-- (instancetype)initWithJavaIoInputStream:(JavaIoInputStream *)input;
+- (instancetype __nonnull)initWithJavaIoInputStream:(JavaIoInputStream *)input;
 
 /*!
  @brief Return <code><code>readByte()</code> !
@@ -185,4 +190,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoInputSwappedDataInputStream)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgApacheCommonsIoInputSwappedDataInputStream")

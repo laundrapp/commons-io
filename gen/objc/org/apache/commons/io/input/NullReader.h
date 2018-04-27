@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgApacheCommonsIoInputNullReader
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgApacheCommonsIoInputNullReader_) && (INCLUDE_ALL_OrgApacheCommonsIoInputNullReader || defined(INCLUDE_OrgApacheCommonsIoInputNullReader))
 #define OrgApacheCommonsIoInputNullReader_
 
@@ -69,7 +74,7 @@
   which supports marking and does not throw EOFException.
  @param size The size of the reader to emulate.
  */
-- (instancetype)initWithLong:(jlong)size;
+- (instancetype __nonnull)initWithLong:(jlong)size;
 
 /*!
  @brief Create a <code>Reader</code> that emulates a specified
@@ -80,9 +85,9 @@
  @param throwEofException Whether this implementation  will throw an 
  <code>EOFException</code>  or return -1 when the  end of file is reached.
  */
-- (instancetype)initWithLong:(jlong)size
-                 withBoolean:(jboolean)markSupported
-                 withBoolean:(jboolean)throwEofException;
+- (instancetype __nonnull)initWithLong:(jlong)size
+                           withBoolean:(jboolean)markSupported
+                           withBoolean:(jboolean)throwEofException;
 
 /*!
  @brief Close this Reader - resets the internal state to
@@ -201,9 +206,9 @@
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)init NS_UNAVAILABLE;
+- (instancetype __nonnull)init NS_UNAVAILABLE;
 
-- (instancetype)initWithId:(id)arg0 NS_UNAVAILABLE;
+- (instancetype __nonnull)initWithId:(id)arg0 NS_UNAVAILABLE;
 
 @end
 
@@ -225,4 +230,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoInputNullReader)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgApacheCommonsIoInputNullReader")

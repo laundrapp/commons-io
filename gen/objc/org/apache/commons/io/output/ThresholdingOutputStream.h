@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgApacheCommonsIoOutputThresholdingOutputStream
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgApacheCommonsIoOutputThresholdingOutputStream_) && (INCLUDE_ALL_OrgApacheCommonsIoOutputThresholdingOutputStream || defined(INCLUDE_OrgApacheCommonsIoOutputThresholdingOutputStream))
 #define OrgApacheCommonsIoOutputThresholdingOutputStream_
 
@@ -46,7 +51,7 @@
   specified threshold.
  @param threshold The number of bytes at which to trigger an event.
  */
-- (instancetype)initWithInt:(jint)threshold;
+- (instancetype __nonnull)initWithInt:(jint)threshold;
 
 /*!
  @brief Closes this output stream and releases any system resources associated
@@ -152,4 +157,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoOutputThresholdingOutputStream)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgApacheCommonsIoOutputThresholdingOutputStream")

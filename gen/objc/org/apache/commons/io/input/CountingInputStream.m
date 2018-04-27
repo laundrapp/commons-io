@@ -22,7 +22,7 @@
 
 @implementation OrgApacheCommonsIoInputCountingInputStream
 
-- (instancetype)initWithJavaIoInputStream:(JavaIoInputStream *)inArg {
+- (instancetype __nonnull)initWithJavaIoInputStream:(JavaIoInputStream *)inArg {
   OrgApacheCommonsIoInputCountingInputStream_initWithJavaIoInputStream_(self, inArg);
   return self;
 }

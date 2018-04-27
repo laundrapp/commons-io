@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgApacheCommonsIoFileCleaningTracker
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgApacheCommonsIoFileCleaningTracker_) && (INCLUDE_ALL_OrgApacheCommonsIoFileCleaningTracker || defined(INCLUDE_OrgApacheCommonsIoFileCleaningTracker))
 #define OrgApacheCommonsIoFileCleaningTracker_
 
@@ -64,7 +69,7 @@
 
 #pragma mark Public
 
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 /*!
  @brief Call this method to cause the file cleaner thread to terminate when
@@ -170,4 +175,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoFileCleaningTracker)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgApacheCommonsIoFileCleaningTracker")

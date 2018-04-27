@@ -18,7 +18,7 @@ id<JavaUtilComparator> OrgApacheCommonsIoComparatorLastModifiedFileComparator_LA
 @implementation OrgApacheCommonsIoComparatorLastModifiedFileComparator
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
-- (instancetype)init {
+- (instancetype __nonnull)init {
   OrgApacheCommonsIoComparatorLastModifiedFileComparator_init(self);
   return self;
 }

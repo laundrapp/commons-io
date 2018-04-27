@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgApacheCommonsIoMonitorFileAlterationListenerAdaptor
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgApacheCommonsIoMonitorFileAlterationListenerAdaptor_) && (INCLUDE_ALL_OrgApacheCommonsIoMonitorFileAlterationListenerAdaptor || defined(INCLUDE_OrgApacheCommonsIoMonitorFileAlterationListenerAdaptor))
 #define OrgApacheCommonsIoMonitorFileAlterationListenerAdaptor_
 
@@ -33,7 +38,7 @@
 
 #pragma mark Public
 
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 /*!
  @brief Directory changed Event.
@@ -97,4 +102,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoMonitorFileAlterationListenerAdapto
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgApacheCommonsIoMonitorFileAlterationListenerAdaptor")

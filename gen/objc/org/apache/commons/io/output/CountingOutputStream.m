@@ -22,7 +22,7 @@
 
 @implementation OrgApacheCommonsIoOutputCountingOutputStream
 
-- (instancetype)initWithJavaIoOutputStream:(JavaIoOutputStream *)outArg {
+- (instancetype __nonnull)initWithJavaIoOutputStream:(JavaIoOutputStream *)outArg {
   OrgApacheCommonsIoOutputCountingOutputStream_initWithJavaIoOutputStream_(self, outArg);
   return self;
 }

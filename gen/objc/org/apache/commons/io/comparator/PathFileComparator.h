@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgApacheCommonsIoComparatorPathFileComparator
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgApacheCommonsIoComparatorPathFileComparator_) && (INCLUDE_ALL_OrgApacheCommonsIoComparatorPathFileComparator || defined(INCLUDE_OrgApacheCommonsIoComparatorPathFileComparator))
 #define OrgApacheCommonsIoComparatorPathFileComparator_
 
@@ -65,13 +70,13 @@
 /*!
  @brief Construct a case sensitive file path comparator instance.
  */
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 /*!
  @brief Construct a file path comparator instance with the specified case-sensitivity.
  @param caseSensitivity how to handle case sensitivity, null means case-sensitive
  */
-- (instancetype)initWithOrgApacheCommonsIoIOCase:(OrgApacheCommonsIoIOCase *)caseSensitivity;
+- (instancetype __nonnull)initWithOrgApacheCommonsIoIOCase:(OrgApacheCommonsIoIOCase *)caseSensitivity;
 
 /*!
  @brief Compare the paths of two files the specified case sensitivity.
@@ -159,4 +164,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoComparatorPathFileComparator)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgApacheCommonsIoComparatorPathFileComparator")

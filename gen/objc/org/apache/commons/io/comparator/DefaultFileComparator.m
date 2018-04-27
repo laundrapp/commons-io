@@ -18,7 +18,7 @@ id<JavaUtilComparator> OrgApacheCommonsIoComparatorDefaultFileComparator_DEFAULT
 @implementation OrgApacheCommonsIoComparatorDefaultFileComparator
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
-- (instancetype)init {
+- (instancetype __nonnull)init {
   OrgApacheCommonsIoComparatorDefaultFileComparator_init(self);
   return self;
 }

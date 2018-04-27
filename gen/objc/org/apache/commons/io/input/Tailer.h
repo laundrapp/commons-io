@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgApacheCommonsIoInputTailer
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgApacheCommonsIoInputTailer_) && (INCLUDE_ALL_OrgApacheCommonsIoInputTailer || defined(INCLUDE_OrgApacheCommonsIoInputTailer))
 #define OrgApacheCommonsIoInputTailer_
 
@@ -114,8 +119,8 @@
  @param file The file to follow.
  @param listener the TailerListener to use.
  */
-- (instancetype)initWithJavaIoFile:(JavaIoFile *)file
-withOrgApacheCommonsIoInputTailerListener:(id<OrgApacheCommonsIoInputTailerListener>)listener;
+- (instancetype __nonnull)initWithJavaIoFile:(JavaIoFile *)file
+   withOrgApacheCommonsIoInputTailerListener:(id<OrgApacheCommonsIoInputTailerListener>)listener;
 
 /*!
  @brief Creates a Tailer for the given file, starting from the beginning.
@@ -123,9 +128,9 @@ withOrgApacheCommonsIoInputTailerListener:(id<OrgApacheCommonsIoInputTailerListe
  @param listener the TailerListener to use.
  @param delayMillis the delay between checks of the file for new content in milliseconds.
  */
-- (instancetype)initWithJavaIoFile:(JavaIoFile *)file
-withOrgApacheCommonsIoInputTailerListener:(id<OrgApacheCommonsIoInputTailerListener>)listener
-                          withLong:(jlong)delayMillis;
+- (instancetype __nonnull)initWithJavaIoFile:(JavaIoFile *)file
+   withOrgApacheCommonsIoInputTailerListener:(id<OrgApacheCommonsIoInputTailerListener>)listener
+                                    withLong:(jlong)delayMillis;
 
 /*!
  @brief Creates a Tailer for the given file, with a delay other than the default 1.0s.
@@ -134,10 +139,10 @@ withOrgApacheCommonsIoInputTailerListener:(id<OrgApacheCommonsIoInputTailerListe
  @param delayMillis the delay between checks of the file for new content in milliseconds.
  @param end Set to true to tail from the end of the file, false to tail from the beginning of the file.
  */
-- (instancetype)initWithJavaIoFile:(JavaIoFile *)file
-withOrgApacheCommonsIoInputTailerListener:(id<OrgApacheCommonsIoInputTailerListener>)listener
-                          withLong:(jlong)delayMillis
-                       withBoolean:(jboolean)end;
+- (instancetype __nonnull)initWithJavaIoFile:(JavaIoFile *)file
+   withOrgApacheCommonsIoInputTailerListener:(id<OrgApacheCommonsIoInputTailerListener>)listener
+                                    withLong:(jlong)delayMillis
+                                 withBoolean:(jboolean)end;
 
 /*!
  @brief Creates a Tailer for the given file, with a delay other than the default 1.0s.
@@ -147,11 +152,11 @@ withOrgApacheCommonsIoInputTailerListener:(id<OrgApacheCommonsIoInputTailerListe
  @param end Set to true to tail from the end of the file, false to tail from the beginning of the file.
  @param reOpen if true, close and reopen the file between reading chunks
  */
-- (instancetype)initWithJavaIoFile:(JavaIoFile *)file
-withOrgApacheCommonsIoInputTailerListener:(id<OrgApacheCommonsIoInputTailerListener>)listener
-                          withLong:(jlong)delayMillis
-                       withBoolean:(jboolean)end
-                       withBoolean:(jboolean)reOpen;
+- (instancetype __nonnull)initWithJavaIoFile:(JavaIoFile *)file
+   withOrgApacheCommonsIoInputTailerListener:(id<OrgApacheCommonsIoInputTailerListener>)listener
+                                    withLong:(jlong)delayMillis
+                                 withBoolean:(jboolean)end
+                                 withBoolean:(jboolean)reOpen;
 
 /*!
  @brief Creates a Tailer for the given file, with a specified buffer size.
@@ -162,12 +167,12 @@ withOrgApacheCommonsIoInputTailerListener:(id<OrgApacheCommonsIoInputTailerListe
  @param reOpen if true, close and reopen the file between reading chunks
  @param bufSize Buffer size
  */
-- (instancetype)initWithJavaIoFile:(JavaIoFile *)file
-withOrgApacheCommonsIoInputTailerListener:(id<OrgApacheCommonsIoInputTailerListener>)listener
-                          withLong:(jlong)delayMillis
-                       withBoolean:(jboolean)end
-                       withBoolean:(jboolean)reOpen
-                           withInt:(jint)bufSize;
+- (instancetype __nonnull)initWithJavaIoFile:(JavaIoFile *)file
+   withOrgApacheCommonsIoInputTailerListener:(id<OrgApacheCommonsIoInputTailerListener>)listener
+                                    withLong:(jlong)delayMillis
+                                 withBoolean:(jboolean)end
+                                 withBoolean:(jboolean)reOpen
+                                     withInt:(jint)bufSize;
 
 /*!
  @brief Creates a Tailer for the given file, with a specified buffer size.
@@ -177,11 +182,11 @@ withOrgApacheCommonsIoInputTailerListener:(id<OrgApacheCommonsIoInputTailerListe
  @param end Set to true to tail from the end of the file, false to tail from the beginning of the file.
  @param bufSize Buffer size
  */
-- (instancetype)initWithJavaIoFile:(JavaIoFile *)file
-withOrgApacheCommonsIoInputTailerListener:(id<OrgApacheCommonsIoInputTailerListener>)listener
-                          withLong:(jlong)delayMillis
-                       withBoolean:(jboolean)end
-                           withInt:(jint)bufSize;
+- (instancetype __nonnull)initWithJavaIoFile:(JavaIoFile *)file
+   withOrgApacheCommonsIoInputTailerListener:(id<OrgApacheCommonsIoInputTailerListener>)listener
+                                    withLong:(jlong)delayMillis
+                                 withBoolean:(jboolean)end
+                                     withInt:(jint)bufSize;
 
 /*!
  @brief Creates and starts a Tailer for the given file, starting at the beginning of the file
@@ -288,7 +293,7 @@ withOrgApacheCommonsIoInputTailerListener:(id<OrgApacheCommonsIoInputTailerListe
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)init NS_UNAVAILABLE;
+- (instancetype __nonnull)init NS_UNAVAILABLE;
 
 @end
 
@@ -346,4 +351,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoInputTailer)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgApacheCommonsIoInputTailer")

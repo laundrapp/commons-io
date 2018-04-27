@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgApacheCommonsIoOutputNullWriter
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgApacheCommonsIoOutputNullWriter_) && (INCLUDE_ALL_OrgApacheCommonsIoOutputNullWriter || defined(INCLUDE_OrgApacheCommonsIoOutputNullWriter))
 #define OrgApacheCommonsIoOutputNullWriter_
 
@@ -37,7 +42,7 @@
 /*!
  @brief Constructs a new NullWriter.
  */
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 /*!
  @brief Does nothing - output to <code>/dev/null</code>.
@@ -117,7 +122,7 @@
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)initWithId:(id)arg0 NS_UNAVAILABLE;
+- (instancetype __nonnull)initWithId:(id)arg0 NS_UNAVAILABLE;
 
 @end
 
@@ -141,4 +146,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoOutputNullWriter)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgApacheCommonsIoOutputNullWriter")

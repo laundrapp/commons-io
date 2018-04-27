@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgApacheCommonsIoOutputClosedOutputStream
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgApacheCommonsIoOutputClosedOutputStream_) && (INCLUDE_ALL_OrgApacheCommonsIoOutputClosedOutputStream || defined(INCLUDE_OrgApacheCommonsIoOutputClosedOutputStream))
 #define OrgApacheCommonsIoOutputClosedOutputStream_
 
@@ -34,7 +39,7 @@
 
 #pragma mark Public
 
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 /*!
  @brief Throws an <code>IOException</code> to indicate that the stream is closed.
@@ -65,4 +70,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoOutputClosedOutputStream)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgApacheCommonsIoOutputClosedOutputStream")

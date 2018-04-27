@@ -24,7 +24,7 @@ J2OBJC_FIELD_SETTER(OrgApacheCommonsIoFilefilterNotFileFilter, filter_, id<OrgAp
 
 @implementation OrgApacheCommonsIoFilefilterNotFileFilter
 
-- (instancetype)initWithOrgApacheCommonsIoFilefilterIOFileFilter:(id<OrgApacheCommonsIoFilefilterIOFileFilter>)filter {
+- (instancetype __nonnull)initWithOrgApacheCommonsIoFilefilterIOFileFilter:(id<OrgApacheCommonsIoFilefilterIOFileFilter>)filter {
   OrgApacheCommonsIoFilefilterNotFileFilter_initWithOrgApacheCommonsIoFilefilterIOFileFilter_(self, filter);
   return self;
 }

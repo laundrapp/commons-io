@@ -12,7 +12,7 @@
 
 @implementation OrgApacheCommonsIoInputProxyInputStream
 
-- (instancetype)initWithJavaIoInputStream:(JavaIoInputStream *)proxy {
+- (instancetype __nonnull)initWithJavaIoInputStream:(JavaIoInputStream *)proxy {
   OrgApacheCommonsIoInputProxyInputStream_initWithJavaIoInputStream_(self, proxy);
   return self;
 }

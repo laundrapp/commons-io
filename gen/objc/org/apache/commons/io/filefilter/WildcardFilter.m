@@ -28,17 +28,17 @@ J2OBJC_FIELD_SETTER(OrgApacheCommonsIoFilefilterWildcardFilter, wildcards_, IOSO
 
 @implementation OrgApacheCommonsIoFilefilterWildcardFilter
 
-- (instancetype)initWithNSString:(NSString *)wildcard {
+- (instancetype __nonnull)initWithNSString:(NSString *)wildcard {
   OrgApacheCommonsIoFilefilterWildcardFilter_initWithNSString_(self, wildcard);
   return self;
 }
 
-- (instancetype)initWithNSStringArray:(IOSObjectArray *)wildcards {
+- (instancetype __nonnull)initWithNSStringArray:(IOSObjectArray *)wildcards {
   OrgApacheCommonsIoFilefilterWildcardFilter_initWithNSStringArray_(self, wildcards);
   return self;
 }
 
-- (instancetype)initWithJavaUtilList:(id<JavaUtilList>)wildcards {
+- (instancetype __nonnull)initWithJavaUtilList:(id<JavaUtilList>)wildcards {
   OrgApacheCommonsIoFilefilterWildcardFilter_initWithJavaUtilList_(self, wildcards);
   return self;
 }

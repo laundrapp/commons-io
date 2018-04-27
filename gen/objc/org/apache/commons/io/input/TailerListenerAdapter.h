@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgApacheCommonsIoInputTailerListenerAdapter
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgApacheCommonsIoInputTailerListenerAdapter_) && (INCLUDE_ALL_OrgApacheCommonsIoInputTailerListenerAdapter || defined(INCLUDE_OrgApacheCommonsIoInputTailerListenerAdapter))
 #define OrgApacheCommonsIoInputTailerListenerAdapter_
 
@@ -32,7 +37,7 @@
 
 #pragma mark Public
 
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 /*!
  @brief This method is called if the tailed file is not found.
@@ -79,4 +84,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoInputTailerListenerAdapter)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgApacheCommonsIoInputTailerListenerAdapter")

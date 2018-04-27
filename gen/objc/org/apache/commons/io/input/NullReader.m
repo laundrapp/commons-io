@@ -28,14 +28,14 @@ __attribute__((unused)) static jint OrgApacheCommonsIoInputNullReader_doEndOfFil
 
 @implementation OrgApacheCommonsIoInputNullReader
 
-- (instancetype)initWithLong:(jlong)size {
+- (instancetype __nonnull)initWithLong:(jlong)size {
   OrgApacheCommonsIoInputNullReader_initWithLong_(self, size);
   return self;
 }
 
-- (instancetype)initWithLong:(jlong)size
-                 withBoolean:(jboolean)markSupported
-                 withBoolean:(jboolean)throwEofException {
+- (instancetype __nonnull)initWithLong:(jlong)size
+                           withBoolean:(jboolean)markSupported
+                           withBoolean:(jboolean)throwEofException {
   OrgApacheCommonsIoInputNullReader_initWithLong_withBoolean_withBoolean_(self, size, markSupported, throwEofException);
   return self;
 }

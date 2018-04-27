@@ -34,35 +34,35 @@ J2OBJC_FIELD_SETTER(OrgApacheCommonsIoFilefilterPrefixFileFilter, caseSensitivit
 
 @implementation OrgApacheCommonsIoFilefilterPrefixFileFilter
 
-- (instancetype)initWithNSString:(NSString *)prefix {
+- (instancetype __nonnull)initWithNSString:(NSString *)prefix {
   OrgApacheCommonsIoFilefilterPrefixFileFilter_initWithNSString_(self, prefix);
   return self;
 }
 
-- (instancetype)initWithNSString:(NSString *)prefix
-    withOrgApacheCommonsIoIOCase:(OrgApacheCommonsIoIOCase *)caseSensitivity {
+- (instancetype __nonnull)initWithNSString:(NSString *)prefix
+              withOrgApacheCommonsIoIOCase:(OrgApacheCommonsIoIOCase *)caseSensitivity {
   OrgApacheCommonsIoFilefilterPrefixFileFilter_initWithNSString_withOrgApacheCommonsIoIOCase_(self, prefix, caseSensitivity);
   return self;
 }
 
-- (instancetype)initWithNSStringArray:(IOSObjectArray *)prefixes {
+- (instancetype __nonnull)initWithNSStringArray:(IOSObjectArray *)prefixes {
   OrgApacheCommonsIoFilefilterPrefixFileFilter_initWithNSStringArray_(self, prefixes);
   return self;
 }
 
-- (instancetype)initWithNSStringArray:(IOSObjectArray *)prefixes
-         withOrgApacheCommonsIoIOCase:(OrgApacheCommonsIoIOCase *)caseSensitivity {
+- (instancetype __nonnull)initWithNSStringArray:(IOSObjectArray *)prefixes
+                   withOrgApacheCommonsIoIOCase:(OrgApacheCommonsIoIOCase *)caseSensitivity {
   OrgApacheCommonsIoFilefilterPrefixFileFilter_initWithNSStringArray_withOrgApacheCommonsIoIOCase_(self, prefixes, caseSensitivity);
   return self;
 }
 
-- (instancetype)initWithJavaUtilList:(id<JavaUtilList>)prefixes {
+- (instancetype __nonnull)initWithJavaUtilList:(id<JavaUtilList>)prefixes {
   OrgApacheCommonsIoFilefilterPrefixFileFilter_initWithJavaUtilList_(self, prefixes);
   return self;
 }
 
-- (instancetype)initWithJavaUtilList:(id<JavaUtilList>)prefixes
-        withOrgApacheCommonsIoIOCase:(OrgApacheCommonsIoIOCase *)caseSensitivity {
+- (instancetype __nonnull)initWithJavaUtilList:(id<JavaUtilList>)prefixes
+                  withOrgApacheCommonsIoIOCase:(OrgApacheCommonsIoIOCase *)caseSensitivity {
   OrgApacheCommonsIoFilefilterPrefixFileFilter_initWithJavaUtilList_withOrgApacheCommonsIoIOCase_(self, prefixes, caseSensitivity);
   return self;
 }

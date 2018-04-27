@@ -68,16 +68,16 @@ __attribute__((unused)) static OrgApacheCommonsIoOutputDeferredFileOutputStream 
 
 @implementation OrgApacheCommonsIoOutputDeferredFileOutputStream
 
-- (instancetype)initWithInt:(jint)threshold
-             withJavaIoFile:(JavaIoFile *)outputFile {
+- (instancetype __nonnull)initWithInt:(jint)threshold
+                       withJavaIoFile:(JavaIoFile *)outputFile {
   OrgApacheCommonsIoOutputDeferredFileOutputStream_initWithInt_withJavaIoFile_(self, threshold, outputFile);
   return self;
 }
 
-- (instancetype)initWithInt:(jint)threshold
-               withNSString:(NSString *)prefix
-               withNSString:(NSString *)suffix
-             withJavaIoFile:(JavaIoFile *)directory {
+- (instancetype __nonnull)initWithInt:(jint)threshold
+                         withNSString:(NSString *)prefix
+                         withNSString:(NSString *)suffix
+                       withJavaIoFile:(JavaIoFile *)directory {
   OrgApacheCommonsIoOutputDeferredFileOutputStream_initWithInt_withNSString_withNSString_withJavaIoFile_(self, threshold, prefix, suffix, directory);
   return self;
 }

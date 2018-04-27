@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgApacheCommonsIoOutputCloseShieldOutputStream
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgApacheCommonsIoOutputCloseShieldOutputStream_) && (INCLUDE_ALL_OrgApacheCommonsIoOutputCloseShieldOutputStream || defined(INCLUDE_OrgApacheCommonsIoOutputCloseShieldOutputStream))
 #define OrgApacheCommonsIoOutputCloseShieldOutputStream_
 
@@ -40,7 +45,7 @@
   closed.
  @param outArg underlying output stream
  */
-- (instancetype)initWithJavaIoOutputStream:(JavaIoOutputStream *)outArg;
+- (instancetype __nonnull)initWithJavaIoOutputStream:(JavaIoOutputStream *)outArg;
 
 /*!
  @brief Replaces the underlying output stream with a <code>ClosedOutputStream</code>
@@ -63,4 +68,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoOutputCloseShieldOutputStream)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgApacheCommonsIoOutputCloseShieldOutputStream")

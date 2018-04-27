@@ -39,7 +39,7 @@ J2OBJC_FIELD_SETTER(OrgApacheCommonsIoLineIterator, cachedLine_, NSString *)
 
 @implementation OrgApacheCommonsIoLineIterator
 
-- (instancetype)initWithJavaIoReader:(JavaIoReader *)reader {
+- (instancetype __nonnull)initWithJavaIoReader:(JavaIoReader *)reader {
   OrgApacheCommonsIoLineIterator_initWithJavaIoReader_(self, reader);
   return self;
 }

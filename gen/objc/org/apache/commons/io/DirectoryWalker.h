@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgApacheCommonsIoDirectoryWalker
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgApacheCommonsIoDirectoryWalker_) && (INCLUDE_ALL_OrgApacheCommonsIoDirectoryWalker || defined(INCLUDE_OrgApacheCommonsIoDirectoryWalker))
 #define OrgApacheCommonsIoDirectoryWalker_
 
@@ -230,7 +235,7 @@
 /*!
  @brief Construct an instance with no filtering and unlimited <i>depth</i>.
  */
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 /*!
  @brief Construct an instance with a filter and limit the <i>depth</i> navigated to.
@@ -243,8 +248,8 @@
  @param depthLimit controls how  <i> deep </i>  the hierarchy is
     navigated to (less than 0 means unlimited)
  */
-- (instancetype)initWithJavaIoFileFilter:(id<JavaIoFileFilter>)filter
-                                 withInt:(jint)depthLimit;
+- (instancetype __nonnull)initWithJavaIoFileFilter:(id<JavaIoFileFilter>)filter
+                                           withInt:(jint)depthLimit;
 
 /*!
  @brief Construct an instance with a directory and a file filter and an optional
@@ -259,9 +264,9 @@
  @param depthLimit controls how  <i> deep </i>  the hierarchy is
     navigated to (less than 0 means unlimited)
  */
-- (instancetype)initWithOrgApacheCommonsIoFilefilterIOFileFilter:(id<OrgApacheCommonsIoFilefilterIOFileFilter>)directoryFilter
-                    withOrgApacheCommonsIoFilefilterIOFileFilter:(id<OrgApacheCommonsIoFilefilterIOFileFilter>)fileFilter
-                                                         withInt:(jint)depthLimit;
+- (instancetype __nonnull)initWithOrgApacheCommonsIoFilefilterIOFileFilter:(id<OrgApacheCommonsIoFilefilterIOFileFilter>)directoryFilter
+                              withOrgApacheCommonsIoFilefilterIOFileFilter:(id<OrgApacheCommonsIoFilefilterIOFileFilter>)fileFilter
+                                                                   withInt:(jint)depthLimit;
 
 /*!
  @brief Checks whether the walk has been cancelled by calling <code>handleIsCancelled</code>,
@@ -493,8 +498,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoDirectoryWalker)
  @param file the file when the operation was cancelled, may be null
  @param depth the depth when the operation was cancelled, may be null
  */
-- (instancetype)initWithJavaIoFile:(JavaIoFile *)file
-                           withInt:(jint)depth;
+- (instancetype __nonnull)initWithJavaIoFile:(JavaIoFile *)file
+                                     withInt:(jint)depth;
 
 /*!
  @brief Constructs a <code>CancelException</code> with
@@ -504,9 +509,9 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoDirectoryWalker)
  @param file the file when the operation was cancelled
  @param depth the depth when the operation was cancelled
  */
-- (instancetype)initWithNSString:(NSString *)message
-                  withJavaIoFile:(JavaIoFile *)file
-                         withInt:(jint)depth;
+- (instancetype __nonnull)initWithNSString:(NSString *)message
+                            withJavaIoFile:(JavaIoFile *)file
+                                   withInt:(jint)depth;
 
 /*!
  @brief Return the depth when the operation was cancelled.
@@ -522,14 +527,14 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoDirectoryWalker)
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)init NS_UNAVAILABLE;
+- (instancetype __nonnull)init NS_UNAVAILABLE;
 
-- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
+- (instancetype __nonnull)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
 
-- (instancetype)initWithNSString:(NSString *)arg0 NS_UNAVAILABLE;
+- (instancetype __nonnull)initWithNSString:(NSString *)arg0 NS_UNAVAILABLE;
 
-- (instancetype)initWithNSString:(NSString *)arg0
-           withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
+- (instancetype __nonnull)initWithNSString:(NSString *)arg0
+                     withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
 
 @end
 
@@ -551,4 +556,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoDirectoryWalker_CancelException)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgApacheCommonsIoDirectoryWalker")

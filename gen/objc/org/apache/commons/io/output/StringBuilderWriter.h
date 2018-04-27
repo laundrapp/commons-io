@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgApacheCommonsIoOutputStringBuilderWriter
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgApacheCommonsIoOutputStringBuilderWriter_) && (INCLUDE_ALL_OrgApacheCommonsIoOutputStringBuilderWriter || defined(INCLUDE_OrgApacheCommonsIoOutputStringBuilderWriter))
 #define OrgApacheCommonsIoOutputStringBuilderWriter_
 
@@ -46,19 +51,19 @@
 /*!
  @brief Construct a new <code>StringBuilder</code> instance with default capacity.
  */
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 /*!
  @brief Construct a new <code>StringBuilder</code> instance with the specified capacity.
  @param capacity The initial capacity of the underlying <code>StringBuilder</code>
  */
-- (instancetype)initWithInt:(jint)capacity;
+- (instancetype __nonnull)initWithInt:(jint)capacity;
 
 /*!
  @brief Construct a new instance with the specified <code>StringBuilder</code>.
  @param builder The String builder
  */
-- (instancetype)initWithJavaLangStringBuilder:(JavaLangStringBuilder *)builder;
+- (instancetype __nonnull)initWithJavaLangStringBuilder:(JavaLangStringBuilder *)builder;
 
 /*!
  @brief Append a single character to this Writer.
@@ -125,7 +130,7 @@
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)initWithId:(id)arg0 NS_UNAVAILABLE;
+- (instancetype __nonnull)initWithId:(id)arg0 NS_UNAVAILABLE;
 
 @end
 
@@ -153,4 +158,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoOutputStringBuilderWriter)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgApacheCommonsIoOutputStringBuilderWriter")

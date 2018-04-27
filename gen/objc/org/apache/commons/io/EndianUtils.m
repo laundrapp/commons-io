@@ -17,7 +17,7 @@ __attribute__((unused)) static jint OrgApacheCommonsIoEndianUtils_readWithJavaIo
 @implementation OrgApacheCommonsIoEndianUtils
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
-- (instancetype)init {
+- (instancetype __nonnull)init {
   OrgApacheCommonsIoEndianUtils_init(self);
   return self;
 }

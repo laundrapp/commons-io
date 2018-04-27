@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgApacheCommonsIoFilefilterMagicNumberFileFilter
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgApacheCommonsIoFilefilterMagicNumberFileFilter_) && (INCLUDE_ALL_OrgApacheCommonsIoFilefilterMagicNumberFileFilter || defined(INCLUDE_OrgApacheCommonsIoFilefilterMagicNumberFileFilter))
 #define OrgApacheCommonsIoFilefilterMagicNumberFileFilter_
 
@@ -101,7 +106,7 @@
  @throw IllegalArgumentExceptionif <code>magicNumber</code> is 
           <code>null</code>, or contains no bytes.
  */
-- (instancetype)initWithByteArray:(IOSByteArray *)magicNumber;
+- (instancetype __nonnull)initWithByteArray:(IOSByteArray *)magicNumber;
 
 /*!
  @brief <p>
@@ -135,8 +140,8 @@
           <code>null</code>, or contains no bytes, or <code>offset</code> 
           is a negative number.
  */
-- (instancetype)initWithByteArray:(IOSByteArray *)magicNumber
-                         withLong:(jlong)offset;
+- (instancetype __nonnull)initWithByteArray:(IOSByteArray *)magicNumber
+                                   withLong:(jlong)offset;
 
 /*!
  @brief <p>
@@ -157,7 +162,7 @@
  @throw IllegalArgumentExceptionif <code>magicNumber</code> is 
           <code>null</code> or the empty String.
  */
-- (instancetype)initWithNSString:(NSString *)magicNumber;
+- (instancetype __nonnull)initWithNSString:(NSString *)magicNumber;
 
 /*!
  @brief <p>
@@ -178,8 +183,8 @@
           <code>null</code> or the empty String, or <code>offset</code> is 
           a negative number.
  */
-- (instancetype)initWithNSString:(NSString *)magicNumber
-                        withLong:(jlong)offset;
+- (instancetype __nonnull)initWithNSString:(NSString *)magicNumber
+                                  withLong:(jlong)offset;
 
 /*!
  @brief <p>
@@ -206,7 +211,7 @@
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)init NS_UNAVAILABLE;
+- (instancetype __nonnull)init NS_UNAVAILABLE;
 
 @end
 
@@ -240,4 +245,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoFilefilterMagicNumberFileFilter)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgApacheCommonsIoFilefilterMagicNumberFileFilter")

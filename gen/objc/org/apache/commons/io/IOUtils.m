@@ -83,7 +83,7 @@ NSString *OrgApacheCommonsIoIOUtils_LINE_SEPARATOR;
 @implementation OrgApacheCommonsIoIOUtils
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
-- (instancetype)init {
+- (instancetype __nonnull)init {
   OrgApacheCommonsIoIOUtils_init(self);
   return self;
 }

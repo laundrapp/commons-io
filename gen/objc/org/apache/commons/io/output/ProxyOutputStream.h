@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgApacheCommonsIoOutputProxyOutputStream
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgApacheCommonsIoOutputProxyOutputStream_) && (INCLUDE_ALL_OrgApacheCommonsIoOutputProxyOutputStream || defined(INCLUDE_OrgApacheCommonsIoOutputProxyOutputStream))
 #define OrgApacheCommonsIoOutputProxyOutputStream_
 
@@ -42,7 +47,7 @@
  @brief Constructs a new ProxyOutputStream.
  @param proxy the OutputStream to delegate to
  */
-- (instancetype)initWithJavaIoOutputStream:(JavaIoOutputStream *)proxy;
+- (instancetype __nonnull)initWithJavaIoOutputStream:(JavaIoOutputStream *)proxy;
 
 /*!
  @brief Invokes the delegate's <code>close()</code> method.
@@ -137,4 +142,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoOutputProxyOutputStream)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgApacheCommonsIoOutputProxyOutputStream")

@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgApacheCommonsIoInputBOMInputStream
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgApacheCommonsIoInputBOMInputStream_) && (INCLUDE_ALL_OrgApacheCommonsIoInputBOMInputStream || defined(INCLUDE_OrgApacheCommonsIoInputBOMInputStream))
 #define OrgApacheCommonsIoInputBOMInputStream_
 
@@ -95,15 +100,15 @@
  @brief Constructs a new BOM InputStream that excludes a <code>ByteOrderMark.UTF_8</code> BOM.
  @param delegate the InputStream to delegate to
  */
-- (instancetype)initWithJavaIoInputStream:(JavaIoInputStream *)delegate;
+- (instancetype __nonnull)initWithJavaIoInputStream:(JavaIoInputStream *)delegate;
 
 /*!
  @brief Constructs a new BOM InputStream that detects a a <code>ByteOrderMark.UTF_8</code> and optionally includes it.
  @param delegate the InputStream to delegate to
  @param include true to include the UTF-8 BOM or false to exclude it
  */
-- (instancetype)initWithJavaIoInputStream:(JavaIoInputStream *)delegate
-                              withBoolean:(jboolean)include;
+- (instancetype __nonnull)initWithJavaIoInputStream:(JavaIoInputStream *)delegate
+                                        withBoolean:(jboolean)include;
 
 /*!
  @brief Constructs a new BOM InputStream that detects the specified BOMs and optionally includes them.
@@ -111,17 +116,17 @@
  @param include true to include the specified BOMs or false to exclude them
  @param boms The BOMs to detect and optionally exclude
  */
-- (instancetype)initWithJavaIoInputStream:(JavaIoInputStream *)delegate
-                              withBoolean:(jboolean)include
- withOrgApacheCommonsIoByteOrderMarkArray:(IOSObjectArray *)boms;
+- (instancetype __nonnull)initWithJavaIoInputStream:(JavaIoInputStream *)delegate
+                                        withBoolean:(jboolean)include
+           withOrgApacheCommonsIoByteOrderMarkArray:(IOSObjectArray *)boms;
 
 /*!
  @brief Constructs a new BOM InputStream that excludes the specified BOMs.
  @param delegate the InputStream to delegate to
  @param boms The BOMs to detect and exclude
  */
-- (instancetype)initWithJavaIoInputStream:(JavaIoInputStream *)delegate
- withOrgApacheCommonsIoByteOrderMarkArray:(IOSObjectArray *)boms;
+- (instancetype __nonnull)initWithJavaIoInputStream:(JavaIoInputStream *)delegate
+           withOrgApacheCommonsIoByteOrderMarkArray:(IOSObjectArray *)boms;
 
 /*!
  @brief Return the BOM (Byte Order Mark).
@@ -242,4 +247,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoInputBOMInputStream)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgApacheCommonsIoInputBOMInputStream")

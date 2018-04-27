@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgApacheCommonsIoFilenameUtils
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgApacheCommonsIoFilenameUtils_) && (INCLUDE_ALL_OrgApacheCommonsIoFilenameUtils || defined(INCLUDE_OrgApacheCommonsIoFilenameUtils))
 #define OrgApacheCommonsIoFilenameUtils_
 
@@ -85,7 +90,7 @@
 /*!
  @brief Instances should NOT be constructed in standard programming.
  */
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 /*!
  @brief Concatenates a filename to a base path using normal command line style rules.
@@ -930,4 +935,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoFilenameUtils)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgApacheCommonsIoFilenameUtils")

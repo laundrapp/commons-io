@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgApacheCommonsIoEndianUtils
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgApacheCommonsIoEndianUtils_) && (INCLUDE_ALL_OrgApacheCommonsIoEndianUtils || defined(INCLUDE_OrgApacheCommonsIoEndianUtils))
 #define OrgApacheCommonsIoEndianUtils_
 
@@ -41,7 +46,7 @@
 /*!
  @brief Instances should NOT be constructed in standard programming.
  */
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 /*!
  @brief Reads a "double" value from a byte array at a given offset.The value is
@@ -390,4 +395,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoEndianUtils)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgApacheCommonsIoEndianUtils")

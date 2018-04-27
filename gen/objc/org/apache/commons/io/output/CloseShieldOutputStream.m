@@ -11,7 +11,7 @@
 
 @implementation OrgApacheCommonsIoOutputCloseShieldOutputStream
 
-- (instancetype)initWithJavaIoOutputStream:(JavaIoOutputStream *)outArg {
+- (instancetype __nonnull)initWithJavaIoOutputStream:(JavaIoOutputStream *)outArg {
   OrgApacheCommonsIoOutputCloseShieldOutputStream_initWithJavaIoOutputStream_(self, outArg);
   return self;
 }

@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgApacheCommonsIoInputXmlStreamReaderException
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgApacheCommonsIoInputXmlStreamReaderException_) && (INCLUDE_ALL_OrgApacheCommonsIoInputXmlStreamReaderException || defined(INCLUDE_OrgApacheCommonsIoInputXmlStreamReaderException))
 #define OrgApacheCommonsIoInputXmlStreamReaderException_
 
@@ -48,10 +53,10 @@
  @param xmlGuessEnc XML guess encoding.
  @param xmlEnc XML prolog encoding.
  */
-- (instancetype)initWithNSString:(NSString *)msg
-                    withNSString:(NSString *)bomEnc
-                    withNSString:(NSString *)xmlGuessEnc
-                    withNSString:(NSString *)xmlEnc;
+- (instancetype __nonnull)initWithNSString:(NSString *)msg
+                              withNSString:(NSString *)bomEnc
+                              withNSString:(NSString *)xmlGuessEnc
+                              withNSString:(NSString *)xmlEnc;
 
 /*!
  @brief Creates an exception instance if the charset encoding could not be
@@ -65,12 +70,12 @@
  @param xmlGuessEnc XML guess encoding.
  @param xmlEnc XML prolog encoding.
  */
-- (instancetype)initWithNSString:(NSString *)msg
-                    withNSString:(NSString *)ctMime
-                    withNSString:(NSString *)ctEnc
-                    withNSString:(NSString *)bomEnc
-                    withNSString:(NSString *)xmlGuessEnc
-                    withNSString:(NSString *)xmlEnc;
+- (instancetype __nonnull)initWithNSString:(NSString *)msg
+                              withNSString:(NSString *)ctMime
+                              withNSString:(NSString *)ctEnc
+                              withNSString:(NSString *)bomEnc
+                              withNSString:(NSString *)xmlGuessEnc
+                              withNSString:(NSString *)xmlEnc;
 
 /*!
  @brief Returns the BOM encoding found in the InputStream.
@@ -109,14 +114,14 @@
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)init NS_UNAVAILABLE;
+- (instancetype __nonnull)init NS_UNAVAILABLE;
 
-- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
+- (instancetype __nonnull)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
 
-- (instancetype)initWithNSString:(NSString *)arg0 NS_UNAVAILABLE;
+- (instancetype __nonnull)initWithNSString:(NSString *)arg0 NS_UNAVAILABLE;
 
-- (instancetype)initWithNSString:(NSString *)arg0
-           withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
+- (instancetype __nonnull)initWithNSString:(NSString *)arg0
+                     withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
 
 @end
 
@@ -138,4 +143,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoInputXmlStreamReaderException)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgApacheCommonsIoInputXmlStreamReaderException")

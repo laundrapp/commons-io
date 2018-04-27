@@ -132,57 +132,57 @@ JavaUtilRegexPattern *OrgApacheCommonsIoInputXmlStreamReader_ENCODING_PATTERN;
   return defaultEncoding_;
 }
 
-- (instancetype)initWithJavaIoFile:(JavaIoFile *)file {
+- (instancetype __nonnull)initWithJavaIoFile:(JavaIoFile *)file {
   OrgApacheCommonsIoInputXmlStreamReader_initWithJavaIoFile_(self, file);
   return self;
 }
 
-- (instancetype)initWithJavaIoInputStream:(JavaIoInputStream *)is {
+- (instancetype __nonnull)initWithJavaIoInputStream:(JavaIoInputStream *)is {
   OrgApacheCommonsIoInputXmlStreamReader_initWithJavaIoInputStream_(self, is);
   return self;
 }
 
-- (instancetype)initWithJavaIoInputStream:(JavaIoInputStream *)is
-                              withBoolean:(jboolean)lenient {
+- (instancetype __nonnull)initWithJavaIoInputStream:(JavaIoInputStream *)is
+                                        withBoolean:(jboolean)lenient {
   OrgApacheCommonsIoInputXmlStreamReader_initWithJavaIoInputStream_withBoolean_(self, is, lenient);
   return self;
 }
 
-- (instancetype)initWithJavaIoInputStream:(JavaIoInputStream *)is
-                              withBoolean:(jboolean)lenient
-                             withNSString:(NSString *)defaultEncoding {
+- (instancetype __nonnull)initWithJavaIoInputStream:(JavaIoInputStream *)is
+                                        withBoolean:(jboolean)lenient
+                                       withNSString:(NSString *)defaultEncoding {
   OrgApacheCommonsIoInputXmlStreamReader_initWithJavaIoInputStream_withBoolean_withNSString_(self, is, lenient, defaultEncoding);
   return self;
 }
 
-- (instancetype)initWithJavaNetURL:(JavaNetURL *)url {
+- (instancetype __nonnull)initWithJavaNetURL:(JavaNetURL *)url {
   OrgApacheCommonsIoInputXmlStreamReader_initWithJavaNetURL_(self, url);
   return self;
 }
 
-- (instancetype)initWithJavaNetURLConnection:(JavaNetURLConnection *)conn
-                                withNSString:(NSString *)defaultEncoding {
+- (instancetype __nonnull)initWithJavaNetURLConnection:(JavaNetURLConnection *)conn
+                                          withNSString:(NSString *)defaultEncoding {
   OrgApacheCommonsIoInputXmlStreamReader_initWithJavaNetURLConnection_withNSString_(self, conn, defaultEncoding);
   return self;
 }
 
-- (instancetype)initWithJavaIoInputStream:(JavaIoInputStream *)is
-                             withNSString:(NSString *)httpContentType {
+- (instancetype __nonnull)initWithJavaIoInputStream:(JavaIoInputStream *)is
+                                       withNSString:(NSString *)httpContentType {
   OrgApacheCommonsIoInputXmlStreamReader_initWithJavaIoInputStream_withNSString_(self, is, httpContentType);
   return self;
 }
 
-- (instancetype)initWithJavaIoInputStream:(JavaIoInputStream *)is
-                             withNSString:(NSString *)httpContentType
-                              withBoolean:(jboolean)lenient
-                             withNSString:(NSString *)defaultEncoding {
+- (instancetype __nonnull)initWithJavaIoInputStream:(JavaIoInputStream *)is
+                                       withNSString:(NSString *)httpContentType
+                                        withBoolean:(jboolean)lenient
+                                       withNSString:(NSString *)defaultEncoding {
   OrgApacheCommonsIoInputXmlStreamReader_initWithJavaIoInputStream_withNSString_withBoolean_withNSString_(self, is, httpContentType, lenient, defaultEncoding);
   return self;
 }
 
-- (instancetype)initWithJavaIoInputStream:(JavaIoInputStream *)is
-                             withNSString:(NSString *)httpContentType
-                              withBoolean:(jboolean)lenient {
+- (instancetype __nonnull)initWithJavaIoInputStream:(JavaIoInputStream *)is
+                                       withNSString:(NSString *)httpContentType
+                                        withBoolean:(jboolean)lenient {
   OrgApacheCommonsIoInputXmlStreamReader_initWithJavaIoInputStream_withNSString_withBoolean_(self, is, httpContentType, lenient);
   return self;
 }

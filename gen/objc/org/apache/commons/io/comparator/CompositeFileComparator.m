@@ -33,12 +33,12 @@ J2OBJC_INITIALIZED_DEFN(OrgApacheCommonsIoComparatorCompositeFileComparator)
 
 @implementation OrgApacheCommonsIoComparatorCompositeFileComparator
 
-- (instancetype)initWithJavaUtilComparatorArray:(IOSObjectArray *)delegates {
+- (instancetype __nonnull)initWithJavaUtilComparatorArray:(IOSObjectArray *)delegates {
   OrgApacheCommonsIoComparatorCompositeFileComparator_initWithJavaUtilComparatorArray_(self, delegates);
   return self;
 }
 
-- (instancetype)initWithJavaLangIterable:(id<JavaLangIterable>)delegates {
+- (instancetype __nonnull)initWithJavaLangIterable:(id<JavaLangIterable>)delegates {
   OrgApacheCommonsIoComparatorCompositeFileComparator_initWithJavaLangIterable_(self, delegates);
   return self;
 }

@@ -35,13 +35,13 @@ id<JavaUtilComparator> OrgApacheCommonsIoComparatorNameFileComparator_NAME_SYSTE
 @implementation OrgApacheCommonsIoComparatorNameFileComparator
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
-- (instancetype)init {
+- (instancetype __nonnull)init {
   OrgApacheCommonsIoComparatorNameFileComparator_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
-- (instancetype)initWithOrgApacheCommonsIoIOCase:(OrgApacheCommonsIoIOCase *)caseSensitivity {
+- (instancetype __nonnull)initWithOrgApacheCommonsIoIOCase:(OrgApacheCommonsIoIOCase *)caseSensitivity {
   OrgApacheCommonsIoComparatorNameFileComparator_initWithOrgApacheCommonsIoIOCase_(self, caseSensitivity);
   return self;
 }

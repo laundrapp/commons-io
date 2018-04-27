@@ -30,20 +30,20 @@ J2OBJC_STATIC_FIELD_CONSTANT(OrgApacheCommonsIoInputXmlStreamReaderException, se
 
 @implementation OrgApacheCommonsIoInputXmlStreamReaderException
 
-- (instancetype)initWithNSString:(NSString *)msg
-                    withNSString:(NSString *)bomEnc
-                    withNSString:(NSString *)xmlGuessEnc
-                    withNSString:(NSString *)xmlEnc {
+- (instancetype __nonnull)initWithNSString:(NSString *)msg
+                              withNSString:(NSString *)bomEnc
+                              withNSString:(NSString *)xmlGuessEnc
+                              withNSString:(NSString *)xmlEnc {
   OrgApacheCommonsIoInputXmlStreamReaderException_initWithNSString_withNSString_withNSString_withNSString_(self, msg, bomEnc, xmlGuessEnc, xmlEnc);
   return self;
 }
 
-- (instancetype)initWithNSString:(NSString *)msg
-                    withNSString:(NSString *)ctMime
-                    withNSString:(NSString *)ctEnc
-                    withNSString:(NSString *)bomEnc
-                    withNSString:(NSString *)xmlGuessEnc
-                    withNSString:(NSString *)xmlEnc {
+- (instancetype __nonnull)initWithNSString:(NSString *)msg
+                              withNSString:(NSString *)ctMime
+                              withNSString:(NSString *)ctEnc
+                              withNSString:(NSString *)bomEnc
+                              withNSString:(NSString *)xmlGuessEnc
+                              withNSString:(NSString *)xmlEnc {
   OrgApacheCommonsIoInputXmlStreamReaderException_initWithNSString_withNSString_withNSString_withNSString_withNSString_withNSString_(self, msg, ctMime, ctEnc, bomEnc, xmlGuessEnc, xmlEnc);
   return self;
 }

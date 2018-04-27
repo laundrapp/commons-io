@@ -25,7 +25,7 @@ J2OBJC_STATIC_FIELD_CONSTANT(OrgApacheCommonsIoCopyUtils, DEFAULT_BUFFER_SIZE, j
 @implementation OrgApacheCommonsIoCopyUtils
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
-- (instancetype)init {
+- (instancetype __nonnull)init {
   OrgApacheCommonsIoCopyUtils_init(self);
   return self;
 }

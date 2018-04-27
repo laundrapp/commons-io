@@ -62,21 +62,21 @@ J2OBJC_STATIC_FIELD_CONSTANT(OrgApacheCommonsIoDirectoryWalker_CancelException, 
 @implementation OrgApacheCommonsIoDirectoryWalker
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
-- (instancetype)init {
+- (instancetype __nonnull)init {
   OrgApacheCommonsIoDirectoryWalker_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
-- (instancetype)initWithJavaIoFileFilter:(id<JavaIoFileFilter>)filter
-                                 withInt:(jint)depthLimit {
+- (instancetype __nonnull)initWithJavaIoFileFilter:(id<JavaIoFileFilter>)filter
+                                           withInt:(jint)depthLimit {
   OrgApacheCommonsIoDirectoryWalker_initWithJavaIoFileFilter_withInt_(self, filter, depthLimit);
   return self;
 }
 
-- (instancetype)initWithOrgApacheCommonsIoFilefilterIOFileFilter:(id<OrgApacheCommonsIoFilefilterIOFileFilter>)directoryFilter
-                    withOrgApacheCommonsIoFilefilterIOFileFilter:(id<OrgApacheCommonsIoFilefilterIOFileFilter>)fileFilter
-                                                         withInt:(jint)depthLimit {
+- (instancetype __nonnull)initWithOrgApacheCommonsIoFilefilterIOFileFilter:(id<OrgApacheCommonsIoFilefilterIOFileFilter>)directoryFilter
+                              withOrgApacheCommonsIoFilefilterIOFileFilter:(id<OrgApacheCommonsIoFilefilterIOFileFilter>)fileFilter
+                                                                   withInt:(jint)depthLimit {
   OrgApacheCommonsIoDirectoryWalker_initWithOrgApacheCommonsIoFilefilterIOFileFilter_withOrgApacheCommonsIoFilefilterIOFileFilter_withInt_(self, directoryFilter, fileFilter, depthLimit);
   return self;
 }
@@ -231,15 +231,15 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(OrgApacheCommonsIoDirectoryWalker)
 
 @implementation OrgApacheCommonsIoDirectoryWalker_CancelException
 
-- (instancetype)initWithJavaIoFile:(JavaIoFile *)file
-                           withInt:(jint)depth {
+- (instancetype __nonnull)initWithJavaIoFile:(JavaIoFile *)file
+                                     withInt:(jint)depth {
   OrgApacheCommonsIoDirectoryWalker_CancelException_initWithJavaIoFile_withInt_(self, file, depth);
   return self;
 }
 
-- (instancetype)initWithNSString:(NSString *)message
-                  withJavaIoFile:(JavaIoFile *)file
-                         withInt:(jint)depth {
+- (instancetype __nonnull)initWithNSString:(NSString *)message
+                            withJavaIoFile:(JavaIoFile *)file
+                                   withInt:(jint)depth {
   OrgApacheCommonsIoDirectoryWalker_CancelException_initWithNSString_withJavaIoFile_withInt_(self, message, file, depth);
   return self;
 }

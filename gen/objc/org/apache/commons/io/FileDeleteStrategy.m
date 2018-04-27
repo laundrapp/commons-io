@@ -28,7 +28,7 @@ OrgApacheCommonsIoFileDeleteStrategy *OrgApacheCommonsIoFileDeleteStrategy_FORCE
 
 @implementation OrgApacheCommonsIoFileDeleteStrategy
 
-- (instancetype)initWithNSString:(NSString *)name {
+- (instancetype __nonnull)initWithNSString:(NSString *)name {
   OrgApacheCommonsIoFileDeleteStrategy_initWithNSString_(self, name);
   return self;
 }
@@ -92,7 +92,7 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(OrgApacheCommonsIoFileDeleteStrategy)
 @implementation OrgApacheCommonsIoFileDeleteStrategy_ForceFileDeleteStrategy
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
-- (instancetype)init {
+- (instancetype __nonnull)init {
   OrgApacheCommonsIoFileDeleteStrategy_ForceFileDeleteStrategy_init(self);
   return self;
 }

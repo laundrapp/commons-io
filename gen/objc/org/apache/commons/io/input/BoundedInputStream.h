@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgApacheCommonsIoInputBoundedInputStream
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgApacheCommonsIoInputBoundedInputStream_) && (INCLUDE_ALL_OrgApacheCommonsIoInputBoundedInputStream || defined(INCLUDE_OrgApacheCommonsIoInputBoundedInputStream))
 #define OrgApacheCommonsIoInputBoundedInputStream_
 
@@ -44,7 +49,7 @@
   stream and is unlimited.
  @param inArg The wrapped input stream
  */
-- (instancetype)initWithJavaIoInputStream:(JavaIoInputStream *)inArg;
+- (instancetype __nonnull)initWithJavaIoInputStream:(JavaIoInputStream *)inArg;
 
 /*!
  @brief Creates a new <code>BoundedInputStream</code> that wraps the given input
@@ -52,8 +57,8 @@
  @param inArg The wrapped input stream
  @param size The maximum number of bytes to return
  */
-- (instancetype)initWithJavaIoInputStream:(JavaIoInputStream *)inArg
-                                 withLong:(jlong)size;
+- (instancetype __nonnull)initWithJavaIoInputStream:(JavaIoInputStream *)inArg
+                                           withLong:(jlong)size;
 
 /*!
  */
@@ -150,7 +155,7 @@
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)init NS_UNAVAILABLE;
+- (instancetype __nonnull)init NS_UNAVAILABLE;
 
 @end
 
@@ -172,4 +177,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoInputBoundedInputStream)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgApacheCommonsIoInputBoundedInputStream")

@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgApacheCommonsIoOutputXmlStreamWriter
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgApacheCommonsIoOutputXmlStreamWriter_) && (INCLUDE_ALL_OrgApacheCommonsIoOutputXmlStreamWriter || defined(INCLUDE_OrgApacheCommonsIoOutputXmlStreamWriter))
 #define OrgApacheCommonsIoOutputXmlStreamWriter_
 
@@ -43,7 +48,7 @@
  @throw FileNotFoundExceptionif there is an error creating or
   opening the file
  */
-- (instancetype)initWithJavaIoFile:(JavaIoFile *)file;
+- (instancetype __nonnull)initWithJavaIoFile:(JavaIoFile *)file;
 
 /*!
  @brief Construct an new XML stream writer for the specified file
@@ -53,15 +58,15 @@
  @throw FileNotFoundExceptionif there is an error creating or
   opening the file
  */
-- (instancetype)initWithJavaIoFile:(JavaIoFile *)file
-                      withNSString:(NSString *)defaultEncoding;
+- (instancetype __nonnull)initWithJavaIoFile:(JavaIoFile *)file
+                                withNSString:(NSString *)defaultEncoding;
 
 /*!
  @brief Construct an new XML stream writer for the specified output stream
   with a default encoding of UTF-8.
  @param outArg The output stream
  */
-- (instancetype)initWithJavaIoOutputStream:(JavaIoOutputStream *)outArg;
+- (instancetype __nonnull)initWithJavaIoOutputStream:(JavaIoOutputStream *)outArg;
 
 /*!
  @brief Construct an new XML stream writer for the specified output stream
@@ -69,8 +74,8 @@
  @param outArg The output stream
  @param defaultEncoding The default encoding if not encoding could be detected
  */
-- (instancetype)initWithJavaIoOutputStream:(JavaIoOutputStream *)outArg
-                              withNSString:(NSString *)defaultEncoding;
+- (instancetype __nonnull)initWithJavaIoOutputStream:(JavaIoOutputStream *)outArg
+                                        withNSString:(NSString *)defaultEncoding;
 
 /*!
  @brief Close the underlying writer.
@@ -109,9 +114,9 @@
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)init NS_UNAVAILABLE;
+- (instancetype __nonnull)init NS_UNAVAILABLE;
 
-- (instancetype)initWithId:(id)arg0 NS_UNAVAILABLE;
+- (instancetype __nonnull)initWithId:(id)arg0 NS_UNAVAILABLE;
 
 @end
 
@@ -150,4 +155,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoOutputXmlStreamWriter)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgApacheCommonsIoOutputXmlStreamWriter")

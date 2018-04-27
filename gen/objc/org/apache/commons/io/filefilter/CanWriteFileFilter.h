@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgApacheCommonsIoFilefilterCanWriteFileFilter
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgApacheCommonsIoFilefilterCanWriteFileFilter_) && (INCLUDE_ALL_OrgApacheCommonsIoFilefilterCanWriteFileFilter || defined(INCLUDE_OrgApacheCommonsIoFilefilterCanWriteFileFilter))
 #define OrgApacheCommonsIoFilefilterCanWriteFileFilter_
 
@@ -78,7 +83,7 @@
 /*!
  @brief Restrictive consructor.
  */
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 @end
 
@@ -110,4 +115,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoFilefilterCanWriteFileFilter)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgApacheCommonsIoFilefilterCanWriteFileFilter")

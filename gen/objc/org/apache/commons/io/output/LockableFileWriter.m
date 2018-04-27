@@ -51,66 +51,66 @@ __attribute__((unused)) static JavaIoWriter *OrgApacheCommonsIoOutputLockableFil
 
 @implementation OrgApacheCommonsIoOutputLockableFileWriter
 
-- (instancetype)initWithNSString:(NSString *)fileName {
+- (instancetype __nonnull)initWithNSString:(NSString *)fileName {
   OrgApacheCommonsIoOutputLockableFileWriter_initWithNSString_(self, fileName);
   return self;
 }
 
-- (instancetype)initWithNSString:(NSString *)fileName
-                     withBoolean:(jboolean)append {
+- (instancetype __nonnull)initWithNSString:(NSString *)fileName
+                               withBoolean:(jboolean)append {
   OrgApacheCommonsIoOutputLockableFileWriter_initWithNSString_withBoolean_(self, fileName, append);
   return self;
 }
 
-- (instancetype)initWithNSString:(NSString *)fileName
-                     withBoolean:(jboolean)append
-                    withNSString:(NSString *)lockDir {
+- (instancetype __nonnull)initWithNSString:(NSString *)fileName
+                               withBoolean:(jboolean)append
+                              withNSString:(NSString *)lockDir {
   OrgApacheCommonsIoOutputLockableFileWriter_initWithNSString_withBoolean_withNSString_(self, fileName, append, lockDir);
   return self;
 }
 
-- (instancetype)initWithJavaIoFile:(JavaIoFile *)file {
+- (instancetype __nonnull)initWithJavaIoFile:(JavaIoFile *)file {
   OrgApacheCommonsIoOutputLockableFileWriter_initWithJavaIoFile_(self, file);
   return self;
 }
 
-- (instancetype)initWithJavaIoFile:(JavaIoFile *)file
-                       withBoolean:(jboolean)append {
+- (instancetype __nonnull)initWithJavaIoFile:(JavaIoFile *)file
+                                 withBoolean:(jboolean)append {
   OrgApacheCommonsIoOutputLockableFileWriter_initWithJavaIoFile_withBoolean_(self, file, append);
   return self;
 }
 
-- (instancetype)initWithJavaIoFile:(JavaIoFile *)file
-                       withBoolean:(jboolean)append
-                      withNSString:(NSString *)lockDir {
+- (instancetype __nonnull)initWithJavaIoFile:(JavaIoFile *)file
+                                 withBoolean:(jboolean)append
+                                withNSString:(NSString *)lockDir {
   OrgApacheCommonsIoOutputLockableFileWriter_initWithJavaIoFile_withBoolean_withNSString_(self, file, append, lockDir);
   return self;
 }
 
-- (instancetype)initWithJavaIoFile:(JavaIoFile *)file
-         withJavaNioCharsetCharset:(JavaNioCharsetCharset *)encoding {
+- (instancetype __nonnull)initWithJavaIoFile:(JavaIoFile *)file
+                   withJavaNioCharsetCharset:(JavaNioCharsetCharset *)encoding {
   OrgApacheCommonsIoOutputLockableFileWriter_initWithJavaIoFile_withJavaNioCharsetCharset_(self, file, encoding);
   return self;
 }
 
-- (instancetype)initWithJavaIoFile:(JavaIoFile *)file
-                      withNSString:(NSString *)encoding {
+- (instancetype __nonnull)initWithJavaIoFile:(JavaIoFile *)file
+                                withNSString:(NSString *)encoding {
   OrgApacheCommonsIoOutputLockableFileWriter_initWithJavaIoFile_withNSString_(self, file, encoding);
   return self;
 }
 
-- (instancetype)initWithJavaIoFile:(JavaIoFile *)file
-         withJavaNioCharsetCharset:(JavaNioCharsetCharset *)encoding
-                       withBoolean:(jboolean)append
-                      withNSString:(NSString *)lockDir {
+- (instancetype __nonnull)initWithJavaIoFile:(JavaIoFile *)file
+                   withJavaNioCharsetCharset:(JavaNioCharsetCharset *)encoding
+                                 withBoolean:(jboolean)append
+                                withNSString:(NSString *)lockDir {
   OrgApacheCommonsIoOutputLockableFileWriter_initWithJavaIoFile_withJavaNioCharsetCharset_withBoolean_withNSString_(self, file, encoding, append, lockDir);
   return self;
 }
 
-- (instancetype)initWithJavaIoFile:(JavaIoFile *)file
-                      withNSString:(NSString *)encoding
-                       withBoolean:(jboolean)append
-                      withNSString:(NSString *)lockDir {
+- (instancetype __nonnull)initWithJavaIoFile:(JavaIoFile *)file
+                                withNSString:(NSString *)encoding
+                                 withBoolean:(jboolean)append
+                                withNSString:(NSString *)lockDir {
   OrgApacheCommonsIoOutputLockableFileWriter_initWithJavaIoFile_withNSString_withBoolean_withNSString_(self, file, encoding, append, lockDir);
   return self;
 }

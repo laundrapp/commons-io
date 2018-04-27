@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgApacheCommonsIoByteOrderMark
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgApacheCommonsIoByteOrderMark_) && (INCLUDE_ALL_OrgApacheCommonsIoByteOrderMark || defined(INCLUDE_OrgApacheCommonsIoByteOrderMark))
 #define OrgApacheCommonsIoByteOrderMark_
 
@@ -45,8 +50,8 @@
  @throw IllegalArgumentExceptionif the bytes are null or zero
   length
  */
-- (instancetype)initWithNSString:(NSString *)charsetName
-                    withIntArray:(IOSIntArray *)bytes;
+- (instancetype __nonnull)initWithNSString:(NSString *)charsetName
+                              withIntArray:(IOSIntArray *)bytes;
 
 /*!
  @brief Indicates if this BOM's bytes equals another.
@@ -96,7 +101,7 @@
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)init NS_UNAVAILABLE;
+- (instancetype __nonnull)init NS_UNAVAILABLE;
 
 @end
 
@@ -154,4 +159,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoByteOrderMark)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgApacheCommonsIoByteOrderMark")

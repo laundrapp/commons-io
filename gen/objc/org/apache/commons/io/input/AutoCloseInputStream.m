@@ -11,7 +11,7 @@
 
 @implementation OrgApacheCommonsIoInputAutoCloseInputStream
 
-- (instancetype)initWithJavaIoInputStream:(JavaIoInputStream *)inArg {
+- (instancetype __nonnull)initWithJavaIoInputStream:(JavaIoInputStream *)inArg {
   OrgApacheCommonsIoInputAutoCloseInputStream_initWithJavaIoInputStream_(self, inArg);
   return self;
 }

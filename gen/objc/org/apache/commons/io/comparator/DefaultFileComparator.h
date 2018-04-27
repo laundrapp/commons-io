@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgApacheCommonsIoComparatorDefaultFileComparator
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgApacheCommonsIoComparatorDefaultFileComparator_) && (INCLUDE_ALL_OrgApacheCommonsIoComparatorDefaultFileComparator || defined(INCLUDE_OrgApacheCommonsIoComparatorDefaultFileComparator))
 #define OrgApacheCommonsIoComparatorDefaultFileComparator_
 
@@ -58,7 +63,7 @@
 
 #pragma mark Public
 
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 /*!
  @brief Compare the two files using the <code>File.compareTo(File)</code> method.
@@ -100,4 +105,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoComparatorDefaultFileComparator)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgApacheCommonsIoComparatorDefaultFileComparator")

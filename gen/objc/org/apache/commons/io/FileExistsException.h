@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgApacheCommonsIoFileExistsException
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgApacheCommonsIoFileExistsException_) && (INCLUDE_ALL_OrgApacheCommonsIoFileExistsException || defined(INCLUDE_OrgApacheCommonsIoFileExistsException))
 #define OrgApacheCommonsIoFileExistsException_
 
@@ -35,26 +40,26 @@
 /*!
  @brief Default Constructor.
  */
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 /*!
  @brief Construct an instance with the specified file.
  @param file The file that exists
  */
-- (instancetype)initWithJavaIoFile:(JavaIoFile *)file;
+- (instancetype __nonnull)initWithJavaIoFile:(JavaIoFile *)file;
 
 /*!
  @brief Construct an instance with the specified message.
  @param message The error message
  */
-- (instancetype)initWithNSString:(NSString *)message;
+- (instancetype __nonnull)initWithNSString:(NSString *)message;
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
+- (instancetype __nonnull)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
 
-- (instancetype)initWithNSString:(NSString *)arg0
-           withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
+- (instancetype __nonnull)initWithNSString:(NSString *)arg0
+                     withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
 
 @end
 
@@ -82,4 +87,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoFileExistsException)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgApacheCommonsIoFileExistsException")

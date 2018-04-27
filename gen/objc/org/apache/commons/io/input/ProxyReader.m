@@ -13,7 +13,7 @@
 
 @implementation OrgApacheCommonsIoInputProxyReader
 
-- (instancetype)initWithJavaIoReader:(JavaIoReader *)proxy {
+- (instancetype __nonnull)initWithJavaIoReader:(JavaIoReader *)proxy {
   OrgApacheCommonsIoInputProxyReader_initWithJavaIoReader_(self, proxy);
   return self;
 }

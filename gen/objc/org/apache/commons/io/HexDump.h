@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgApacheCommonsIoHexDump
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgApacheCommonsIoHexDump_) && (INCLUDE_ALL_OrgApacheCommonsIoHexDump || defined(INCLUDE_OrgApacheCommonsIoHexDump))
 #define OrgApacheCommonsIoHexDump_
 
@@ -35,7 +40,7 @@
 /*!
  @brief Instances should NOT be constructed in standard programming.
  */
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 /*!
  @brief Dump an array of bytes to an OutputStream.The output is formatted
@@ -92,4 +97,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoHexDump)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgApacheCommonsIoHexDump")

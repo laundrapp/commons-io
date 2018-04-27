@@ -43,24 +43,24 @@ J2OBJC_STATIC_FIELD_CONSTANT(OrgApacheCommonsIoFilefilterMagicNumberFileFilter, 
 
 @implementation OrgApacheCommonsIoFilefilterMagicNumberFileFilter
 
-- (instancetype)initWithByteArray:(IOSByteArray *)magicNumber {
+- (instancetype __nonnull)initWithByteArray:(IOSByteArray *)magicNumber {
   OrgApacheCommonsIoFilefilterMagicNumberFileFilter_initWithByteArray_(self, magicNumber);
   return self;
 }
 
-- (instancetype)initWithNSString:(NSString *)magicNumber {
+- (instancetype __nonnull)initWithNSString:(NSString *)magicNumber {
   OrgApacheCommonsIoFilefilterMagicNumberFileFilter_initWithNSString_(self, magicNumber);
   return self;
 }
 
-- (instancetype)initWithNSString:(NSString *)magicNumber
-                        withLong:(jlong)offset {
+- (instancetype __nonnull)initWithNSString:(NSString *)magicNumber
+                                  withLong:(jlong)offset {
   OrgApacheCommonsIoFilefilterMagicNumberFileFilter_initWithNSString_withLong_(self, magicNumber, offset);
   return self;
 }
 
-- (instancetype)initWithByteArray:(IOSByteArray *)magicNumber
-                         withLong:(jlong)offset {
+- (instancetype __nonnull)initWithByteArray:(IOSByteArray *)magicNumber
+                                   withLong:(jlong)offset {
   OrgApacheCommonsIoFilefilterMagicNumberFileFilter_initWithByteArray_withLong_(self, magicNumber, offset);
   return self;
 }

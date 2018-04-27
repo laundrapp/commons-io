@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgApacheCommonsIoOutputFileWriterWithEncoding
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgApacheCommonsIoOutputFileWriterWithEncoding_) && (INCLUDE_ALL_OrgApacheCommonsIoOutputFileWriterWithEncoding || defined(INCLUDE_OrgApacheCommonsIoOutputFileWriterWithEncoding))
 #define OrgApacheCommonsIoOutputFileWriterWithEncoding_
 
@@ -53,8 +58,8 @@
  @throw NullPointerExceptionif the file or encoding is null
  @throw IOExceptionin case of an I/O error
  */
-- (instancetype)initWithJavaIoFile:(JavaIoFile *)file
-         withJavaNioCharsetCharset:(JavaNioCharsetCharset *)encoding;
+- (instancetype __nonnull)initWithJavaIoFile:(JavaIoFile *)file
+                   withJavaNioCharsetCharset:(JavaNioCharsetCharset *)encoding;
 
 /*!
  @brief Constructs a FileWriterWithEncoding with a file encoding.
@@ -64,9 +69,9 @@
  @throw NullPointerExceptionif the file or encoding is null
  @throw IOExceptionin case of an I/O error
  */
-- (instancetype)initWithJavaIoFile:(JavaIoFile *)file
-         withJavaNioCharsetCharset:(JavaNioCharsetCharset *)encoding
-                       withBoolean:(jboolean)append;
+- (instancetype __nonnull)initWithJavaIoFile:(JavaIoFile *)file
+                   withJavaNioCharsetCharset:(JavaNioCharsetCharset *)encoding
+                                 withBoolean:(jboolean)append;
 
 /*!
  @brief Constructs a FileWriterWithEncoding with a file encoding.
@@ -75,30 +80,8 @@
  @throw NullPointerExceptionif the file or encoding is null
  @throw IOExceptionin case of an I/O error
  */
-- (instancetype)initWithJavaIoFile:(JavaIoFile *)file
-  withJavaNioCharsetCharsetEncoder:(JavaNioCharsetCharsetEncoder *)encoding;
-
-/*!
- @brief Constructs a FileWriterWithEncoding with a file encoding.
- @param file the file to write to, not null
- @param encoding the encoding to use, not null
- @param append true if content should be appended, false to overwrite
- @throw NullPointerExceptionif the file or encoding is null
- @throw IOExceptionin case of an I/O error
- */
-- (instancetype)initWithJavaIoFile:(JavaIoFile *)file
-  withJavaNioCharsetCharsetEncoder:(JavaNioCharsetCharsetEncoder *)encoding
-                       withBoolean:(jboolean)append;
-
-/*!
- @brief Constructs a FileWriterWithEncoding with a file encoding.
- @param file the file to write to, not null
- @param encoding the encoding to use, not null
- @throw NullPointerExceptionif the file or encoding is null
- @throw IOExceptionin case of an I/O error
- */
-- (instancetype)initWithJavaIoFile:(JavaIoFile *)file
-                      withNSString:(NSString *)encoding;
+- (instancetype __nonnull)initWithJavaIoFile:(JavaIoFile *)file
+            withJavaNioCharsetCharsetEncoder:(JavaNioCharsetCharsetEncoder *)encoding;
 
 /*!
  @brief Constructs a FileWriterWithEncoding with a file encoding.
@@ -108,9 +91,31 @@
  @throw NullPointerExceptionif the file or encoding is null
  @throw IOExceptionin case of an I/O error
  */
-- (instancetype)initWithJavaIoFile:(JavaIoFile *)file
-                      withNSString:(NSString *)encoding
-                       withBoolean:(jboolean)append;
+- (instancetype __nonnull)initWithJavaIoFile:(JavaIoFile *)file
+            withJavaNioCharsetCharsetEncoder:(JavaNioCharsetCharsetEncoder *)encoding
+                                 withBoolean:(jboolean)append;
+
+/*!
+ @brief Constructs a FileWriterWithEncoding with a file encoding.
+ @param file the file to write to, not null
+ @param encoding the encoding to use, not null
+ @throw NullPointerExceptionif the file or encoding is null
+ @throw IOExceptionin case of an I/O error
+ */
+- (instancetype __nonnull)initWithJavaIoFile:(JavaIoFile *)file
+                                withNSString:(NSString *)encoding;
+
+/*!
+ @brief Constructs a FileWriterWithEncoding with a file encoding.
+ @param file the file to write to, not null
+ @param encoding the encoding to use, not null
+ @param append true if content should be appended, false to overwrite
+ @throw NullPointerExceptionif the file or encoding is null
+ @throw IOExceptionin case of an I/O error
+ */
+- (instancetype __nonnull)initWithJavaIoFile:(JavaIoFile *)file
+                                withNSString:(NSString *)encoding
+                                 withBoolean:(jboolean)append;
 
 /*!
  @brief Constructs a FileWriterWithEncoding with a file encoding.
@@ -119,8 +124,8 @@
  @throw NullPointerExceptionif the file name or encoding is null
  @throw IOExceptionin case of an I/O error
  */
-- (instancetype)initWithNSString:(NSString *)filename
-       withJavaNioCharsetCharset:(JavaNioCharsetCharset *)encoding;
+- (instancetype __nonnull)initWithNSString:(NSString *)filename
+                 withJavaNioCharsetCharset:(JavaNioCharsetCharset *)encoding;
 
 /*!
  @brief Constructs a FileWriterWithEncoding with a file encoding.
@@ -130,9 +135,9 @@
  @throw NullPointerExceptionif the file name or encoding is null
  @throw IOExceptionin case of an I/O error
  */
-- (instancetype)initWithNSString:(NSString *)filename
-       withJavaNioCharsetCharset:(JavaNioCharsetCharset *)encoding
-                     withBoolean:(jboolean)append;
+- (instancetype __nonnull)initWithNSString:(NSString *)filename
+                 withJavaNioCharsetCharset:(JavaNioCharsetCharset *)encoding
+                               withBoolean:(jboolean)append;
 
 /*!
  @brief Constructs a FileWriterWithEncoding with a file encoding.
@@ -141,30 +146,8 @@
  @throw NullPointerExceptionif the file name or encoding is null
  @throw IOExceptionin case of an I/O error
  */
-- (instancetype)initWithNSString:(NSString *)filename
-withJavaNioCharsetCharsetEncoder:(JavaNioCharsetCharsetEncoder *)encoding;
-
-/*!
- @brief Constructs a FileWriterWithEncoding with a file encoding.
- @param filename the name of the file to write to, not null
- @param encoding the encoding to use, not null
- @param append true if content should be appended, false to overwrite
- @throw NullPointerExceptionif the file name or encoding is null
- @throw IOExceptionin case of an I/O error
- */
-- (instancetype)initWithNSString:(NSString *)filename
-withJavaNioCharsetCharsetEncoder:(JavaNioCharsetCharsetEncoder *)encoding
-                     withBoolean:(jboolean)append;
-
-/*!
- @brief Constructs a FileWriterWithEncoding with a file encoding.
- @param filename the name of the file to write to, not null
- @param encoding the encoding to use, not null
- @throw NullPointerExceptionif the file name or encoding is null
- @throw IOExceptionin case of an I/O error
- */
-- (instancetype)initWithNSString:(NSString *)filename
-                    withNSString:(NSString *)encoding;
+- (instancetype __nonnull)initWithNSString:(NSString *)filename
+          withJavaNioCharsetCharsetEncoder:(JavaNioCharsetCharsetEncoder *)encoding;
 
 /*!
  @brief Constructs a FileWriterWithEncoding with a file encoding.
@@ -174,9 +157,31 @@ withJavaNioCharsetCharsetEncoder:(JavaNioCharsetCharsetEncoder *)encoding
  @throw NullPointerExceptionif the file name or encoding is null
  @throw IOExceptionin case of an I/O error
  */
-- (instancetype)initWithNSString:(NSString *)filename
-                    withNSString:(NSString *)encoding
-                     withBoolean:(jboolean)append;
+- (instancetype __nonnull)initWithNSString:(NSString *)filename
+          withJavaNioCharsetCharsetEncoder:(JavaNioCharsetCharsetEncoder *)encoding
+                               withBoolean:(jboolean)append;
+
+/*!
+ @brief Constructs a FileWriterWithEncoding with a file encoding.
+ @param filename the name of the file to write to, not null
+ @param encoding the encoding to use, not null
+ @throw NullPointerExceptionif the file name or encoding is null
+ @throw IOExceptionin case of an I/O error
+ */
+- (instancetype __nonnull)initWithNSString:(NSString *)filename
+                              withNSString:(NSString *)encoding;
+
+/*!
+ @brief Constructs a FileWriterWithEncoding with a file encoding.
+ @param filename the name of the file to write to, not null
+ @param encoding the encoding to use, not null
+ @param append true if content should be appended, false to overwrite
+ @throw NullPointerExceptionif the file name or encoding is null
+ @throw IOExceptionin case of an I/O error
+ */
+- (instancetype __nonnull)initWithNSString:(NSString *)filename
+                              withNSString:(NSString *)encoding
+                               withBoolean:(jboolean)append;
 
 /*!
  @brief Close the stream.
@@ -235,9 +240,9 @@ withJavaNioCharsetCharsetEncoder:(JavaNioCharsetCharsetEncoder *)encoding
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)init NS_UNAVAILABLE;
+- (instancetype __nonnull)init NS_UNAVAILABLE;
 
-- (instancetype)initWithId:(id)arg0 NS_UNAVAILABLE;
+- (instancetype __nonnull)initWithId:(id)arg0 NS_UNAVAILABLE;
 
 @end
 
@@ -319,4 +324,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoOutputFileWriterWithEncoding)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgApacheCommonsIoOutputFileWriterWithEncoding")

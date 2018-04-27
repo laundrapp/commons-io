@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgApacheCommonsIoInputTailerListener
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgApacheCommonsIoInputTailerListener_) && (INCLUDE_ALL_OrgApacheCommonsIoInputTailerListener || defined(INCLUDE_OrgApacheCommonsIoInputTailerListener))
 #define OrgApacheCommonsIoInputTailerListener_
 
@@ -73,4 +78,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoInputTailerListener)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgApacheCommonsIoInputTailerListener")

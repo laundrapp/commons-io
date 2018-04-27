@@ -37,8 +37,8 @@ OrgApacheCommonsIoByteOrderMark *OrgApacheCommonsIoByteOrderMark_UTF_32LE;
 
 @implementation OrgApacheCommonsIoByteOrderMark
 
-- (instancetype)initWithNSString:(NSString *)charsetName
-                    withIntArray:(IOSIntArray *)bytes {
+- (instancetype __nonnull)initWithNSString:(NSString *)charsetName
+                              withIntArray:(IOSIntArray *)bytes {
   OrgApacheCommonsIoByteOrderMark_initWithNSString_withIntArray_(self, charsetName, bytes);
   return self;
 }

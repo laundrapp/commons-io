@@ -54,46 +54,46 @@ __attribute__((unused)) static void OrgApacheCommonsIoInputReaderInputStream_fil
 
 @implementation OrgApacheCommonsIoInputReaderInputStream
 
-- (instancetype)initWithJavaIoReader:(JavaIoReader *)reader
-    withJavaNioCharsetCharsetEncoder:(JavaNioCharsetCharsetEncoder *)encoder {
+- (instancetype __nonnull)initWithJavaIoReader:(JavaIoReader *)reader
+              withJavaNioCharsetCharsetEncoder:(JavaNioCharsetCharsetEncoder *)encoder {
   OrgApacheCommonsIoInputReaderInputStream_initWithJavaIoReader_withJavaNioCharsetCharsetEncoder_(self, reader, encoder);
   return self;
 }
 
-- (instancetype)initWithJavaIoReader:(JavaIoReader *)reader
-    withJavaNioCharsetCharsetEncoder:(JavaNioCharsetCharsetEncoder *)encoder
-                             withInt:(jint)bufferSize {
+- (instancetype __nonnull)initWithJavaIoReader:(JavaIoReader *)reader
+              withJavaNioCharsetCharsetEncoder:(JavaNioCharsetCharsetEncoder *)encoder
+                                       withInt:(jint)bufferSize {
   OrgApacheCommonsIoInputReaderInputStream_initWithJavaIoReader_withJavaNioCharsetCharsetEncoder_withInt_(self, reader, encoder, bufferSize);
   return self;
 }
 
-- (instancetype)initWithJavaIoReader:(JavaIoReader *)reader
-           withJavaNioCharsetCharset:(JavaNioCharsetCharset *)charset
-                             withInt:(jint)bufferSize {
+- (instancetype __nonnull)initWithJavaIoReader:(JavaIoReader *)reader
+                     withJavaNioCharsetCharset:(JavaNioCharsetCharset *)charset
+                                       withInt:(jint)bufferSize {
   OrgApacheCommonsIoInputReaderInputStream_initWithJavaIoReader_withJavaNioCharsetCharset_withInt_(self, reader, charset, bufferSize);
   return self;
 }
 
-- (instancetype)initWithJavaIoReader:(JavaIoReader *)reader
-           withJavaNioCharsetCharset:(JavaNioCharsetCharset *)charset {
+- (instancetype __nonnull)initWithJavaIoReader:(JavaIoReader *)reader
+                     withJavaNioCharsetCharset:(JavaNioCharsetCharset *)charset {
   OrgApacheCommonsIoInputReaderInputStream_initWithJavaIoReader_withJavaNioCharsetCharset_(self, reader, charset);
   return self;
 }
 
-- (instancetype)initWithJavaIoReader:(JavaIoReader *)reader
-                        withNSString:(NSString *)charsetName
-                             withInt:(jint)bufferSize {
+- (instancetype __nonnull)initWithJavaIoReader:(JavaIoReader *)reader
+                                  withNSString:(NSString *)charsetName
+                                       withInt:(jint)bufferSize {
   OrgApacheCommonsIoInputReaderInputStream_initWithJavaIoReader_withNSString_withInt_(self, reader, charsetName, bufferSize);
   return self;
 }
 
-- (instancetype)initWithJavaIoReader:(JavaIoReader *)reader
-                        withNSString:(NSString *)charsetName {
+- (instancetype __nonnull)initWithJavaIoReader:(JavaIoReader *)reader
+                                  withNSString:(NSString *)charsetName {
   OrgApacheCommonsIoInputReaderInputStream_initWithJavaIoReader_withNSString_(self, reader, charsetName);
   return self;
 }
 
-- (instancetype)initWithJavaIoReader:(JavaIoReader *)reader {
+- (instancetype __nonnull)initWithJavaIoReader:(JavaIoReader *)reader {
   OrgApacheCommonsIoInputReaderInputStream_initWithJavaIoReader_(self, reader);
   return self;
 }

@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgApacheCommonsIoInputCharSequenceReader
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgApacheCommonsIoInputCharSequenceReader_) && (INCLUDE_ALL_OrgApacheCommonsIoInputCharSequenceReader || defined(INCLUDE_OrgApacheCommonsIoInputCharSequenceReader))
 #define OrgApacheCommonsIoInputCharSequenceReader_
 
@@ -43,7 +48,7 @@
  @brief Construct a new instance with the specified character sequence.
  @param charSequence The character sequence, may be <code>null</code>
  */
-- (instancetype)initWithJavaLangCharSequence:(id<JavaLangCharSequence>)charSequence;
+- (instancetype __nonnull)initWithJavaLangCharSequence:(id<JavaLangCharSequence>)charSequence;
 
 /*!
  @brief Close resets the file back to the start and removes any marked position.
@@ -103,9 +108,9 @@
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)init NS_UNAVAILABLE;
+- (instancetype __nonnull)init NS_UNAVAILABLE;
 
-- (instancetype)initWithId:(id)arg0 NS_UNAVAILABLE;
+- (instancetype __nonnull)initWithId:(id)arg0 NS_UNAVAILABLE;
 
 @end
 
@@ -121,4 +126,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoInputCharSequenceReader)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgApacheCommonsIoInputCharSequenceReader")

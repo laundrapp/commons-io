@@ -95,7 +95,7 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoFileCleaningTracker_Tracker)
 @implementation OrgApacheCommonsIoFileCleaningTracker
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
-- (instancetype)init {
+- (instancetype __nonnull)init {
   OrgApacheCommonsIoFileCleaningTracker_init(self);
   return self;
 }

@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgApacheCommonsIoComparatorSizeFileComparator
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgApacheCommonsIoComparatorSizeFileComparator_) && (INCLUDE_ALL_OrgApacheCommonsIoComparatorSizeFileComparator || defined(INCLUDE_OrgApacheCommonsIoComparatorSizeFileComparator))
 #define OrgApacheCommonsIoComparatorSizeFileComparator_
 
@@ -64,7 +69,7 @@
 /*!
  @brief Construct a file size comparator instance (directories treated as zero size).
  */
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 /*!
  @brief Construct a file size comparator instance specifying whether the size of
@@ -76,7 +81,7 @@
  <code>false</code>  if directories should be treated   as size zero (see 
  <code>FileUtils.sizeOfDirectory(File)</code> ).
  */
-- (instancetype)initWithBoolean:(jboolean)sumDirectoryContents;
+- (instancetype __nonnull)initWithBoolean:(jboolean)sumDirectoryContents;
 
 /*!
  @brief Compare the length of two files.
@@ -150,4 +155,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoComparatorSizeFileComparator)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgApacheCommonsIoComparatorSizeFileComparator")

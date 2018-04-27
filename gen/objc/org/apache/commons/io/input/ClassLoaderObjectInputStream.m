@@ -28,8 +28,8 @@ J2OBJC_FIELD_SETTER(OrgApacheCommonsIoInputClassLoaderObjectInputStream, classLo
 
 @implementation OrgApacheCommonsIoInputClassLoaderObjectInputStream
 
-- (instancetype)initWithJavaLangClassLoader:(JavaLangClassLoader *)classLoader
-                      withJavaIoInputStream:(JavaIoInputStream *)inputStream {
+- (instancetype __nonnull)initWithJavaLangClassLoader:(JavaLangClassLoader *)classLoader
+                                withJavaIoInputStream:(JavaIoInputStream *)inputStream {
   OrgApacheCommonsIoInputClassLoaderObjectInputStream_initWithJavaLangClassLoader_withJavaIoInputStream_(self, classLoader, inputStream);
   return self;
 }

@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgApacheCommonsIoFilefilterWildcardFileFilter
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgApacheCommonsIoFilefilterWildcardFileFilter_) && (INCLUDE_ALL_OrgApacheCommonsIoFilefilterWildcardFileFilter || defined(INCLUDE_OrgApacheCommonsIoFilefilterWildcardFileFilter))
 #define OrgApacheCommonsIoFilefilterWildcardFileFilter_
 
@@ -65,7 +70,7 @@
  @throw IllegalArgumentExceptionif the pattern list is null
  @throw ClassCastExceptionif the list does not contain Strings
  */
-- (instancetype)initWithJavaUtilList:(id<JavaUtilList>)wildcards;
+- (instancetype __nonnull)initWithJavaUtilList:(id<JavaUtilList>)wildcards;
 
 /*!
  @brief Construct a new wildcard filter for a list of wildcards specifying case-sensitivity.
@@ -74,15 +79,15 @@
  @throw IllegalArgumentExceptionif the pattern list is null
  @throw ClassCastExceptionif the list does not contain Strings
  */
-- (instancetype)initWithJavaUtilList:(id<JavaUtilList>)wildcards
-        withOrgApacheCommonsIoIOCase:(OrgApacheCommonsIoIOCase *)caseSensitivity;
+- (instancetype __nonnull)initWithJavaUtilList:(id<JavaUtilList>)wildcards
+                  withOrgApacheCommonsIoIOCase:(OrgApacheCommonsIoIOCase *)caseSensitivity;
 
 /*!
  @brief Construct a new case-sensitive wildcard filter for a single wildcard.
  @param wildcard the wildcard to match
  @throw IllegalArgumentExceptionif the pattern is null
  */
-- (instancetype)initWithNSString:(NSString *)wildcard;
+- (instancetype __nonnull)initWithNSString:(NSString *)wildcard;
 
 /*!
  @brief Construct a new wildcard filter for a single wildcard specifying case-sensitivity.
@@ -90,8 +95,8 @@
  @param caseSensitivity how to handle case sensitivity, null means case-sensitive
  @throw IllegalArgumentExceptionif the pattern is null
  */
-- (instancetype)initWithNSString:(NSString *)wildcard
-    withOrgApacheCommonsIoIOCase:(OrgApacheCommonsIoIOCase *)caseSensitivity;
+- (instancetype __nonnull)initWithNSString:(NSString *)wildcard
+              withOrgApacheCommonsIoIOCase:(OrgApacheCommonsIoIOCase *)caseSensitivity;
 
 /*!
  @brief Construct a new case-sensitive wildcard filter for an array of wildcards.
@@ -101,7 +106,7 @@
  @param wildcards the array of wildcards to match
  @throw IllegalArgumentExceptionif the pattern array is null
  */
-- (instancetype)initWithNSStringArray:(IOSObjectArray *)wildcards;
+- (instancetype __nonnull)initWithNSStringArray:(IOSObjectArray *)wildcards;
 
 /*!
  @brief Construct a new wildcard filter for an array of wildcards specifying case-sensitivity.
@@ -112,8 +117,8 @@
  @param caseSensitivity how to handle case sensitivity, null means case-sensitive
  @throw IllegalArgumentExceptionif the pattern array is null
  */
-- (instancetype)initWithNSStringArray:(IOSObjectArray *)wildcards
-         withOrgApacheCommonsIoIOCase:(OrgApacheCommonsIoIOCase *)caseSensitivity;
+- (instancetype __nonnull)initWithNSStringArray:(IOSObjectArray *)wildcards
+                   withOrgApacheCommonsIoIOCase:(OrgApacheCommonsIoIOCase *)caseSensitivity;
 
 /*!
  @brief Checks to see if the filename matches one of the wildcards.
@@ -139,7 +144,7 @@
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)init NS_UNAVAILABLE;
+- (instancetype __nonnull)init NS_UNAVAILABLE;
 
 @end
 
@@ -185,4 +190,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoFilefilterWildcardFileFilter)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgApacheCommonsIoFilefilterWildcardFileFilter")

@@ -54,49 +54,49 @@ __attribute__((unused)) static void OrgApacheCommonsIoOutputWriterOutputStream_f
 
 @implementation OrgApacheCommonsIoOutputWriterOutputStream
 
-- (instancetype)initWithJavaIoWriter:(JavaIoWriter *)writer
-    withJavaNioCharsetCharsetDecoder:(JavaNioCharsetCharsetDecoder *)decoder {
+- (instancetype __nonnull)initWithJavaIoWriter:(JavaIoWriter *)writer
+              withJavaNioCharsetCharsetDecoder:(JavaNioCharsetCharsetDecoder *)decoder {
   OrgApacheCommonsIoOutputWriterOutputStream_initWithJavaIoWriter_withJavaNioCharsetCharsetDecoder_(self, writer, decoder);
   return self;
 }
 
-- (instancetype)initWithJavaIoWriter:(JavaIoWriter *)writer
-    withJavaNioCharsetCharsetDecoder:(JavaNioCharsetCharsetDecoder *)decoder
-                             withInt:(jint)bufferSize
-                         withBoolean:(jboolean)writeImmediately {
+- (instancetype __nonnull)initWithJavaIoWriter:(JavaIoWriter *)writer
+              withJavaNioCharsetCharsetDecoder:(JavaNioCharsetCharsetDecoder *)decoder
+                                       withInt:(jint)bufferSize
+                                   withBoolean:(jboolean)writeImmediately {
   OrgApacheCommonsIoOutputWriterOutputStream_initWithJavaIoWriter_withJavaNioCharsetCharsetDecoder_withInt_withBoolean_(self, writer, decoder, bufferSize, writeImmediately);
   return self;
 }
 
-- (instancetype)initWithJavaIoWriter:(JavaIoWriter *)writer
-           withJavaNioCharsetCharset:(JavaNioCharsetCharset *)charset
-                             withInt:(jint)bufferSize
-                         withBoolean:(jboolean)writeImmediately {
+- (instancetype __nonnull)initWithJavaIoWriter:(JavaIoWriter *)writer
+                     withJavaNioCharsetCharset:(JavaNioCharsetCharset *)charset
+                                       withInt:(jint)bufferSize
+                                   withBoolean:(jboolean)writeImmediately {
   OrgApacheCommonsIoOutputWriterOutputStream_initWithJavaIoWriter_withJavaNioCharsetCharset_withInt_withBoolean_(self, writer, charset, bufferSize, writeImmediately);
   return self;
 }
 
-- (instancetype)initWithJavaIoWriter:(JavaIoWriter *)writer
-           withJavaNioCharsetCharset:(JavaNioCharsetCharset *)charset {
+- (instancetype __nonnull)initWithJavaIoWriter:(JavaIoWriter *)writer
+                     withJavaNioCharsetCharset:(JavaNioCharsetCharset *)charset {
   OrgApacheCommonsIoOutputWriterOutputStream_initWithJavaIoWriter_withJavaNioCharsetCharset_(self, writer, charset);
   return self;
 }
 
-- (instancetype)initWithJavaIoWriter:(JavaIoWriter *)writer
-                        withNSString:(NSString *)charsetName
-                             withInt:(jint)bufferSize
-                         withBoolean:(jboolean)writeImmediately {
+- (instancetype __nonnull)initWithJavaIoWriter:(JavaIoWriter *)writer
+                                  withNSString:(NSString *)charsetName
+                                       withInt:(jint)bufferSize
+                                   withBoolean:(jboolean)writeImmediately {
   OrgApacheCommonsIoOutputWriterOutputStream_initWithJavaIoWriter_withNSString_withInt_withBoolean_(self, writer, charsetName, bufferSize, writeImmediately);
   return self;
 }
 
-- (instancetype)initWithJavaIoWriter:(JavaIoWriter *)writer
-                        withNSString:(NSString *)charsetName {
+- (instancetype __nonnull)initWithJavaIoWriter:(JavaIoWriter *)writer
+                                  withNSString:(NSString *)charsetName {
   OrgApacheCommonsIoOutputWriterOutputStream_initWithJavaIoWriter_withNSString_(self, writer, charsetName);
   return self;
 }
 
-- (instancetype)initWithJavaIoWriter:(JavaIoWriter *)writer {
+- (instancetype __nonnull)initWithJavaIoWriter:(JavaIoWriter *)writer {
   OrgApacheCommonsIoOutputWriterOutputStream_initWithJavaIoWriter_(self, writer);
   return self;
 }

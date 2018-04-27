@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgApacheCommonsIoMonitorFileAlterationObserver
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgApacheCommonsIoMonitorFileAlterationObserver_) && (INCLUDE_ALL_OrgApacheCommonsIoMonitorFileAlterationObserver || defined(INCLUDE_OrgApacheCommonsIoMonitorFileAlterationObserver))
 #define OrgApacheCommonsIoMonitorFileAlterationObserver_
 
@@ -130,15 +135,15 @@
  @brief Construct an observer for the specified directory.
  @param directory the directory to observe
  */
-- (instancetype)initWithJavaIoFile:(JavaIoFile *)directory;
+- (instancetype __nonnull)initWithJavaIoFile:(JavaIoFile *)directory;
 
 /*!
  @brief Construct an observer for the specified directory and file filter.
  @param directory the directory to observe
  @param fileFilter The file filter or null if none
  */
-- (instancetype)initWithJavaIoFile:(JavaIoFile *)directory
-              withJavaIoFileFilter:(id<JavaIoFileFilter>)fileFilter;
+- (instancetype __nonnull)initWithJavaIoFile:(JavaIoFile *)directory
+                        withJavaIoFileFilter:(id<JavaIoFileFilter>)fileFilter;
 
 /*!
  @brief Construct an observer for the specified directory, file filter and
@@ -147,23 +152,23 @@
  @param fileFilter The file filter or null if none
  @param caseSensitivity what case sensitivity to use comparing file names, null means system sensitive
  */
-- (instancetype)initWithJavaIoFile:(JavaIoFile *)directory
-              withJavaIoFileFilter:(id<JavaIoFileFilter>)fileFilter
-      withOrgApacheCommonsIoIOCase:(OrgApacheCommonsIoIOCase *)caseSensitivity;
+- (instancetype __nonnull)initWithJavaIoFile:(JavaIoFile *)directory
+                        withJavaIoFileFilter:(id<JavaIoFileFilter>)fileFilter
+                withOrgApacheCommonsIoIOCase:(OrgApacheCommonsIoIOCase *)caseSensitivity;
 
 /*!
  @brief Construct an observer for the specified directory.
  @param directoryName the name of the directory to observe
  */
-- (instancetype)initWithNSString:(NSString *)directoryName;
+- (instancetype __nonnull)initWithNSString:(NSString *)directoryName;
 
 /*!
  @brief Construct an observer for the specified directory and file filter.
  @param directoryName the name of the directory to observe
  @param fileFilter The file filter or null if none
  */
-- (instancetype)initWithNSString:(NSString *)directoryName
-            withJavaIoFileFilter:(id<JavaIoFileFilter>)fileFilter;
+- (instancetype __nonnull)initWithNSString:(NSString *)directoryName
+                      withJavaIoFileFilter:(id<JavaIoFileFilter>)fileFilter;
 
 /*!
  @brief Construct an observer for the specified directory, file filter and
@@ -172,9 +177,9 @@
  @param fileFilter The file filter or null if none
  @param caseSensitivity what case sensitivity to use comparing file names, null means system sensitive
  */
-- (instancetype)initWithNSString:(NSString *)directoryName
-            withJavaIoFileFilter:(id<JavaIoFileFilter>)fileFilter
-    withOrgApacheCommonsIoIOCase:(OrgApacheCommonsIoIOCase *)caseSensitivity;
+- (instancetype __nonnull)initWithNSString:(NSString *)directoryName
+                      withJavaIoFileFilter:(id<JavaIoFileFilter>)fileFilter
+              withOrgApacheCommonsIoIOCase:(OrgApacheCommonsIoIOCase *)caseSensitivity;
 
 /*!
  @brief Add a file system listener.
@@ -239,13 +244,13 @@
  @param fileFilter The file filter or null if none
  @param caseSensitivity what case sensitivity to use comparing file names, null means system sensitive
  */
-- (instancetype)initWithOrgApacheCommonsIoMonitorFileEntry:(OrgApacheCommonsIoMonitorFileEntry *)rootEntry
-                                      withJavaIoFileFilter:(id<JavaIoFileFilter>)fileFilter
-                              withOrgApacheCommonsIoIOCase:(OrgApacheCommonsIoIOCase *)caseSensitivity;
+- (instancetype __nonnull)initWithOrgApacheCommonsIoMonitorFileEntry:(OrgApacheCommonsIoMonitorFileEntry *)rootEntry
+                                                withJavaIoFileFilter:(id<JavaIoFileFilter>)fileFilter
+                                        withOrgApacheCommonsIoIOCase:(OrgApacheCommonsIoIOCase *)caseSensitivity;
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)init NS_UNAVAILABLE;
+- (instancetype __nonnull)init NS_UNAVAILABLE;
 
 @end
 
@@ -297,4 +302,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoMonitorFileAlterationObserver)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgApacheCommonsIoMonitorFileAlterationObserver")

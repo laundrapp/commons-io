@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgApacheCommonsIoInputNullInputStream
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgApacheCommonsIoInputNullInputStream_) && (INCLUDE_ALL_OrgApacheCommonsIoInputNullInputStream || defined(INCLUDE_OrgApacheCommonsIoInputNullInputStream))
 #define OrgApacheCommonsIoInputNullInputStream_
 
@@ -69,7 +74,7 @@
   which supports marking and does not throw EOFException.
  @param size The size of the input stream to emulate.
  */
-- (instancetype)initWithLong:(jlong)size;
+- (instancetype __nonnull)initWithLong:(jlong)size;
 
 /*!
  @brief Create an <code>InputStream</code> that emulates a specified
@@ -80,9 +85,9 @@
  @param throwEofException Whether this implementation  will throw an 
  <code>EOFException</code>  or return -1 when the  end of file is reached.
  */
-- (instancetype)initWithLong:(jlong)size
-                 withBoolean:(jboolean)markSupported
-                 withBoolean:(jboolean)throwEofException;
+- (instancetype __nonnull)initWithLong:(jlong)size
+                           withBoolean:(jboolean)markSupported
+                           withBoolean:(jboolean)throwEofException;
 
 /*!
  @brief Return the number of bytes that can be read.
@@ -207,7 +212,7 @@
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)init NS_UNAVAILABLE;
+- (instancetype __nonnull)init NS_UNAVAILABLE;
 
 @end
 
@@ -229,4 +234,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoInputNullInputStream)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgApacheCommonsIoInputNullInputStream")

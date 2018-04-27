@@ -72,51 +72,51 @@ __attribute__((unused)) static jlong OrgApacheCommonsIoInputTailer_readLinesWith
 
 @implementation OrgApacheCommonsIoInputTailer
 
-- (instancetype)initWithJavaIoFile:(JavaIoFile *)file
-withOrgApacheCommonsIoInputTailerListener:(id<OrgApacheCommonsIoInputTailerListener>)listener {
+- (instancetype __nonnull)initWithJavaIoFile:(JavaIoFile *)file
+   withOrgApacheCommonsIoInputTailerListener:(id<OrgApacheCommonsIoInputTailerListener>)listener {
   OrgApacheCommonsIoInputTailer_initWithJavaIoFile_withOrgApacheCommonsIoInputTailerListener_(self, file, listener);
   return self;
 }
 
-- (instancetype)initWithJavaIoFile:(JavaIoFile *)file
-withOrgApacheCommonsIoInputTailerListener:(id<OrgApacheCommonsIoInputTailerListener>)listener
-                          withLong:(jlong)delayMillis {
+- (instancetype __nonnull)initWithJavaIoFile:(JavaIoFile *)file
+   withOrgApacheCommonsIoInputTailerListener:(id<OrgApacheCommonsIoInputTailerListener>)listener
+                                    withLong:(jlong)delayMillis {
   OrgApacheCommonsIoInputTailer_initWithJavaIoFile_withOrgApacheCommonsIoInputTailerListener_withLong_(self, file, listener, delayMillis);
   return self;
 }
 
-- (instancetype)initWithJavaIoFile:(JavaIoFile *)file
-withOrgApacheCommonsIoInputTailerListener:(id<OrgApacheCommonsIoInputTailerListener>)listener
-                          withLong:(jlong)delayMillis
-                       withBoolean:(jboolean)end {
+- (instancetype __nonnull)initWithJavaIoFile:(JavaIoFile *)file
+   withOrgApacheCommonsIoInputTailerListener:(id<OrgApacheCommonsIoInputTailerListener>)listener
+                                    withLong:(jlong)delayMillis
+                                 withBoolean:(jboolean)end {
   OrgApacheCommonsIoInputTailer_initWithJavaIoFile_withOrgApacheCommonsIoInputTailerListener_withLong_withBoolean_(self, file, listener, delayMillis, end);
   return self;
 }
 
-- (instancetype)initWithJavaIoFile:(JavaIoFile *)file
-withOrgApacheCommonsIoInputTailerListener:(id<OrgApacheCommonsIoInputTailerListener>)listener
-                          withLong:(jlong)delayMillis
-                       withBoolean:(jboolean)end
-                       withBoolean:(jboolean)reOpen {
+- (instancetype __nonnull)initWithJavaIoFile:(JavaIoFile *)file
+   withOrgApacheCommonsIoInputTailerListener:(id<OrgApacheCommonsIoInputTailerListener>)listener
+                                    withLong:(jlong)delayMillis
+                                 withBoolean:(jboolean)end
+                                 withBoolean:(jboolean)reOpen {
   OrgApacheCommonsIoInputTailer_initWithJavaIoFile_withOrgApacheCommonsIoInputTailerListener_withLong_withBoolean_withBoolean_(self, file, listener, delayMillis, end, reOpen);
   return self;
 }
 
-- (instancetype)initWithJavaIoFile:(JavaIoFile *)file
-withOrgApacheCommonsIoInputTailerListener:(id<OrgApacheCommonsIoInputTailerListener>)listener
-                          withLong:(jlong)delayMillis
-                       withBoolean:(jboolean)end
-                           withInt:(jint)bufSize {
+- (instancetype __nonnull)initWithJavaIoFile:(JavaIoFile *)file
+   withOrgApacheCommonsIoInputTailerListener:(id<OrgApacheCommonsIoInputTailerListener>)listener
+                                    withLong:(jlong)delayMillis
+                                 withBoolean:(jboolean)end
+                                     withInt:(jint)bufSize {
   OrgApacheCommonsIoInputTailer_initWithJavaIoFile_withOrgApacheCommonsIoInputTailerListener_withLong_withBoolean_withInt_(self, file, listener, delayMillis, end, bufSize);
   return self;
 }
 
-- (instancetype)initWithJavaIoFile:(JavaIoFile *)file
-withOrgApacheCommonsIoInputTailerListener:(id<OrgApacheCommonsIoInputTailerListener>)listener
-                          withLong:(jlong)delayMillis
-                       withBoolean:(jboolean)end
-                       withBoolean:(jboolean)reOpen
-                           withInt:(jint)bufSize {
+- (instancetype __nonnull)initWithJavaIoFile:(JavaIoFile *)file
+   withOrgApacheCommonsIoInputTailerListener:(id<OrgApacheCommonsIoInputTailerListener>)listener
+                                    withLong:(jlong)delayMillis
+                                 withBoolean:(jboolean)end
+                                 withBoolean:(jboolean)reOpen
+                                     withInt:(jint)bufSize {
   OrgApacheCommonsIoInputTailer_initWithJavaIoFile_withOrgApacheCommonsIoInputTailerListener_withLong_withBoolean_withBoolean_withInt_(self, file, listener, delayMillis, end, reOpen, bufSize);
   return self;
 }

@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgApacheCommonsIoInputAutoCloseInputStream
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgApacheCommonsIoInputAutoCloseInputStream_) && (INCLUDE_ALL_OrgApacheCommonsIoInputAutoCloseInputStream || defined(INCLUDE_OrgApacheCommonsIoInputAutoCloseInputStream))
 #define OrgApacheCommonsIoInputAutoCloseInputStream_
 
@@ -44,7 +49,7 @@
  @brief Creates an automatically closing proxy for the given input stream.
  @param inArg underlying input stream
  */
-- (instancetype)initWithJavaIoInputStream:(JavaIoInputStream *)inArg;
+- (instancetype __nonnull)initWithJavaIoInputStream:(JavaIoInputStream *)inArg;
 
 /*!
  @brief Closes the underlying input stream and replaces the reference to it
@@ -92,4 +97,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoInputAutoCloseInputStream)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgApacheCommonsIoInputAutoCloseInputStream")

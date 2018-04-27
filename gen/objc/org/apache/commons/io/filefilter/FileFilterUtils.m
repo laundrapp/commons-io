@@ -52,7 +52,7 @@ J2OBJC_INITIALIZED_DEFN(OrgApacheCommonsIoFilefilterFileFilterUtils)
 @implementation OrgApacheCommonsIoFilefilterFileFilterUtils
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
-- (instancetype)init {
+- (instancetype __nonnull)init {
   OrgApacheCommonsIoFilefilterFileFilterUtils_init(self);
   return self;
 }

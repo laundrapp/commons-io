@@ -19,7 +19,7 @@ JavaNioCharsetCharset *OrgApacheCommonsIoCharsets_UTF_8;
 @implementation OrgApacheCommonsIoCharsets
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
-- (instancetype)init {
+- (instancetype __nonnull)init {
   OrgApacheCommonsIoCharsets_init(self);
   return self;
 }

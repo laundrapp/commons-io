@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgApacheCommonsIoInputReversedLinesFileReader
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgApacheCommonsIoInputReversedLinesFileReader_) && (INCLUDE_ALL_OrgApacheCommonsIoInputReversedLinesFileReader || defined(INCLUDE_OrgApacheCommonsIoInputReversedLinesFileReader))
 #define OrgApacheCommonsIoInputReversedLinesFileReader_
 
@@ -38,7 +43,7 @@
  @param file the file to be read
  @throw IOExceptionif an I/O error occurs
  */
-- (instancetype)initWithJavaIoFile:(JavaIoFile *)file;
+- (instancetype __nonnull)initWithJavaIoFile:(JavaIoFile *)file;
 
 /*!
  @brief Creates a ReversedLinesFileReader with the given block size and encoding.
@@ -49,9 +54,9 @@
  @throw IOExceptionif an I/O error occurs
  @since 2.3
  */
-- (instancetype)initWithJavaIoFile:(JavaIoFile *)file
-                           withInt:(jint)blockSize
-         withJavaNioCharsetCharset:(JavaNioCharsetCharset *)encoding;
+- (instancetype __nonnull)initWithJavaIoFile:(JavaIoFile *)file
+                                     withInt:(jint)blockSize
+                   withJavaNioCharsetCharset:(JavaNioCharsetCharset *)encoding;
 
 /*!
  @brief Creates a ReversedLinesFileReader with the given block size and encoding.
@@ -64,9 +69,9 @@
  thrown instead of <code>UnsupportedEncodingException</code> in version 2.2 if the encoding is not
               supported.
  */
-- (instancetype)initWithJavaIoFile:(JavaIoFile *)file
-                           withInt:(jint)blockSize
-                      withNSString:(NSString *)encoding;
+- (instancetype __nonnull)initWithJavaIoFile:(JavaIoFile *)file
+                                     withInt:(jint)blockSize
+                                withNSString:(NSString *)encoding;
 
 /*!
  @brief Closes underlying resources.
@@ -83,7 +88,7 @@
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)init NS_UNAVAILABLE;
+- (instancetype __nonnull)init NS_UNAVAILABLE;
 
 @end
 
@@ -111,4 +116,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoInputReversedLinesFileReader)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgApacheCommonsIoInputReversedLinesFileReader")

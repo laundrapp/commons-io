@@ -36,13 +36,13 @@ id<JavaUtilComparator> OrgApacheCommonsIoComparatorExtensionFileComparator_EXTEN
 @implementation OrgApacheCommonsIoComparatorExtensionFileComparator
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
-- (instancetype)init {
+- (instancetype __nonnull)init {
   OrgApacheCommonsIoComparatorExtensionFileComparator_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
-- (instancetype)initWithOrgApacheCommonsIoIOCase:(OrgApacheCommonsIoIOCase *)caseSensitivity {
+- (instancetype __nonnull)initWithOrgApacheCommonsIoIOCase:(OrgApacheCommonsIoIOCase *)caseSensitivity {
   OrgApacheCommonsIoComparatorExtensionFileComparator_initWithOrgApacheCommonsIoIOCase_(self, caseSensitivity);
   return self;
 }

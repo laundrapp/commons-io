@@ -32,7 +32,7 @@
 
 @implementation OrgApacheCommonsIoOutputThresholdingOutputStream
 
-- (instancetype)initWithInt:(jint)threshold {
+- (instancetype __nonnull)initWithInt:(jint)threshold {
   OrgApacheCommonsIoOutputThresholdingOutputStream_initWithInt_(self, threshold);
   return self;
 }

@@ -16,7 +16,7 @@ OrgApacheCommonsIoOutputNullWriter *OrgApacheCommonsIoOutputNullWriter_NULL_WRIT
 @implementation OrgApacheCommonsIoOutputNullWriter
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
-- (instancetype)init {
+- (instancetype __nonnull)init {
   OrgApacheCommonsIoOutputNullWriter_init(self);
   return self;
 }

@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgApacheCommonsIoInputClassLoaderObjectInputStream
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgApacheCommonsIoInputClassLoaderObjectInputStream_) && (INCLUDE_ALL_OrgApacheCommonsIoInputClassLoaderObjectInputStream || defined(INCLUDE_OrgApacheCommonsIoInputClassLoaderObjectInputStream))
 #define OrgApacheCommonsIoInputClassLoaderObjectInputStream_
 
@@ -45,8 +50,8 @@
  @throw IOExceptionin case of an I/O error
  @throw StreamCorruptedExceptionif the stream is corrupted
  */
-- (instancetype)initWithJavaLangClassLoader:(JavaLangClassLoader *)classLoader
-                      withJavaIoInputStream:(JavaIoInputStream *)inputStream;
+- (instancetype __nonnull)initWithJavaLangClassLoader:(JavaLangClassLoader *)classLoader
+                                withJavaIoInputStream:(JavaIoInputStream *)inputStream;
 
 #pragma mark Protected
 
@@ -74,9 +79,9 @@
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)init NS_UNAVAILABLE;
+- (instancetype __nonnull)init NS_UNAVAILABLE;
 
-- (instancetype)initWithJavaIoInputStream:(JavaIoInputStream *)arg0 NS_UNAVAILABLE;
+- (instancetype __nonnull)initWithJavaIoInputStream:(JavaIoInputStream *)arg0 NS_UNAVAILABLE;
 
 @end
 
@@ -92,4 +97,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoInputClassLoaderObjectInputStream)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgApacheCommonsIoInputClassLoaderObjectInputStream")

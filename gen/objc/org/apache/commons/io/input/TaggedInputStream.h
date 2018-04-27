@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgApacheCommonsIoInputTaggedInputStream
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgApacheCommonsIoInputTaggedInputStream_) && (INCLUDE_ALL_OrgApacheCommonsIoInputTaggedInputStream || defined(INCLUDE_OrgApacheCommonsIoInputTaggedInputStream))
 #define OrgApacheCommonsIoInputTaggedInputStream_
 
@@ -73,7 +78,7 @@
  @brief Creates a tagging decorator for the given input stream.
  @param proxy input stream to be decorated
  */
-- (instancetype)initWithJavaIoInputStream:(JavaIoInputStream *)proxy;
+- (instancetype __nonnull)initWithJavaIoInputStream:(JavaIoInputStream *)proxy;
 
 /*!
  @brief Tests if the given exception was caused by this stream.
@@ -118,4 +123,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoInputTaggedInputStream)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgApacheCommonsIoInputTaggedInputStream")

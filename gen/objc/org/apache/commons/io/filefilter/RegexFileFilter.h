@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgApacheCommonsIoFilefilterRegexFileFilter
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgApacheCommonsIoFilefilterRegexFileFilter_) && (INCLUDE_ALL_OrgApacheCommonsIoFilefilterRegexFileFilter || defined(INCLUDE_OrgApacheCommonsIoFilefilterRegexFileFilter))
 #define OrgApacheCommonsIoFilefilterRegexFileFilter_
 
@@ -58,14 +63,14 @@
  @param pattern regular expression to match
  @throw IllegalArgumentExceptionif the pattern is null
  */
-- (instancetype)initWithJavaUtilRegexPattern:(JavaUtilRegexPattern *)pattern;
+- (instancetype __nonnull)initWithJavaUtilRegexPattern:(JavaUtilRegexPattern *)pattern;
 
 /*!
  @brief Construct a new regular expression filter.
  @param pattern regular string expression to match
  @throw IllegalArgumentExceptionif the pattern is null
  */
-- (instancetype)initWithNSString:(NSString *)pattern;
+- (instancetype __nonnull)initWithNSString:(NSString *)pattern;
 
 /*!
  @brief Construct a new regular expression filter with the specified flags.
@@ -73,8 +78,8 @@
  @param flags pattern flags - e.g. <code>Pattern.CASE_INSENSITIVE</code>
  @throw IllegalArgumentExceptionif the pattern is null
  */
-- (instancetype)initWithNSString:(NSString *)pattern
-                         withInt:(jint)flags;
+- (instancetype __nonnull)initWithNSString:(NSString *)pattern
+                                   withInt:(jint)flags;
 
 /*!
  @brief Construct a new regular expression filter with the specified flags case sensitivity.
@@ -82,8 +87,8 @@
  @param caseSensitivity how to handle case sensitivity, null means case-sensitive
  @throw IllegalArgumentExceptionif the pattern is null
  */
-- (instancetype)initWithNSString:(NSString *)pattern
-    withOrgApacheCommonsIoIOCase:(OrgApacheCommonsIoIOCase *)caseSensitivity;
+- (instancetype __nonnull)initWithNSString:(NSString *)pattern
+              withOrgApacheCommonsIoIOCase:(OrgApacheCommonsIoIOCase *)caseSensitivity;
 
 /*!
  @brief Checks to see if the filename matches one of the regular expressions.
@@ -96,7 +101,7 @@
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)init NS_UNAVAILABLE;
+- (instancetype __nonnull)init NS_UNAVAILABLE;
 
 @end
 
@@ -130,4 +135,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoFilefilterRegexFileFilter)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgApacheCommonsIoFilefilterRegexFileFilter")

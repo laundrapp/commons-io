@@ -22,13 +22,13 @@ J2OBJC_FIELD_SETTER(OrgApacheCommonsIoOutputBrokenOutputStream, exception_, Java
 
 @implementation OrgApacheCommonsIoOutputBrokenOutputStream
 
-- (instancetype)initWithJavaIoIOException:(JavaIoIOException *)exception {
+- (instancetype __nonnull)initWithJavaIoIOException:(JavaIoIOException *)exception {
   OrgApacheCommonsIoOutputBrokenOutputStream_initWithJavaIoIOException_(self, exception);
   return self;
 }
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
-- (instancetype)init {
+- (instancetype __nonnull)init {
   OrgApacheCommonsIoOutputBrokenOutputStream_init(self);
   return self;
 }

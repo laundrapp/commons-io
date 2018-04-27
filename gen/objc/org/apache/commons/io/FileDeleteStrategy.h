@@ -16,6 +16,11 @@
 #define INCLUDE_OrgApacheCommonsIoFileDeleteStrategy 1
 #endif
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgApacheCommonsIoFileDeleteStrategy_) && (INCLUDE_ALL_OrgApacheCommonsIoFileDeleteStrategy || defined(INCLUDE_OrgApacheCommonsIoFileDeleteStrategy))
 #define OrgApacheCommonsIoFileDeleteStrategy_
 
@@ -70,7 +75,7 @@
  @brief Restricted constructor.
  @param name the name by which the strategy is known
  */
-- (instancetype)initWithNSString:(NSString *)name;
+- (instancetype __nonnull)initWithNSString:(NSString *)name;
 
 /*!
  @brief Actually deletes the file object, which may be a file or a directory.
@@ -91,7 +96,7 @@
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)init NS_UNAVAILABLE;
+- (instancetype __nonnull)init NS_UNAVAILABLE;
 
 @end
 
@@ -154,11 +159,11 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoFileDeleteStrategy)
 /*!
  @brief Default Constructor
  */
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)initWithNSString:(NSString *)arg0 NS_UNAVAILABLE;
+- (instancetype __nonnull)initWithNSString:(NSString *)arg0 NS_UNAVAILABLE;
 
 @end
 
@@ -174,4 +179,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoFileDeleteStrategy_ForceFileDeleteS
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgApacheCommonsIoFileDeleteStrategy")

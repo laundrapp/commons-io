@@ -29,19 +29,19 @@ J2OBJC_FIELD_SETTER(OrgApacheCommonsIoFilefilterOrFileFilter, fileFilters_, id<J
 @implementation OrgApacheCommonsIoFilefilterOrFileFilter
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
-- (instancetype)init {
+- (instancetype __nonnull)init {
   OrgApacheCommonsIoFilefilterOrFileFilter_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
-- (instancetype)initWithJavaUtilList:(id<JavaUtilList>)fileFilters {
+- (instancetype __nonnull)initWithJavaUtilList:(id<JavaUtilList>)fileFilters {
   OrgApacheCommonsIoFilefilterOrFileFilter_initWithJavaUtilList_(self, fileFilters);
   return self;
 }
 
-- (instancetype)initWithOrgApacheCommonsIoFilefilterIOFileFilter:(id<OrgApacheCommonsIoFilefilterIOFileFilter>)filter1
-                    withOrgApacheCommonsIoFilefilterIOFileFilter:(id<OrgApacheCommonsIoFilefilterIOFileFilter>)filter2 {
+- (instancetype __nonnull)initWithOrgApacheCommonsIoFilefilterIOFileFilter:(id<OrgApacheCommonsIoFilefilterIOFileFilter>)filter1
+                              withOrgApacheCommonsIoFilefilterIOFileFilter:(id<OrgApacheCommonsIoFilefilterIOFileFilter>)filter2 {
   OrgApacheCommonsIoFilefilterOrFileFilter_initWithOrgApacheCommonsIoFilefilterIOFileFilter_withOrgApacheCommonsIoFilefilterIOFileFilter_(self, filter1, filter2);
   return self;
 }

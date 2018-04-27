@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgApacheCommonsIoComparatorCompositeFileComparator
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgApacheCommonsIoComparatorCompositeFileComparator_) && (INCLUDE_ALL_OrgApacheCommonsIoComparatorCompositeFileComparator || defined(INCLUDE_OrgApacheCommonsIoComparatorCompositeFileComparator))
 #define OrgApacheCommonsIoComparatorCompositeFileComparator_
 
@@ -57,13 +62,13 @@
  @brief Create a composite comparator for the set of delegate comparators.
  @param delegates The delegate file comparators
  */
-- (instancetype)initWithJavaUtilComparatorArray:(IOSObjectArray *)delegates;
+- (instancetype __nonnull)initWithJavaUtilComparatorArray:(IOSObjectArray *)delegates;
 
 /*!
  @brief Create a composite comparator for the set of delegate comparators.
  @param delegates The delegate file comparators
  */
-- (instancetype)initWithJavaLangIterable:(id<JavaLangIterable>)delegates;
+- (instancetype __nonnull)initWithJavaLangIterable:(id<JavaLangIterable>)delegates;
 
 /*!
  @brief Compare the two files using delegate comparators.
@@ -83,7 +88,7 @@
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)init NS_UNAVAILABLE;
+- (instancetype __nonnull)init NS_UNAVAILABLE;
 
 @end
 
@@ -105,4 +110,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoComparatorCompositeFileComparator)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgApacheCommonsIoComparatorCompositeFileComparator")

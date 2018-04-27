@@ -21,7 +21,7 @@ J2OBJC_FIELD_SETTER(OrgApacheCommonsIoComparatorReverseComparator, delegate_, id
 
 @implementation OrgApacheCommonsIoComparatorReverseComparator
 
-- (instancetype)initWithJavaUtilComparator:(id<JavaUtilComparator>)delegate {
+- (instancetype __nonnull)initWithJavaUtilComparator:(id<JavaUtilComparator>)delegate {
   OrgApacheCommonsIoComparatorReverseComparator_initWithJavaUtilComparator_(self, delegate);
   return self;
 }

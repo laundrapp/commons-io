@@ -35,80 +35,80 @@ __attribute__((unused)) static JavaIoWriter *OrgApacheCommonsIoOutputFileWriterW
 
 @implementation OrgApacheCommonsIoOutputFileWriterWithEncoding
 
-- (instancetype)initWithNSString:(NSString *)filename
-                    withNSString:(NSString *)encoding {
+- (instancetype __nonnull)initWithNSString:(NSString *)filename
+                              withNSString:(NSString *)encoding {
   OrgApacheCommonsIoOutputFileWriterWithEncoding_initWithNSString_withNSString_(self, filename, encoding);
   return self;
 }
 
-- (instancetype)initWithNSString:(NSString *)filename
-                    withNSString:(NSString *)encoding
-                     withBoolean:(jboolean)append {
+- (instancetype __nonnull)initWithNSString:(NSString *)filename
+                              withNSString:(NSString *)encoding
+                               withBoolean:(jboolean)append {
   OrgApacheCommonsIoOutputFileWriterWithEncoding_initWithNSString_withNSString_withBoolean_(self, filename, encoding, append);
   return self;
 }
 
-- (instancetype)initWithNSString:(NSString *)filename
-       withJavaNioCharsetCharset:(JavaNioCharsetCharset *)encoding {
+- (instancetype __nonnull)initWithNSString:(NSString *)filename
+                 withJavaNioCharsetCharset:(JavaNioCharsetCharset *)encoding {
   OrgApacheCommonsIoOutputFileWriterWithEncoding_initWithNSString_withJavaNioCharsetCharset_(self, filename, encoding);
   return self;
 }
 
-- (instancetype)initWithNSString:(NSString *)filename
-       withJavaNioCharsetCharset:(JavaNioCharsetCharset *)encoding
-                     withBoolean:(jboolean)append {
+- (instancetype __nonnull)initWithNSString:(NSString *)filename
+                 withJavaNioCharsetCharset:(JavaNioCharsetCharset *)encoding
+                               withBoolean:(jboolean)append {
   OrgApacheCommonsIoOutputFileWriterWithEncoding_initWithNSString_withJavaNioCharsetCharset_withBoolean_(self, filename, encoding, append);
   return self;
 }
 
-- (instancetype)initWithNSString:(NSString *)filename
-withJavaNioCharsetCharsetEncoder:(JavaNioCharsetCharsetEncoder *)encoding {
+- (instancetype __nonnull)initWithNSString:(NSString *)filename
+          withJavaNioCharsetCharsetEncoder:(JavaNioCharsetCharsetEncoder *)encoding {
   OrgApacheCommonsIoOutputFileWriterWithEncoding_initWithNSString_withJavaNioCharsetCharsetEncoder_(self, filename, encoding);
   return self;
 }
 
-- (instancetype)initWithNSString:(NSString *)filename
-withJavaNioCharsetCharsetEncoder:(JavaNioCharsetCharsetEncoder *)encoding
-                     withBoolean:(jboolean)append {
+- (instancetype __nonnull)initWithNSString:(NSString *)filename
+          withJavaNioCharsetCharsetEncoder:(JavaNioCharsetCharsetEncoder *)encoding
+                               withBoolean:(jboolean)append {
   OrgApacheCommonsIoOutputFileWriterWithEncoding_initWithNSString_withJavaNioCharsetCharsetEncoder_withBoolean_(self, filename, encoding, append);
   return self;
 }
 
-- (instancetype)initWithJavaIoFile:(JavaIoFile *)file
-                      withNSString:(NSString *)encoding {
+- (instancetype __nonnull)initWithJavaIoFile:(JavaIoFile *)file
+                                withNSString:(NSString *)encoding {
   OrgApacheCommonsIoOutputFileWriterWithEncoding_initWithJavaIoFile_withNSString_(self, file, encoding);
   return self;
 }
 
-- (instancetype)initWithJavaIoFile:(JavaIoFile *)file
-                      withNSString:(NSString *)encoding
-                       withBoolean:(jboolean)append {
+- (instancetype __nonnull)initWithJavaIoFile:(JavaIoFile *)file
+                                withNSString:(NSString *)encoding
+                                 withBoolean:(jboolean)append {
   OrgApacheCommonsIoOutputFileWriterWithEncoding_initWithJavaIoFile_withNSString_withBoolean_(self, file, encoding, append);
   return self;
 }
 
-- (instancetype)initWithJavaIoFile:(JavaIoFile *)file
-         withJavaNioCharsetCharset:(JavaNioCharsetCharset *)encoding {
+- (instancetype __nonnull)initWithJavaIoFile:(JavaIoFile *)file
+                   withJavaNioCharsetCharset:(JavaNioCharsetCharset *)encoding {
   OrgApacheCommonsIoOutputFileWriterWithEncoding_initWithJavaIoFile_withJavaNioCharsetCharset_(self, file, encoding);
   return self;
 }
 
-- (instancetype)initWithJavaIoFile:(JavaIoFile *)file
-         withJavaNioCharsetCharset:(JavaNioCharsetCharset *)encoding
-                       withBoolean:(jboolean)append {
+- (instancetype __nonnull)initWithJavaIoFile:(JavaIoFile *)file
+                   withJavaNioCharsetCharset:(JavaNioCharsetCharset *)encoding
+                                 withBoolean:(jboolean)append {
   OrgApacheCommonsIoOutputFileWriterWithEncoding_initWithJavaIoFile_withJavaNioCharsetCharset_withBoolean_(self, file, encoding, append);
   return self;
 }
 
-- (instancetype)initWithJavaIoFile:(JavaIoFile *)file
-  withJavaNioCharsetCharsetEncoder:(JavaNioCharsetCharsetEncoder *)encoding {
+- (instancetype __nonnull)initWithJavaIoFile:(JavaIoFile *)file
+            withJavaNioCharsetCharsetEncoder:(JavaNioCharsetCharsetEncoder *)encoding {
   OrgApacheCommonsIoOutputFileWriterWithEncoding_initWithJavaIoFile_withJavaNioCharsetCharsetEncoder_(self, file, encoding);
   return self;
 }
 
-- (instancetype)initWithJavaIoFile:(JavaIoFile *)file
-  withJavaNioCharsetCharsetEncoder:(JavaNioCharsetCharsetEncoder *)encoding
-                       withBoolean:(jboolean)append {
+- (instancetype __nonnull)initWithJavaIoFile:(JavaIoFile *)file
+            withJavaNioCharsetCharsetEncoder:(JavaNioCharsetCharsetEncoder *)encoding
+                                 withBoolean:(jboolean)append {
   OrgApacheCommonsIoOutputFileWriterWithEncoding_initWithJavaIoFile_withJavaNioCharsetCharsetEncoder_withBoolean_(self, file, encoding, append);
   return self;
 }

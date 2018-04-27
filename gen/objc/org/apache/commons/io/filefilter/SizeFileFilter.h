@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgApacheCommonsIoFilefilterSizeFileFilter
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgApacheCommonsIoFilefilterSizeFileFilter_) && (INCLUDE_ALL_OrgApacheCommonsIoFilefilterSizeFileFilter || defined(INCLUDE_OrgApacheCommonsIoFilefilterSizeFileFilter))
 #define OrgApacheCommonsIoFilefilterSizeFileFilter_
 
@@ -57,7 +62,7 @@
  @param size the threshold size of the files
  @throw IllegalArgumentExceptionif the size is negative
  */
-- (instancetype)initWithLong:(jlong)size;
+- (instancetype __nonnull)initWithLong:(jlong)size;
 
 /*!
  @brief Constructs a new size file filter for files based on a certain size
@@ -66,8 +71,8 @@
  @param acceptLarger if true, files equal to or larger are accepted,  otherwise smaller ones (but not equal to)
  @throw IllegalArgumentExceptionif the size is negative
  */
-- (instancetype)initWithLong:(jlong)size
-                 withBoolean:(jboolean)acceptLarger;
+- (instancetype __nonnull)initWithLong:(jlong)size
+                           withBoolean:(jboolean)acceptLarger;
 
 /*!
  @brief Checks to see if the size of the file is favorable.
@@ -89,7 +94,7 @@
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)init NS_UNAVAILABLE;
+- (instancetype __nonnull)init NS_UNAVAILABLE;
 
 @end
 
@@ -111,4 +116,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoFilefilterSizeFileFilter)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgApacheCommonsIoFilefilterSizeFileFilter")

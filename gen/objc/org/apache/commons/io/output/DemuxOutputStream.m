@@ -20,7 +20,7 @@ J2OBJC_FIELD_SETTER(OrgApacheCommonsIoOutputDemuxOutputStream, m_streams_, JavaL
 @implementation OrgApacheCommonsIoOutputDemuxOutputStream
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
-- (instancetype)init {
+- (instancetype __nonnull)init {
   OrgApacheCommonsIoOutputDemuxOutputStream_init(self);
   return self;
 }

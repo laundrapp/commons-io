@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgApacheCommonsIoIOExceptionWithCause
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgApacheCommonsIoIOExceptionWithCause_) && (INCLUDE_ALL_OrgApacheCommonsIoIOExceptionWithCause || defined(INCLUDE_OrgApacheCommonsIoIOExceptionWithCause))
 #define OrgApacheCommonsIoIOExceptionWithCause_
 
@@ -43,8 +48,8 @@
  @param cause the cause (see 
  <code>getCause()</code> ). A <code>null</code>  value is allowed.
  */
-- (instancetype)initWithNSString:(NSString *)message
-           withJavaLangThrowable:(JavaLangThrowable *)cause;
+- (instancetype __nonnull)initWithNSString:(NSString *)message
+                     withJavaLangThrowable:(JavaLangThrowable *)cause;
 
 /*!
  @brief Constructs a new instance with the given cause.
@@ -55,13 +60,13 @@
  @param cause the cause (see 
  <code>getCause()</code> ). A <code>null</code>  value is allowed.
  */
-- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)cause;
+- (instancetype __nonnull)initWithJavaLangThrowable:(JavaLangThrowable *)cause;
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)init NS_UNAVAILABLE;
+- (instancetype __nonnull)init NS_UNAVAILABLE;
 
-- (instancetype)initWithNSString:(NSString *)arg0 NS_UNAVAILABLE;
+- (instancetype __nonnull)initWithNSString:(NSString *)arg0 NS_UNAVAILABLE;
 
 @end
 
@@ -83,4 +88,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoIOExceptionWithCause)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgApacheCommonsIoIOExceptionWithCause")

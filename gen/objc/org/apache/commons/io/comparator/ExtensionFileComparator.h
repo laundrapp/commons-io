@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgApacheCommonsIoComparatorExtensionFileComparator
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgApacheCommonsIoComparatorExtensionFileComparator_) && (INCLUDE_ALL_OrgApacheCommonsIoComparatorExtensionFileComparator || defined(INCLUDE_OrgApacheCommonsIoComparatorExtensionFileComparator))
 #define OrgApacheCommonsIoComparatorExtensionFileComparator_
 
@@ -66,13 +71,13 @@
 /*!
  @brief Construct a case sensitive file extension comparator instance.
  */
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 /*!
  @brief Construct a file extension comparator instance with the specified case-sensitivity.
  @param caseSensitivity how to handle case sensitivity, null means case-sensitive
  */
-- (instancetype)initWithOrgApacheCommonsIoIOCase:(OrgApacheCommonsIoIOCase *)caseSensitivity;
+- (instancetype __nonnull)initWithOrgApacheCommonsIoIOCase:(OrgApacheCommonsIoIOCase *)caseSensitivity;
 
 /*!
  @brief Compare the extensions of two files the specified case sensitivity.
@@ -160,4 +165,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoComparatorExtensionFileComparator)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgApacheCommonsIoComparatorExtensionFileComparator")

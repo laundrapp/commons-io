@@ -35,13 +35,13 @@ IOSObjectArray *OrgApacheCommonsIoMonitorFileEntry_EMPTY_ENTRIES;
 
 @implementation OrgApacheCommonsIoMonitorFileEntry
 
-- (instancetype)initWithJavaIoFile:(JavaIoFile *)file {
+- (instancetype __nonnull)initWithJavaIoFile:(JavaIoFile *)file {
   OrgApacheCommonsIoMonitorFileEntry_initWithJavaIoFile_(self, file);
   return self;
 }
 
-- (instancetype)initWithOrgApacheCommonsIoMonitorFileEntry:(OrgApacheCommonsIoMonitorFileEntry *)parent
-                                            withJavaIoFile:(JavaIoFile *)file {
+- (instancetype __nonnull)initWithOrgApacheCommonsIoMonitorFileEntry:(OrgApacheCommonsIoMonitorFileEntry *)parent
+                                                      withJavaIoFile:(JavaIoFile *)file {
   OrgApacheCommonsIoMonitorFileEntry_initWithOrgApacheCommonsIoMonitorFileEntry_withJavaIoFile_(self, parent, file);
   return self;
 }

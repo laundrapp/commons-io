@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgApacheCommonsIoFilefilterSuffixFileFilter
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgApacheCommonsIoFilefilterSuffixFileFilter_) && (INCLUDE_ALL_OrgApacheCommonsIoFilefilterSuffixFileFilter || defined(INCLUDE_OrgApacheCommonsIoFilefilterSuffixFileFilter))
 #define OrgApacheCommonsIoFilefilterSuffixFileFilter_
 
@@ -59,7 +64,7 @@
  @throw IllegalArgumentExceptionif the suffix list is null
  @throw ClassCastExceptionif the list does not contain Strings
  */
-- (instancetype)initWithJavaUtilList:(id<JavaUtilList>)suffixes;
+- (instancetype __nonnull)initWithJavaUtilList:(id<JavaUtilList>)suffixes;
 
 /*!
  @brief Constructs a new Suffix file filter for a list of suffixes
@@ -70,15 +75,15 @@
  @throw ClassCastExceptionif the list does not contain Strings
  @since 1.4
  */
-- (instancetype)initWithJavaUtilList:(id<JavaUtilList>)suffixes
-        withOrgApacheCommonsIoIOCase:(OrgApacheCommonsIoIOCase *)caseSensitivity;
+- (instancetype __nonnull)initWithJavaUtilList:(id<JavaUtilList>)suffixes
+                  withOrgApacheCommonsIoIOCase:(OrgApacheCommonsIoIOCase *)caseSensitivity;
 
 /*!
  @brief Constructs a new Suffix file filter for a single extension.
  @param suffix the suffix to allow, must not be null
  @throw IllegalArgumentExceptionif the suffix is null
  */
-- (instancetype)initWithNSString:(NSString *)suffix;
+- (instancetype __nonnull)initWithNSString:(NSString *)suffix;
 
 /*!
  @brief Constructs a new Suffix file filter for a single extension
@@ -88,8 +93,8 @@
  @throw IllegalArgumentExceptionif the suffix is null
  @since 1.4
  */
-- (instancetype)initWithNSString:(NSString *)suffix
-    withOrgApacheCommonsIoIOCase:(OrgApacheCommonsIoIOCase *)caseSensitivity;
+- (instancetype __nonnull)initWithNSString:(NSString *)suffix
+              withOrgApacheCommonsIoIOCase:(OrgApacheCommonsIoIOCase *)caseSensitivity;
 
 /*!
  @brief Constructs a new Suffix file filter for an array of suffixs.
@@ -99,7 +104,7 @@
  @param suffixes the suffixes to allow, must not be null
  @throw IllegalArgumentExceptionif the suffix array is null
  */
-- (instancetype)initWithNSStringArray:(IOSObjectArray *)suffixes;
+- (instancetype __nonnull)initWithNSStringArray:(IOSObjectArray *)suffixes;
 
 /*!
  @brief Constructs a new Suffix file filter for an array of suffixs
@@ -112,8 +117,8 @@
  @throw IllegalArgumentExceptionif the suffix array is null
  @since 1.4
  */
-- (instancetype)initWithNSStringArray:(IOSObjectArray *)suffixes
-         withOrgApacheCommonsIoIOCase:(OrgApacheCommonsIoIOCase *)caseSensitivity;
+- (instancetype __nonnull)initWithNSStringArray:(IOSObjectArray *)suffixes
+                   withOrgApacheCommonsIoIOCase:(OrgApacheCommonsIoIOCase *)caseSensitivity;
 
 /*!
  @brief Checks to see if the filename ends with the suffix.
@@ -139,7 +144,7 @@
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)init NS_UNAVAILABLE;
+- (instancetype __nonnull)init NS_UNAVAILABLE;
 
 @end
 
@@ -185,4 +190,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoFilefilterSuffixFileFilter)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgApacheCommonsIoFilefilterSuffixFileFilter")

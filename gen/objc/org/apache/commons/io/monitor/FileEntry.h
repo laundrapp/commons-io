@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgApacheCommonsIoMonitorFileEntry
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgApacheCommonsIoMonitorFileEntry_) && (INCLUDE_ALL_OrgApacheCommonsIoMonitorFileEntry || defined(INCLUDE_OrgApacheCommonsIoMonitorFileEntry))
 #define OrgApacheCommonsIoMonitorFileEntry_
 
@@ -51,15 +56,15 @@
  @brief Construct a new monitor for a specified <code>File</code>.
  @param file The file being monitored
  */
-- (instancetype)initWithJavaIoFile:(JavaIoFile *)file;
+- (instancetype __nonnull)initWithJavaIoFile:(JavaIoFile *)file;
 
 /*!
  @brief Construct a new monitor for a specified <code>File</code>.
  @param parent The parent
  @param file The file being monitored
  */
-- (instancetype)initWithOrgApacheCommonsIoMonitorFileEntry:(OrgApacheCommonsIoMonitorFileEntry *)parent
-                                            withJavaIoFile:(JavaIoFile *)file;
+- (instancetype __nonnull)initWithOrgApacheCommonsIoMonitorFileEntry:(OrgApacheCommonsIoMonitorFileEntry *)parent
+                                                      withJavaIoFile:(JavaIoFile *)file;
 
 /*!
  @brief Return the directory's files.
@@ -184,7 +189,7 @@
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)init NS_UNAVAILABLE;
+- (instancetype __nonnull)init NS_UNAVAILABLE;
 
 @end
 
@@ -211,4 +216,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoMonitorFileEntry)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgApacheCommonsIoMonitorFileEntry")

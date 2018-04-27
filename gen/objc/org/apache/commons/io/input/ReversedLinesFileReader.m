@@ -74,21 +74,21 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoInputReversedLinesFileReader_FilePa
 
 @implementation OrgApacheCommonsIoInputReversedLinesFileReader
 
-- (instancetype)initWithJavaIoFile:(JavaIoFile *)file {
+- (instancetype __nonnull)initWithJavaIoFile:(JavaIoFile *)file {
   OrgApacheCommonsIoInputReversedLinesFileReader_initWithJavaIoFile_(self, file);
   return self;
 }
 
-- (instancetype)initWithJavaIoFile:(JavaIoFile *)file
-                           withInt:(jint)blockSize
-         withJavaNioCharsetCharset:(JavaNioCharsetCharset *)encoding {
+- (instancetype __nonnull)initWithJavaIoFile:(JavaIoFile *)file
+                                     withInt:(jint)blockSize
+                   withJavaNioCharsetCharset:(JavaNioCharsetCharset *)encoding {
   OrgApacheCommonsIoInputReversedLinesFileReader_initWithJavaIoFile_withInt_withJavaNioCharsetCharset_(self, file, blockSize, encoding);
   return self;
 }
 
-- (instancetype)initWithJavaIoFile:(JavaIoFile *)file
-                           withInt:(jint)blockSize
-                      withNSString:(NSString *)encoding {
+- (instancetype __nonnull)initWithJavaIoFile:(JavaIoFile *)file
+                                     withInt:(jint)blockSize
+                                withNSString:(NSString *)encoding {
   OrgApacheCommonsIoInputReversedLinesFileReader_initWithJavaIoFile_withInt_withNSString_(self, file, blockSize, encoding);
   return self;
 }

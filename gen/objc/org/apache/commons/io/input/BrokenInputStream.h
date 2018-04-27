@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgApacheCommonsIoInputBrokenInputStream
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgApacheCommonsIoInputBrokenInputStream_) && (INCLUDE_ALL_OrgApacheCommonsIoInputBrokenInputStream || defined(INCLUDE_OrgApacheCommonsIoInputBrokenInputStream))
 #define OrgApacheCommonsIoInputBrokenInputStream_
 
@@ -37,13 +42,13 @@
 /*!
  @brief Creates a new stream that always throws an <code>IOException</code>
  */
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 /*!
  @brief Creates a new stream that always throws the given exception.
  @param exception the exception to be thrown
  */
-- (instancetype)initWithJavaIoIOException:(JavaIoIOException *)exception;
+- (instancetype __nonnull)initWithJavaIoIOException:(JavaIoIOException *)exception;
 
 /*!
  @brief Throws the configured exception.
@@ -99,4 +104,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoInputBrokenInputStream)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgApacheCommonsIoInputBrokenInputStream")

@@ -17,13 +17,13 @@ J2OBJC_STATIC_FIELD_CONSTANT(OrgApacheCommonsIoIOExceptionWithCause, serialVersi
 
 @implementation OrgApacheCommonsIoIOExceptionWithCause
 
-- (instancetype)initWithNSString:(NSString *)message
-           withJavaLangThrowable:(JavaLangThrowable *)cause {
+- (instancetype __nonnull)initWithNSString:(NSString *)message
+                     withJavaLangThrowable:(JavaLangThrowable *)cause {
   OrgApacheCommonsIoIOExceptionWithCause_initWithNSString_withJavaLangThrowable_(self, message, cause);
   return self;
 }
 
-- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)cause {
+- (instancetype __nonnull)initWithJavaLangThrowable:(JavaLangThrowable *)cause {
   OrgApacheCommonsIoIOExceptionWithCause_initWithJavaLangThrowable_(self, cause);
   return self;
 }

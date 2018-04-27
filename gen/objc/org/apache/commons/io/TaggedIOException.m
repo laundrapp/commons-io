@@ -41,8 +41,8 @@ J2OBJC_STATIC_FIELD_CONSTANT(OrgApacheCommonsIoTaggedIOException, serialVersionU
   OrgApacheCommonsIoTaggedIOException_throwCauseIfTaggedWithWithJavaLangThrowable_withId_(throwable, tag);
 }
 
-- (instancetype)initWithJavaIoIOException:(JavaIoIOException *)original
-                   withJavaIoSerializable:(id<JavaIoSerializable>)tag {
+- (instancetype __nonnull)initWithJavaIoIOException:(JavaIoIOException *)original
+                             withJavaIoSerializable:(id<JavaIoSerializable>)tag {
   OrgApacheCommonsIoTaggedIOException_initWithJavaIoIOException_withJavaIoSerializable_(self, original, tag);
   return self;
 }

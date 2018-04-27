@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgApacheCommonsIoInputTeeInputStream
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgApacheCommonsIoInputTeeInputStream_) && (INCLUDE_ALL_OrgApacheCommonsIoInputTeeInputStream || defined(INCLUDE_OrgApacheCommonsIoInputTeeInputStream))
 #define OrgApacheCommonsIoInputTeeInputStream_
 
@@ -48,8 +53,8 @@
  @param input input stream to be proxied
  @param branch output stream that will receive a copy of all bytes read
  */
-- (instancetype)initWithJavaIoInputStream:(JavaIoInputStream *)input
-                   withJavaIoOutputStream:(JavaIoOutputStream *)branch;
+- (instancetype __nonnull)initWithJavaIoInputStream:(JavaIoInputStream *)input
+                             withJavaIoOutputStream:(JavaIoOutputStream *)branch;
 
 /*!
  @brief Creates a TeeInputStream that proxies the given <code>InputStream</code>
@@ -60,9 +65,9 @@
  @param branch output stream that will receive a copy of all bytes read
  @param closeBranch flag for closing also the output stream when this                     stream is closed
  */
-- (instancetype)initWithJavaIoInputStream:(JavaIoInputStream *)input
-                   withJavaIoOutputStream:(JavaIoOutputStream *)branch
-                              withBoolean:(jboolean)closeBranch;
+- (instancetype __nonnull)initWithJavaIoInputStream:(JavaIoInputStream *)input
+                             withJavaIoOutputStream:(JavaIoOutputStream *)branch
+                                        withBoolean:(jboolean)closeBranch;
 
 /*!
  @brief Closes the proxied input stream and, if so configured, the associated
@@ -104,7 +109,7 @@
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)initWithJavaIoInputStream:(JavaIoInputStream *)arg0 NS_UNAVAILABLE;
+- (instancetype __nonnull)initWithJavaIoInputStream:(JavaIoInputStream *)arg0 NS_UNAVAILABLE;
 
 @end
 
@@ -126,4 +131,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoInputTeeInputStream)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgApacheCommonsIoInputTeeInputStream")

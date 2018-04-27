@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgApacheCommonsIoFilefilterPrefixFileFilter
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgApacheCommonsIoFilefilterPrefixFileFilter_) && (INCLUDE_ALL_OrgApacheCommonsIoFilefilterPrefixFileFilter || defined(INCLUDE_OrgApacheCommonsIoFilefilterPrefixFileFilter))
 #define OrgApacheCommonsIoFilefilterPrefixFileFilter_
 
@@ -59,7 +64,7 @@
  @throw IllegalArgumentExceptionif the prefix list is null
  @throw ClassCastExceptionif the list does not contain Strings
  */
-- (instancetype)initWithJavaUtilList:(id<JavaUtilList>)prefixes;
+- (instancetype __nonnull)initWithJavaUtilList:(id<JavaUtilList>)prefixes;
 
 /*!
  @brief Constructs a new Prefix file filter for a list of prefixes
@@ -70,15 +75,15 @@
  @throw ClassCastExceptionif the list does not contain Strings
  @since 1.4
  */
-- (instancetype)initWithJavaUtilList:(id<JavaUtilList>)prefixes
-        withOrgApacheCommonsIoIOCase:(OrgApacheCommonsIoIOCase *)caseSensitivity;
+- (instancetype __nonnull)initWithJavaUtilList:(id<JavaUtilList>)prefixes
+                  withOrgApacheCommonsIoIOCase:(OrgApacheCommonsIoIOCase *)caseSensitivity;
 
 /*!
  @brief Constructs a new Prefix file filter for a single prefix.
  @param prefix the prefix to allow, must not be null
  @throw IllegalArgumentExceptionif the prefix is null
  */
-- (instancetype)initWithNSString:(NSString *)prefix;
+- (instancetype __nonnull)initWithNSString:(NSString *)prefix;
 
 /*!
  @brief Constructs a new Prefix file filter for a single prefix 
@@ -88,8 +93,8 @@
  @throw IllegalArgumentExceptionif the prefix is null
  @since 1.4
  */
-- (instancetype)initWithNSString:(NSString *)prefix
-    withOrgApacheCommonsIoIOCase:(OrgApacheCommonsIoIOCase *)caseSensitivity;
+- (instancetype __nonnull)initWithNSString:(NSString *)prefix
+              withOrgApacheCommonsIoIOCase:(OrgApacheCommonsIoIOCase *)caseSensitivity;
 
 /*!
  @brief Constructs a new Prefix file filter for any of an array of prefixes.
@@ -99,7 +104,7 @@
  @param prefixes the prefixes to allow, must not be null
  @throw IllegalArgumentExceptionif the prefix array is null
  */
-- (instancetype)initWithNSStringArray:(IOSObjectArray *)prefixes;
+- (instancetype __nonnull)initWithNSStringArray:(IOSObjectArray *)prefixes;
 
 /*!
  @brief Constructs a new Prefix file filter for any of an array of prefixes
@@ -112,8 +117,8 @@
  @throw IllegalArgumentExceptionif the prefix is null
  @since 1.4
  */
-- (instancetype)initWithNSStringArray:(IOSObjectArray *)prefixes
-         withOrgApacheCommonsIoIOCase:(OrgApacheCommonsIoIOCase *)caseSensitivity;
+- (instancetype __nonnull)initWithNSStringArray:(IOSObjectArray *)prefixes
+                   withOrgApacheCommonsIoIOCase:(OrgApacheCommonsIoIOCase *)caseSensitivity;
 
 /*!
  @brief Checks to see if the filename starts with the prefix.
@@ -139,7 +144,7 @@
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)init NS_UNAVAILABLE;
+- (instancetype __nonnull)init NS_UNAVAILABLE;
 
 @end
 
@@ -185,4 +190,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoFilefilterPrefixFileFilter)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgApacheCommonsIoFilefilterPrefixFileFilter")

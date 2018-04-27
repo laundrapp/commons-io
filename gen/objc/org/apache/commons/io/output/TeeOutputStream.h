@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgApacheCommonsIoOutputTeeOutputStream
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgApacheCommonsIoOutputTeeOutputStream_) && (INCLUDE_ALL_OrgApacheCommonsIoOutputTeeOutputStream || defined(INCLUDE_OrgApacheCommonsIoOutputTeeOutputStream))
 #define OrgApacheCommonsIoOutputTeeOutputStream_
 
@@ -45,8 +50,8 @@
  @param outArg the main OutputStream
  @param branch the second OutputStream
  */
-- (instancetype)initWithJavaIoOutputStream:(JavaIoOutputStream *)outArg
-                    withJavaIoOutputStream:(JavaIoOutputStream *)branch;
+- (instancetype __nonnull)initWithJavaIoOutputStream:(JavaIoOutputStream *)outArg
+                              withJavaIoOutputStream:(JavaIoOutputStream *)branch;
 
 /*!
  @brief Closes both output streams.
@@ -91,7 +96,7 @@
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)initWithJavaIoOutputStream:(JavaIoOutputStream *)arg0 NS_UNAVAILABLE;
+- (instancetype __nonnull)initWithJavaIoOutputStream:(JavaIoOutputStream *)arg0 NS_UNAVAILABLE;
 
 @end
 
@@ -109,4 +114,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoOutputTeeOutputStream)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgApacheCommonsIoOutputTeeOutputStream")

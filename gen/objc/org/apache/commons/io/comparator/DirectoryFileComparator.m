@@ -20,7 +20,7 @@ id<JavaUtilComparator> OrgApacheCommonsIoComparatorDirectoryFileComparator_DIREC
 @implementation OrgApacheCommonsIoComparatorDirectoryFileComparator
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
-- (instancetype)init {
+- (instancetype __nonnull)init {
   OrgApacheCommonsIoComparatorDirectoryFileComparator_init(self);
   return self;
 }

@@ -29,14 +29,14 @@ __attribute__((unused)) static jint OrgApacheCommonsIoInputNullInputStream_doEnd
 
 @implementation OrgApacheCommonsIoInputNullInputStream
 
-- (instancetype)initWithLong:(jlong)size {
+- (instancetype __nonnull)initWithLong:(jlong)size {
   OrgApacheCommonsIoInputNullInputStream_initWithLong_(self, size);
   return self;
 }
 
-- (instancetype)initWithLong:(jlong)size
-                 withBoolean:(jboolean)markSupported
-                 withBoolean:(jboolean)throwEofException {
+- (instancetype __nonnull)initWithLong:(jlong)size
+                           withBoolean:(jboolean)markSupported
+                           withBoolean:(jboolean)throwEofException {
   OrgApacheCommonsIoInputNullInputStream_initWithLong_withBoolean_withBoolean_(self, size, markSupported, throwEofException);
   return self;
 }

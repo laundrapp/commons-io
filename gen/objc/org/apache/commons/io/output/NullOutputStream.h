@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgApacheCommonsIoOutputNullOutputStream
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgApacheCommonsIoOutputNullOutputStream_) && (INCLUDE_ALL_OrgApacheCommonsIoOutputNullOutputStream || defined(INCLUDE_OrgApacheCommonsIoOutputNullOutputStream))
 #define OrgApacheCommonsIoOutputNullOutputStream_
 
@@ -33,7 +38,7 @@
 
 #pragma mark Public
 
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 /*!
  @brief Does nothing - output to <code>/dev/null</code>.
@@ -80,4 +85,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoOutputNullOutputStream)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgApacheCommonsIoOutputNullOutputStream")

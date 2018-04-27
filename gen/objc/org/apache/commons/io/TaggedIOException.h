@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgApacheCommonsIoTaggedIOException
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgApacheCommonsIoTaggedIOException_) && (INCLUDE_ALL_OrgApacheCommonsIoTaggedIOException || defined(INCLUDE_OrgApacheCommonsIoTaggedIOException))
 #define OrgApacheCommonsIoTaggedIOException_
 
@@ -39,8 +44,8 @@
  @param original the exception to be tagged
  @param tag tag of this exception
  */
-- (instancetype)initWithJavaIoIOException:(JavaIoIOException *)original
-                   withJavaIoSerializable:(id<JavaIoSerializable>)tag;
+- (instancetype __nonnull)initWithJavaIoIOException:(JavaIoIOException *)original
+                             withJavaIoSerializable:(id<JavaIoSerializable>)tag;
 
 /*!
  @brief Returns the wrapped exception.The only difference to the overridden 
@@ -114,10 +119,10 @@
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
+- (instancetype __nonnull)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
 
-- (instancetype)initWithNSString:(NSString *)arg0
-           withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
+- (instancetype __nonnull)initWithNSString:(NSString *)arg0
+                     withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
 
 @end
 
@@ -137,4 +142,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoTaggedIOException)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgApacheCommonsIoTaggedIOException")

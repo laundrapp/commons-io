@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgApacheCommonsIoOutputProxyWriter
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgApacheCommonsIoOutputProxyWriter_) && (INCLUDE_ALL_OrgApacheCommonsIoOutputProxyWriter || defined(INCLUDE_OrgApacheCommonsIoOutputProxyWriter))
 #define OrgApacheCommonsIoOutputProxyWriter_
 
@@ -42,7 +47,7 @@
  @brief Constructs a new ProxyWriter.
  @param proxy the Writer to delegate to
  */
-- (instancetype)initWithJavaIoWriter:(JavaIoWriter *)proxy;
+- (instancetype __nonnull)initWithJavaIoWriter:(JavaIoWriter *)proxy;
 
 /*!
  @brief Invokes the delegate's <code>append(char)</code> method.
@@ -186,4 +191,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoOutputProxyWriter)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgApacheCommonsIoOutputProxyWriter")

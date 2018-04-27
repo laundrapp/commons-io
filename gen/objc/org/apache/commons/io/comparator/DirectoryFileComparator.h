@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgApacheCommonsIoComparatorDirectoryFileComparator
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgApacheCommonsIoComparatorDirectoryFileComparator_) && (INCLUDE_ALL_OrgApacheCommonsIoComparatorDirectoryFileComparator || defined(INCLUDE_OrgApacheCommonsIoComparatorDirectoryFileComparator))
 #define OrgApacheCommonsIoComparatorDirectoryFileComparator_
 
@@ -57,7 +62,7 @@
 
 #pragma mark Public
 
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 /*!
  @brief Compare the two files using the <code>File.isDirectory()</code> method.
@@ -99,4 +104,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoComparatorDirectoryFileComparator)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgApacheCommonsIoComparatorDirectoryFileComparator")

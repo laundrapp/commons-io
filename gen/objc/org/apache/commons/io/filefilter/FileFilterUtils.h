@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgApacheCommonsIoFilefilterFileFilterUtils
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgApacheCommonsIoFilefilterFileFilterUtils_) && (INCLUDE_ALL_OrgApacheCommonsIoFilefilterFileFilterUtils || defined(INCLUDE_OrgApacheCommonsIoFilefilterFileFilterUtils))
 #define OrgApacheCommonsIoFilefilterFileFilterUtils_
 
@@ -42,7 +47,7 @@
 /*!
  @brief FileFilterUtils is not normally instantiated.
  */
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 /*!
  @brief Returns a filter that returns true if the file was last modified after
@@ -676,4 +681,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoFilefilterFileFilterUtils)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgApacheCommonsIoFilefilterFileFilterUtils")

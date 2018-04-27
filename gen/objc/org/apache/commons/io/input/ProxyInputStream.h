@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgApacheCommonsIoInputProxyInputStream
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgApacheCommonsIoInputProxyInputStream_) && (INCLUDE_ALL_OrgApacheCommonsIoInputProxyInputStream || defined(INCLUDE_OrgApacheCommonsIoInputProxyInputStream))
 #define OrgApacheCommonsIoInputProxyInputStream_
 
@@ -45,7 +50,7 @@
  @brief Constructs a new ProxyInputStream.
  @param proxy the InputStream to delegate to
  */
-- (instancetype)initWithJavaIoInputStream:(JavaIoInputStream *)proxy;
+- (instancetype __nonnull)initWithJavaIoInputStream:(JavaIoInputStream *)proxy;
 
 /*!
  @brief Invokes the delegate's <code>available()</code> method.
@@ -173,4 +178,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoInputProxyInputStream)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgApacheCommonsIoInputProxyInputStream")

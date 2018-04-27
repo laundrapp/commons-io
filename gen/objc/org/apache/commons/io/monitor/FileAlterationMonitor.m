@@ -33,18 +33,18 @@ J2OBJC_FIELD_SETTER(OrgApacheCommonsIoMonitorFileAlterationMonitor, threadFactor
 @implementation OrgApacheCommonsIoMonitorFileAlterationMonitor
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
-- (instancetype)init {
+- (instancetype __nonnull)init {
   OrgApacheCommonsIoMonitorFileAlterationMonitor_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
-- (instancetype)initWithLong:(jlong)interval {
+- (instancetype __nonnull)initWithLong:(jlong)interval {
   OrgApacheCommonsIoMonitorFileAlterationMonitor_initWithLong_(self, interval);
   return self;
 }
 
-- (instancetype)initWithLong:(jlong)interval
+- (instancetype __nonnull)initWithLong:(jlong)interval
 withOrgApacheCommonsIoMonitorFileAlterationObserverArray:(IOSObjectArray *)observers {
   OrgApacheCommonsIoMonitorFileAlterationMonitor_initWithLong_withOrgApacheCommonsIoMonitorFileAlterationObserverArray_(self, interval, observers);
   return self;

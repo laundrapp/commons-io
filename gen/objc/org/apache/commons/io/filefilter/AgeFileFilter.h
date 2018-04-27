@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgApacheCommonsIoFilefilterAgeFileFilter
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgApacheCommonsIoFilefilterAgeFileFilter_) && (INCLUDE_ALL_OrgApacheCommonsIoFilefilterAgeFileFilter || defined(INCLUDE_OrgApacheCommonsIoFilefilterAgeFileFilter))
 #define OrgApacheCommonsIoFilefilterAgeFileFilter_
 
@@ -62,7 +67,7 @@
   a certain cutoff date.
  @param cutoffDate the threshold age of the files
  */
-- (instancetype)initWithJavaUtilDate:(JavaUtilDate *)cutoffDate;
+- (instancetype __nonnull)initWithJavaUtilDate:(JavaUtilDate *)cutoffDate;
 
 /*!
  @brief Constructs a new age file filter for files on any one side
@@ -70,15 +75,15 @@
  @param cutoffDate the threshold age of the files
  @param acceptOlder if true, older files (at or before the cutoff)  are accepted, else newer ones (after the cutoff).
  */
-- (instancetype)initWithJavaUtilDate:(JavaUtilDate *)cutoffDate
-                         withBoolean:(jboolean)acceptOlder;
+- (instancetype __nonnull)initWithJavaUtilDate:(JavaUtilDate *)cutoffDate
+                                   withBoolean:(jboolean)acceptOlder;
 
 /*!
  @brief Constructs a new age file filter for files older than (at or before)
   a certain File (whose last modification time will be used as reference).
  @param cutoffReference the file whose last modification         time is usesd as the threshold age of the files
  */
-- (instancetype)initWithJavaIoFile:(JavaIoFile *)cutoffReference;
+- (instancetype __nonnull)initWithJavaIoFile:(JavaIoFile *)cutoffReference;
 
 /*!
  @brief Constructs a new age file filter for files on any one side
@@ -87,15 +92,15 @@
  @param cutoffReference the file whose last modification         time is usesd as the threshold age of the files
  @param acceptOlder if true, older files (at or before the cutoff)  are accepted, else newer ones (after the cutoff).
  */
-- (instancetype)initWithJavaIoFile:(JavaIoFile *)cutoffReference
-                       withBoolean:(jboolean)acceptOlder;
+- (instancetype __nonnull)initWithJavaIoFile:(JavaIoFile *)cutoffReference
+                                 withBoolean:(jboolean)acceptOlder;
 
 /*!
  @brief Constructs a new age file filter for files equal to or older than
   a certain cutoff
  @param cutoff the threshold age of the files
  */
-- (instancetype)initWithLong:(jlong)cutoff;
+- (instancetype __nonnull)initWithLong:(jlong)cutoff;
 
 /*!
  @brief Constructs a new age file filter for files on any one side
@@ -103,8 +108,8 @@
  @param cutoff the threshold age of the files
  @param acceptOlder if true, older files (at or before the cutoff)  are accepted, else newer ones (after the cutoff).
  */
-- (instancetype)initWithLong:(jlong)cutoff
-                 withBoolean:(jboolean)acceptOlder;
+- (instancetype __nonnull)initWithLong:(jlong)cutoff
+                           withBoolean:(jboolean)acceptOlder;
 
 /*!
  @brief Checks to see if the last modification of the file matches cutoff
@@ -127,7 +132,7 @@
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)init NS_UNAVAILABLE;
+- (instancetype __nonnull)init NS_UNAVAILABLE;
 
 @end
 
@@ -173,4 +178,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgApacheCommonsIoFilefilterAgeFileFilter)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgApacheCommonsIoFilefilterAgeFileFilter")
