@@ -22,5 +22,3 @@ Pod::Spec.new do |s|
 #  s.xcconfig = { 'HEADER_SEARCH_PATHS' => "\"${PODS_ROOT}/J2ObjC/dist/include\"" }
 
 end
-~
-
